@@ -161,7 +161,9 @@ function candidate(record, r, params, card) {
         "span",
         record.name_match === "exact_or_variant"
           ? "Exact or variant"
-          : "Possible match",
+          : record.matched_former_name
+            ? `Matched former name: ${record.matched_former_name}`
+            : "Possible match",
       ),
     );
   const facts = el("div", undefined, "facts");

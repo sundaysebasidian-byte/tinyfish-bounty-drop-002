@@ -467,3 +467,25 @@ export function validABN(value: string) {
       0
   );
 }
+
+// Rank current names ahead of historical aliases; preserve registry provenance.
+export function rankCandidates(records: RecordData[], query: string, registry: RegistryId) {
+  const q = normaliseName(query);
+  const similarity = (name: string) => {
+    const n = normaliseName(name);
+    if (n === q) return 1;
+    const a = new Set(q.split(" ")), b = new Set(n.split(" "));
+    return [...a].filter(t => b.has(t)).length / new Set([...a, ...b]).size;
+  };
+  return records.map(r => {
+    const current = similarity(r.name);
+    const alias = r.name_variants.find(n => normaliseName(n) === q);
+    const historical = registry === "companies" ? [...r.name_variants].sort((a,b) => similarity(b)-similarity(a)).find(n => similarity(n) > current) : undefined;
+    const former = registry === "companies" ? alias ?? historical : undefined;
+    return { ...r,
+      name_match: current === 1 || (alias && !former) ? "exact_or_variant" : former ? "former_name" : "possible_match",
+      ...(former ? { matched_former_name: former } : {}),
+      score: current === 1 ? 3 : alias && !former ? 2 : current,
+    };
+  }).sort((a,b) => b.score - a.score).map(({score, ...record}) => record);
+}

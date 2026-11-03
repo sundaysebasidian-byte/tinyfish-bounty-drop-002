@@ -6,6 +6,7 @@ import {
   lookupURL,
   parseRecords,
   normaliseName,
+  rankCandidates,
   outcome,
   officialURL,
   companyNumbers,
@@ -184,14 +185,7 @@ app.get("/api/verify", async (c) => {
           checked_at: new Date().toISOString(),
           source_url: url,
           truncated: records.length >= 10,
-          candidates: records.map((r) => ({
-            ...r,
-            name_match: [r.name, ...r.name_variants].some(
-              (n) => normaliseName(n) === normaliseName(q.name),
-            )
-              ? "exact_or_variant"
-              : "possible_match",
-          })),
+          candidates: rankCandidates(records, q.name, d.id),
         };
       } catch (e) {
         return {
