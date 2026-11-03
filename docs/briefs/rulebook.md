@@ -1,0 +1,43 @@
+# TinyFish Bounties — Rulebook (transcribed from tinybounties.com)
+
+## Rewards
+- Bounty drops, top 3 per bounty: 1st $50 · 2nd $30 · 3rd $15 gift card
+- Other bounties, by what you built: Agentic app $50 · Skill $20 · Prompt $10
+
+## 1. Who can enter
+- Anyone registered in the TinyFish Students program or Ambassadors program.
+- Individual entries only: one person per build, and one submission per person per bounty.
+- Anyone can claim any bounty. Claiming doesn't reserve it; several people can build the same bounty.
+
+## 2. Timeline
+- This drop is open until Tue 17 Nov, 11:59 PM PT.
+- New bounties drop on the first Monday of every month.
+
+## 3. What to submit
+- A link to your working build (repo, live demo, or cookbook PR) with notes on what it does and how TinyFish is used.
+- A LinkedIn post about your build (required), tagging TinyFish on LinkedIn.
+- Share it in #showcase on the TinyFish Discord.
+- X post optional.
+- Anything else the bounty's submission requirements ask for.
+
+## 4. How builds are judged
+- Every approval criterion on the bounty must pass.
+- TinyFish does real work in the build: it searches, reads, or acts on the live web, not canned data.
+- It works end to end and handles different inputs, not one scripted run.
+- It's your own original work, built for this bounty.
+- Reviewed by the TinyFish team; partner bounties reviewed jointly with the partner.
+
+## 5. Approvals and rewards
+- The top 3 builds per bounty are approved. Every other submission gets feedback.
+- Each approved build earns a gift card and leaderboard points (drop: by place).
+- Leaderboard points depend on how many TinyFish endpoints (Search, Fetch, Agent, Browser, Monitor) do real work: 1 = 50, 2 = 100, 3 = 150, 4+ = 200.
+- Three approved builds promote you to Student Builder.
+
+## 6. If your build isn't approved
+- Feedback appears in My claims.
+- Submissions are final for that bounty.
+
+## 7. Fair play
+- No copied or recycled work, no fake sources, no padding TinyFish usage to reach a higher score.
+- Never put passwords, API keys, or other people's personal data in your build or demo.
+- TinyFish may disqualify submissions that break these rules.
