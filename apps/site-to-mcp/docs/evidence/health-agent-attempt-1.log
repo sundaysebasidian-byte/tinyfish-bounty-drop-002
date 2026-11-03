@@ -1,0 +1,35 @@
+
+> site-to-mcp@1.0.0 health
+> tsx scripts/health.ts
+
+{
+  "checked_at": "2026-11-03T18:21:52.522Z",
+  "ok": false,
+  "tools": [
+    {
+      "tool": "search_films",
+      "ok": true,
+      "reason": "Schema and known-input sanity passed",
+      "duration_ms": 9890
+    },
+    {
+      "tool": "get_film",
+      "ok": true,
+      "reason": "Schema and known-input sanity passed",
+      "duration_ms": 15271
+    },
+    {
+      "tool": "get_screenings",
+      "ok": true,
+      "reason": "Schema and known-input sanity passed",
+      "duration_ms": 29277
+    },
+    {
+      "tool": "filter_programme",
+      "ok": false,
+      "code": "SITE_CHANGED",
+      "reason": "Known 35mm programme filter returned no matches",
+      "duration_ms": 105230
+    }
+  ]
+}

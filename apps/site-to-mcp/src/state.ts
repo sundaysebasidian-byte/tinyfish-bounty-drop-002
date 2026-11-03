@@ -11,5 +11,4 @@ export interface RuntimeEnv {
   DB: State;
   TINYFISH_API_KEY: string;
   PAID_CALLS_ENABLED: string;
-  AGENT_STEP_CAP_SUPPORTED?: string;
 }

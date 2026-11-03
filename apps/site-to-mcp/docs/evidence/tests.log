@@ -1,0 +1,25 @@
+
+> site-to-mcp@1.0.0 test
+> tsx --test tests/*.test.ts
+
+✔ Agent request uses the accepted duration bound (2.34425ms)
+✔ Agent settles reported steps, caches six hours and preserves paid guard (2.695417ms)
+✔ uncertain filter application is rejected rather than accepted as no matches (0.208708ms)
+✔ gateway timeout recovers the original run without another paid request (0.610459ms)
+✔ persistent SQL guard cannot reserve beyond $1.60 or within cooldown (1.029417ms)
+{"event":"health","checked_at":"2026-11-03T18:39:38.976Z","ok":false,"tools":[{"tool":"filter_programme","ok":false,"code":"SITE_CHANGED","reason":"Filter panel missing","duration_ms":1}]}
+✔ scheduled Worker runs health and persists the same per-tool failure report (1.360209ms)
+✔ recorded Fetch film facts and deduplicated mobile/desktop performances (12.117459ms)
+✔ catalogue yields stable numeric identifiers (3.05925ms)
+✔ markup drift fails loudly instead of empty results (3.656041ms)
+✔ cross-origin booking injection is rejected (0.612542ms)
+✔ robots disallow, wildcard and longest allow (0.3525ms)
+✔ Fetch markdown literal CRLF robots excludes booking paths (0.110292ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 296.662916

@@ -1,8 +1,8 @@
 {
-  "recorded_at": "2026-11-03T18:12:52.554511+00:00",
+  "recorded_at": "2026-11-03T18:41:26.721086+00:00",
   "project": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp",
   "branch": "t3/build-site-to-mcp-entry",
-  "deployed_worker_version": "176d43a0-b3e2-4980-80db-45ecc1210112",
+  "deployed_worker_version": "bdc0ad4b-05dc-4368-b927-ee85929e0d34",
   "moved_count": 0,
   "moved_bytes": 0,
   "retained": [
@@ -53,9 +53,14 @@
     }
   ],
   "blocked": [],
-  "backup_status": "No old source copies removed; no GitHub backup created or assumed. Current work and evidence retained.",
-  "processes": "Owned smoke clients and Claude conversation exited; no temporary server/browser was started. Hosted Worker is the required deliverable and retained.",
-  "df_before_available_kib": 150496276,
-  "df_after": "Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5   482797652 304554104 150470368    67% 3902526 1504703680    0%   /System/Volumes/Data\n",
-  "attributable_freed_bytes": 0
+  "backup_status": "No source copies removed. No exact GitHub backup asserted; current source, dependencies, state, original probes and credentials retained. Git working changes reviewed before commit.",
+  "processes": "All owned health/Claude/Fetch clients exited. No task-owned temporary service or browser was started. Hosted Worker retained as deliverable; user and other-task processes retained.",
+  "df_before_available_kib": 150447248,
+  "df_after": "Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5   482797652 304671980 150352492    67% 3913812 1503524920    0%   /System/Volumes/Data\n",
+  "attributable_freed_bytes": 0,
+  "source_base_head": "a4d9dda406b266fe0bebd4a2642e6c9a3eda7cc1",
+  "delivery_revision": "Local commit containing this manifest; no push",
+  "candidates": [],
+  "restore_map": {},
+  "operation_log": []
 }

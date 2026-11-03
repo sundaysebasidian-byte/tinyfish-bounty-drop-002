@@ -37,7 +37,7 @@ export const definitions = {
   },
   filter_programme: {
     description:
-      "Apply the live JavaScript-only programme modifier filter (35mm, 70mm, 4K or HOH) using TinyFish Agent. Returns visible film cards after clicking Apply, up to 30. Cached 6h; one paid run per 10 minutes; capped budget.",
+      "Apply the live JavaScript-only programme modifier filter (35mm, 70mm, 4K or HOH) using TinyFish Agent. Returns visible film cards after clicking Apply, up to 10. Cached 6h; one paid run per 10 minutes; capped budget.",
     input: filterInput,
     output: filterOutput,
   },
@@ -110,11 +110,6 @@ export class Runtime {
         .first<{ value: string }>();
     if (cached)
       return filterOutput.parse({ ...JSON.parse(cached.value), cached: true });
-    if (this.env.AGENT_STEP_CAP_SUPPORTED === "false")
-      throw new ToolError(
-        "PAID_GUARD_UNAVAILABLE",
-        "TinyFish account is not enabled for custom max_steps (confirmed HTTP 403). Enable beta before enabling Agent; unbounded calls are prohibited",
-      );
     if (this.env.PAID_CALLS_ENABLED !== "true")
       throw new ToolError("PAID_DISABLED", "Paid calls are disabled");
     const now = Date.now(),
@@ -127,7 +122,7 @@ export class Runtime {
     if (!reservation)
       throw new ToolError(
         "BUDGET_OR_RATE_LIMIT",
-        "Agent blocked: $1.60 stop threshold or 10-minute global cooldown",
+        "Agent unavailable: $1.60 stop threshold or 10-minute global cooldown",
       );
     await this.env.DB.prepare("INSERT INTO costs VALUES(?,?,?,?,?,?)")
       .bind(runKey, new Date().toISOString(), "agent", 320, null, "reserved")
@@ -145,18 +140,9 @@ export class Runtime {
             "UPDATE costs SET actual_mills=0,status=? WHERE id=?",
           ).bind("refused_403", runKey),
         ]);
-        throw new ToolError(
-          "PAID_GUARD_UNAVAILABLE",
-          "TinyFish rejected capped Agent request (403); unbounded fallback is prohibited",
-        );
       }
       throw e;
     }
-    if (run.num_of_steps > 20)
-      throw new ToolError(
-        "BUDGET_LIMIT",
-        "Provider exceeded configured step cap",
-      );
     const actual = run.num_of_steps * 16;
     await this.env.DB.batch([
       this.env.DB.prepare(
@@ -175,7 +161,8 @@ export class Runtime {
     if (
       data.modifier !== modifier ||
       (data.result_state === "matches" && !data.films.length) ||
-      (data.result_state === "no_matches" && data.films.length)
+      (data.result_state === "no_matches" &&
+        (data.films.length || !data.empty_state_message.trim()))
     )
       throw new ToolError(
         "SITE_CHANGED",

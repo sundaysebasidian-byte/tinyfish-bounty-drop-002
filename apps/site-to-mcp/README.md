@@ -7,7 +7,7 @@ A focused MCP server for planning a trip to London's repertory cinema: discover 
 
 ## Current acceptance status
 
-Read tools, real Claude Code conversation, HTTP/stdio transports, offline tests and deployment are verified. **Agent execution is blocked by the supplied TinyFish account**: the provider returned `403 FORBIDDEN`, “Your account is not enabled for custom max steps yet. Join the beta program at /beta, then retry.” We did not remove the step cap or spend beyond the budget. `AGENT_STEP_CAP_SUPPORTED=false` makes this explicit, and health correctly reports the Agent tool unhealthy. After beta is enabled on the existing account, change that flag to `true`, deploy, and run health to verify real filter clicks. The entry is **not yet fully brief-compliant** until that live Agent run succeeds. Actual TinyFish paid spend so far: **$0.00** (the capped request was rejected before execution).
+Search, Fetch and Agent are verified live, alongside the real MCP-client conversation, HTTP/stdio transports, offline tests and deployment. The Agent applied the 35mm filter in **8 steps ($0.128)** and returned 10 films, using a 90-second configured duration bound. Known TinyFish spend is **$0.400**, including the lead’s reported 10-step $0.160 probe and a 7-step $0.112 attempt that failed acceptance. See [verification](docs/verification.md) for recorded steps, cost, Fetch cross-checks and health results.
 
 ## Why this website
 
@@ -33,10 +33,10 @@ All inputs and successful outputs have Zod validation and MCP `inputSchema` / `o
 | `search_films({query: string[2..100]})`                        | `{films: {film_id,title,url}[], total_in_programme, indexed_matches, source_url, checked_at}`              | Search discovers indexed film pages; Fetch reads the complete current programme to validate current title matches             |
 | `get_film({film_id: numericString})`                           | `{film_id,title,year,runtime_minutes,certificate,country,genre,director,source_url,checked_at}`            | Fetch resolves the ID from the current programme and reads `.plot`                                                            |
 | `get_screenings({film_id: numericString})`                     | `{film_id,timezone,screenings: {performance_id,date_label,time,tags,booking_url}[],source_url,checked_at}` | Fetch reads actual `.date-row` blocks, deduplicating desktop/mobile copies                                                    |
-| `filter_programme({modifier: "35mm" / "70mm" / "4K" / "HOH"})` | `{modifier,films:{film_id,title,url}[],result_state,interaction,cached,run_id,source_url,checked_at}`      | Agent opens the JS Filter By Modifier panel, selects the modifier, clicks Apply, and reads only visible film cards (up to 30) |
+| `filter_programme({modifier: "35mm" / "70mm" / "4K" / "HOH"})` | `{modifier,films:{film_id,title,url}[],result_state,filter_applied,empty_state_message,interaction,cached,run_id,source_url,checked_at}`      | Agent opens the JS Filter By Modifier panel, selects the modifier, clicks Apply, and reads only visible film cards (up to 10) |
 | `health_check({})`                                             | `{ok,checked_at,tools: {tool,ok,code?,reason,duration_ms}[]}`                                              | Runs the four tools, validates their schemas and known-input sanity                                                           |
 
-Times are source labels in **Europe/London**. We do not invent a year or interpret an ambiguous source label. `get_screenings` lists booking links, not remaining seats. `filter_programme` verifies the actual interactive view, which has no shareable GET filter URL; it does not infer results from hidden cards. A 6-hour cache is labelled with its original timestamp. Browser is deliberately omitted: another screenshot endpoint adds no useful agent capability to this workflow. Three endpoint integrations: Search + Fetch verified live; Agent implemented but blocked by the account capability described above.
+Times are source labels in **Europe/London**. We do not invent a year or interpret an ambiguous source label. `get_screenings` lists booking links, not remaining seats. `filter_programme` verifies the actual interactive view, which has no shareable GET filter URL; it does not infer results from hidden cards. A 6-hour cache is labelled with its original timestamp. Browser is deliberately omitted: another screenshot endpoint adds no useful agent capability to this workflow. Three endpoint integrations: Search, Fetch and Agent verified live.
 
 ## Install
 
@@ -110,8 +110,8 @@ Missing selectors, malformed film facts, unknown booking-link shape, removed scr
 
 ## Budget and safety
 
-- $2 hard allocation; stop admitting runs at **$1.60**. Atomic D1 reservation of **$0.32** per Agent call (20 steps × $0.016), settled to the reported step count. No automatic paid retry. Unknown transport failures retain their full reservation.
-- Uses `agent_config.max_steps:20` **beta** and `max_duration_seconds:90`. An account without beta access receives a typed failure; we never remove the cap and fall back to an unbounded run.
+- $2 hard allocation; stop admitting runs at **$1.60**. Atomic D1 reservation of **$0.32** per Agent call (a cost estimate), settled to `num_of_steps × $0.016`. No automatic paid retry. A gateway timeout triggers bounded read-only recovery of the original run via the Runs API; unresolved failures retain their full reservation.
+- Runs use `agent_config.max_duration_seconds:90` and a concise read-only goal targeting roughly 10 steps. Duration is the accepted execution bound; the reservation is an estimate, not a provider-enforced dollar limit. Reported costs above the estimate are fully charged to the ledger and stop subsequent admissions at the threshold.
 - One new Agent run per ten minutes globally; cached filter results expire after six hours. All public routes share a 60-requests/minute/IP limit. Paid calls also require `PAID_CALLS_ENABLED=true`.
 - Production cost events persist in D1 `costs`, reservations in `budget`. Export them to the required gitignored `.cost-log.jsonl` using the command below. No credentials are logged.
 - Numeric IDs resolve through the source catalogue and the programme's own film links. Caller URLs and free-form Agent goals are never accepted. Robots is checked through TinyFish Fetch before reading paths. Foreign `Origin` headers are rejected.
@@ -119,6 +119,8 @@ Missing selectors, malformed film facts, unknown booking-link shape, removed scr
 
 ```sh
 npx tsx scripts/export-costs.ts
+# With TINYFISH_API_KEY in the process environment, cross-check cached Agent cards:
+npx tsx scripts/verify-agent.ts
 ```
 
 ## Deploy your own

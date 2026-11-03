@@ -45,6 +45,8 @@ export const modifier = z.enum(["35mm", "70mm", "4K", "HOH"]);
 export const filterInput = z.object({ modifier });
 export const filterData = z.object({
   modifier,
+  filter_applied: z.literal(true),
+  empty_state_message: z.string(),
   films: z.array(film),
   interaction: z.string().min(10),
   result_state: z.enum(["matches", "no_matches"]),

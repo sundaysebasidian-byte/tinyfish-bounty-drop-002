@@ -9,7 +9,6 @@ enabled = true
 crons = ["0 8 * * *"]
 [vars]
 PAID_CALLS_ENABLED = "true"
-AGENT_STEP_CAP_SUPPORTED = "false"
 [[d1_databases]]
 binding = "DB"
 database_name = "site-to-mcp-pcc"

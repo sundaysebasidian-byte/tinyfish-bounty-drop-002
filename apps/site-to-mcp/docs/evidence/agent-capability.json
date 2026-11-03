@@ -1,1 +1,13 @@
-{"checked_at":"2026-11-03T18:11:00Z","endpoint":"https://agent.tinyfish.ai/v1/automation/run","requested_max_steps":1,"http_status":403,"error":{"code":"FORBIDDEN","message":"Your account is not enabled for custom max steps yet. Join the beta program at /beta, then retry."},"paid_execution_started":false,"actual_usd":0}
+{
+  "checked_at": "2026-11-03T18:33:27Z",
+  "endpoint": "https://agent.tinyfish.ai/v1/automation/run",
+  "agent_config": {
+    "max_duration_seconds": 90
+  },
+  "run_id": "e07d53ca-118b-4150-9ff7-11dd8deb0543",
+  "num_of_steps": 8,
+  "actual_usd": 0.128,
+  "status": "COMPLETED",
+  "returned_films": 10,
+  "response_recovery": "Original run retrieved via GET /v1/runs after synchronous HTTP 524"
+}
