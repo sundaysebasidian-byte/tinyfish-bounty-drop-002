@@ -1,0 +1,35 @@
+{
+  "name": "site-to-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "site-to-mcp": "./bin/site-to-mcp.mjs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "health": "tsx scripts/health.ts",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "stdio": "tsx src/stdio.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@hono/mcp": "0.3.5",
+    "hono": "4.13.16",
+    "zod": "4.6.7",
+    "cheerio": "1.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261103.1",
+    "@types/node": "26.6.6",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "wrangler": "4.156.2"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

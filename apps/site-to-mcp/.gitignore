@@ -1,0 +1,8 @@
+
+.dev.vars*
+
+.local-state.sqlite*
+docs/evidence/probe-*.json
+docs/evidence/candidates.json
+
+docs/evidence/claude-conversation.jsonl

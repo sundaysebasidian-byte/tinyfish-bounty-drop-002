@@ -1,0 +1,61 @@
+{
+  "recorded_at": "2026-11-03T18:12:52.554511+00:00",
+  "project": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp",
+  "branch": "t3/build-site-to-mcp-entry",
+  "deployed_worker_version": "176d43a0-b3e2-4980-80db-45ecc1210112",
+  "moved_count": 0,
+  "moved_bytes": 0,
+  "retained": [
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/src",
+      "action": "retained",
+      "reason": "Current implementation"
+    },
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/tests",
+      "action": "retained",
+      "reason": "Regression fixtures and tests"
+    },
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/docs",
+      "action": "retained",
+      "reason": "Real verification and delivery evidence"
+    },
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/node_modules",
+      "action": "retained",
+      "reason": "Active pinned dependency environment"
+    },
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/dist",
+      "action": "retained",
+      "reason": "Current verified build; retain for handoff"
+    },
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/.wrangler",
+      "action": "retained",
+      "reason": "Current deployment state"
+    },
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/.dev.vars",
+      "action": "retained",
+      "reason": "Ignored local credential; protected"
+    },
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/.local-state.sqlite",
+      "action": "retained",
+      "reason": "Standalone smoke state; protected"
+    },
+    {
+      "path": "/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/.cost-log.jsonl",
+      "action": "retained",
+      "reason": "Required paid-call ledger; protected"
+    }
+  ],
+  "blocked": [],
+  "backup_status": "No old source copies removed; no GitHub backup created or assumed. Current work and evidence retained.",
+  "processes": "Owned smoke clients and Claude conversation exited; no temporary server/browser was started. Hosted Worker is the required deliverable and retained.",
+  "df_before_available_kib": 150496276,
+  "df_after": "Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5   482797652 304554104 150470368    67% 3902526 1504703680    0%   /System/Volumes/Data\n",
+  "attributable_freed_bytes": 0
+}

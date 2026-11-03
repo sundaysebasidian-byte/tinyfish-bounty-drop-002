@@ -1,0 +1,1 @@
+{"checked_at":"2026-11-03T18:11:00Z","endpoint":"https://agent.tinyfish.ai/v1/automation/run","requested_max_steps":1,"http_status":403,"error":{"code":"FORBIDDEN","message":"Your account is not enabled for custom max steps yet. Join the beta program at /beta, then retry."},"paid_execution_started":false,"actual_usd":0}

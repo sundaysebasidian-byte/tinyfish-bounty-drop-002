@@ -1,0 +1,16 @@
+name = "site-to-mcp-pcc"
+main = "src/worker.ts"
+compatibility_date = "2026-11-03"
+compatibility_flags = ["nodejs_compat"]
+account_id = "8f236662adb381d7fc8ef1e68d93d0af"
+[observability]
+enabled = true
+[triggers]
+crons = ["0 8 * * *"]
+[vars]
+PAID_CALLS_ENABLED = "true"
+AGENT_STEP_CAP_SUPPORTED = "false"
+[[d1_databases]]
+binding = "DB"
+database_name = "site-to-mcp-pcc"
+database_id = "40306e99-7b9b-4e31-80d8-4da7cc547d20"
