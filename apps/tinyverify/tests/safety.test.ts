@@ -177,3 +177,4 @@ for (const mode of ["unchanged", "duplicate", "source_error"])
       expect(batch).toHaveBeenCalledOnce();
     }
   });
+it('receipt and directory permalinks serve the app without canonical redirects',async()=>{for(const path of ['/r/a-receipt','/registries']){const e={ASSETS:{fetch:async(req:Request)=>new URL(req.url).pathname==='/'?new Response('<html>app</html>',{headers:{'Content-Type':'text/html'}}):Response.redirect('https://app.test/',307)}} as unknown as Env;const r=await worker.fetch(new Request('https://app.test'+path),e,{} as ExecutionContext);expect(r.status).toBe(200);expect(await r.text()).toContain('app');}});

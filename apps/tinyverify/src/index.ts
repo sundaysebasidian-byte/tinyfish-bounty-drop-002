@@ -558,7 +558,7 @@ app.get("*", (c) =>
     new Request(
       new URL(
         ["/registries"].includes(c.req.path) || c.req.path.startsWith("/r/")
-          ? "/index.html"
+          ? "/"
           : c.req.path,
         c.req.url,
       ),
