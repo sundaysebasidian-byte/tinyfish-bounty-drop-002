@@ -8,7 +8,9 @@ import {
 } from "./schema.js";
 const clean = (s: string) => s.replace(/\s+/g, " ").trim();
 export function catalogue(html: string) {
-  const $ = load(html);
+  // Programme pages are large; build a DOM only for title anchors, not every screening.
+  const anchors = programmeCards(html).flatMap(card => card.match(/<a\b[^>]*class=["'][^"']*\bliveeventtitle\b[^"']*["'][^>]*>[\s\S]*?<\/a>/gi) ?? []);
+  const $ = load(`<div class="film_list-outer">${anchors.join("")}</div>`);
   const films = new Map<string, ReturnType<typeof film.parse>>();
   $(".film_list-outer .liveeventtitle").each((_, el) => {
     const a = $(el),
@@ -88,7 +90,7 @@ export function performances(
   });
 }
 export function allowedByRobots(text: string, path: string) {
-  text = text.replace(/\\r\\n/g, "\n").replace(/\\n/g, "\n");
+  text = text.replace(/\\r\\n/g, "\n").replace(/\\n/g, "\n").replace(/\\([*_])/g, "$1");
   if (!/User-agent:/i.test(text))
     throw new ToolError("SITE_CHANGED", "Invalid robots.txt");
   let applies = false;
@@ -120,4 +122,20 @@ export function allowedByRobots(text: string, path: string) {
         b.path.length - a.path.length || Number(b.allow) - Number(a.allow),
     );
   return matches[0]?.allow ?? true;
+}
+
+function programmeCards(html: string) {
+  return html.split(/<div\b[^>]*class=["'][^"']*\bfilm_list-outer\b[^"']*["'][^>]*>/i).slice(1);
+}
+export function byFormat(html: string, modifier: string) {
+  const all = catalogue(html), ids = new Set<string>();
+  for (const card of programmeCards(html)) {
+    const tags = [...card.matchAll(/<span\b[^>]*class=["'][^"']*\btag\b[^"']*["'][^>]*>([^<]*)<\/span>/gi)];
+    if (tags.some(t => clean(t[1]).toLowerCase() === modifier.toLowerCase())) {
+      const anchor = card.match(/<a\b[^>]*class=["'][^"']*\bliveeventtitle\b[^"']*["'][^>]*>/i)?.[0];
+      const id = anchor?.match(/href=["'][^"']*\/film\/(\d+)\//i)?.[1];
+      if (id) ids.add(id);
+    }
+  }
+  return all.filter(f => ids.has(f.film_id));
 }

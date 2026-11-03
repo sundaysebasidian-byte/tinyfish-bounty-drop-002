@@ -3,7 +3,7 @@ import { execFileSync } from "node:child_process";
 import assert from "node:assert/strict";
 import { load } from "cheerio";
 import { TinyFish } from "../src/tinyfish.js";
-import { filterOutput, ORIGIN } from "../src/schema.js";
+import { legacyFilterOutput, ORIGIN } from "../src/schema.js";
 import { catalogue } from "../src/parse.js";
 
 // Credentials are loaded only into this process, never into evidence.
@@ -28,7 +28,7 @@ const raw = execFileSync(
 );
 const rows = JSON.parse(raw)[0].results;
 assert.equal(rows.length, 1, "A successful live 35mm run must exist");
-const result = filterOutput.parse(JSON.parse(rows[0].value));
+const result = legacyFilterOutput.parse(JSON.parse(rows[0].value));
 const programme = catalogue((await tf.page(`${ORIGIN}/whats-on/`)).text);
 const comparisons = [];
 for (let i = 0; i < result.films.length; i += 4) {

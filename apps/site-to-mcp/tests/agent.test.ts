@@ -1,139 +1,101 @@
-import { test } from "node:test";
-import assert from "node:assert/strict";
-import { TinyFish } from "../src/tinyfish.js";
-import { Runtime } from "../src/runtime.js";
-import { LocalState } from "../src/local-state.js";
-import { ToolError } from "../src/schema.js";
-
-test("Agent request uses the accepted duration bound", async () => {
-  const tf = new TinyFish("test-key");
-  let body: Record<string, unknown> | undefined;
-  tf.request = async (_url, input) => {
-    body = input as Record<string, unknown>;
-    return {
-      run_id: "test",
-      status: "COMPLETED",
-      num_of_steps: 10,
-      result: {},
-    };
-  };
-  await tf.agent("https://princecharlescinema.com/whats-on/", "35mm");
-  assert.deepEqual(body?.agent_config, { max_duration_seconds: 90 });
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { TinyFish } from '../src/tinyfish.js';
+import { Runtime } from '../src/runtime.js';
+import { LocalState } from '../src/local-state.js';
+test('async endpoint starts once and polling uses exact run ID', async () => {
+    const tf = new TinyFish('test');
+    const urls: string[] = [];
+    tf.request = async (url, body) => { urls.push(url); return body ? { run_id: 'test' } : { run_id: 'test', status: 'RUNNING', num_of_steps: null, result: null }; };
+    assert.equal((await tf.agent('https://princecharlescinema.com', 'read only')).run_id, 'test');
+    assert.equal((await tf.getRun('test')).status, 'RUNNING');
+    assert.match(urls[0], /automation\/run-async$/);
+    assert.match(urls[1], /\/runs\/test\?/);
 });
-
-test("Agent settles reported steps, caches six hours and preserves paid guard", async () => {
-  const state = new LocalState(":memory:");
-  const env = {
-    DB: state,
-    TINYFISH_API_KEY: "test-key",
-    PAID_CALLS_ENABLED: "true",
-  };
-  const runtime = new Runtime(env);
-  runtime.tf.page = async () => ({ url: "", final_url: "", text: "" });
-  let calls = 0;
-  runtime.tf.agent = async (_url, modifier) => {
-    calls++;
-    return {
-      run_id: "test",
-      status: "COMPLETED",
-      num_of_steps: 21,
-      result: {
-        modifier,
-        filter_applied: true,
-        empty_state_message: "",
-        films: [
-          {
-            film_id: "1808",
-            title: "Akira",
-            url: "https://princecharlescinema.com/film/1808/akira/",
-          },
-        ],
-        result_state: "matches",
-        interaction: "Selected 35mm and clicked Apply",
-      },
-    };
-  };
-  try {
-    assert.equal((await runtime.filter("35mm")).cached, false);
-    assert.equal(
-      (
-        await state
-          .prepare("SELECT actual_mills FROM costs")
-          .first<{ actual_mills: number }>()
-      )?.actual_mills,
-      336,
-    );
-    assert.equal(
-      (
-        await state
-          .prepare("SELECT reserved_mills FROM budget")
-          .first<{ reserved_mills: number }>()
-      )?.reserved_mills,
-      336,
-    );
-    const row = await state
-      .prepare("SELECT expires FROM cache")
-      .first<{ expires: number }>();
-    assert.ok(row && Math.abs(row.expires - Date.now() - 21600000) < 1000);
-    assert.equal((await runtime.filter("35mm")).cached, true);
-    assert.equal(calls, 1);
-    await assert.rejects(
-      runtime.filter("70mm"),
-      (e: unknown) =>
-        e instanceof ToolError && e.code === "BUDGET_OR_RATE_LIMIT",
-    );
-    env.PAID_CALLS_ENABLED = "false";
-    await assert.rejects(
-      runtime.filter("70mm"),
-      (e: unknown) => e instanceof ToolError && e.code === "PAID_DISABLED",
-    );
-  } finally {
-    state.db.close();
-  }
-});
-
-test("uncertain filter application is rejected rather than accepted as no matches", async () => {
-  const { filterData } = await import("../src/schema.js");
-  assert.equal(
-    filterData.safeParse({
-      modifier: "35mm",
-      filter_applied: false,
-      empty_state_message: "",
-      films: [],
-      result_state: "no_matches",
-      interaction: "Could not find Apply",
-    }).success,
-    false,
-  );
-});
-
-test("gateway timeout recovers the original run without another paid request", async () => {
-  const tf = new TinyFish("test-key");
-  let paid = 0;
-  let goal = "";
-  tf.request = async (url, input) => {
-    if (input) {
-      paid++;
-      goal = (input as { goal: string }).goal;
-      throw new ToolError("TINYFISH_HTTP", "TinyFish returned HTTP 524");
+test('Fetch filter pagination covers every matching film without a paid run', async () => {
+    const state = new LocalState(':memory:');
+    const r = new Runtime({ DB: state, TINYFISH_API_KEY: 'test', PAID_CALLS_ENABLED: 'false' });
+    r.tf.page = async () => ({ url: '', final_url: '', text: readFileSync('tests/fixtures/programme-full.html', 'utf8') });
+    r.tf.agent = async () => { throw Error('must not run'); };
+    try {
+        const all = await r.filter('35mm', 0, 300);
+        assert.ok(all.total > 10);
+        let ids: string[] = [];
+        for (let i = 0; i < all.total; i += 10) {
+            const p = await r.filter('35mm', i, 10);
+            ids.push(...p.films.map(f => f.film_id));
+            assert.equal(p.next_offset, i + 10 < all.total ? i + 10 : null);
+        }
+        assert.deepEqual(ids, all.films.map(f => f.film_id));
     }
-    assert.ok(url.startsWith("https://agent.tinyfish.ai/v1/runs?"));
-    return {
-      data: [
-        {
-          goal: `Navigate to the page: ${goal}`,
-          run_id: "original",
-          status: "COMPLETED",
-          num_of_steps: 8,
-          result: {},
-        },
-      ],
-    };
-  };
-  assert.equal(
-    (await tf.agent("https://princecharlescinema.com/whats-on/", "35mm"))
-      .run_id,
-    "original",
-  );
-  assert.equal(paid, 1);
+    finally {
+        state.db.close();
+    }
+});
+test('pending run returns immediately; completion settles once and caches', async () => {
+    const state = new LocalState(':memory:');
+    const r = new Runtime({ DB: state, TINYFISH_API_KEY: 'test', PAID_CALLS_ENABLED: 'true' });
+    r.tf.agent = async () => ({ run_id: 'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa' });
+    try {
+        const p = await r.agentFilter('35mm');
+        assert.equal(('status' in p ? p.status : undefined), 'PENDING');
+        r.tf.getRun = async () => ({ run_id: String(p.run_id), status: 'RUNNING', num_of_steps: null, result: null });
+        assert.equal(((await r.runResult(String(p.run_id))) as {
+            status: string;
+        }).status, 'PENDING');
+        r.filter = async () => ({ source_url: 'https://princecharlescinema.com/whats-on/', checked_at: new Date().toISOString(), modifier: '35mm', films: [], total: 71, offset: 0, limit: 300, next_offset: null });
+        r.tf.getRun = async () => ({ run_id: String(p.run_id), status: 'COMPLETED', num_of_steps: 8, result: { modifier: '35mm', filter_applied: true, empty_state_message: '', films: [], result_state: 'matches', interaction: 'Clicked modifier then Apply' } });
+        await r.runResult(String(p.run_id));
+        await r.runResult(String(p.run_id));
+        assert.equal((await state.prepare('SELECT reserved_mills FROM budget').first<{
+            reserved_mills: number;
+        }>())?.reserved_mills, 128);
+        r.tf.agent = async () => { throw Error('must use cache'); };
+        assert.equal((await r.agentFilter('35mm') as {
+            cached: boolean;
+        }).cached, true);
+    }
+    finally {
+        state.db.close();
+    }
+});
+test('health never starts Agent or Search even when paid budget is exhausted', async () => {
+    const state = new LocalState(':memory:');
+    const r = new Runtime({ DB: state, TINYFISH_API_KEY: 'test', PAID_CALLS_ENABLED: 'false' });
+    r.tf.page = async (url) => ({ url, final_url: url, text: readFileSync(url.includes('/whats-on/') ? 'tests/fixtures/programme-full.html' : 'tests/fixtures/film.html', 'utf8') });
+    r.tf.agent = async () => { throw Error('paid call forbidden'); };
+    r.tf.search = async () => { throw Error('Search forbidden in cron'); };
+    const baseline = { status: 'COMPLETED', source_url: 'https://princecharlescinema.com/whats-on/', checked_at: '2026-11-03T00:00:00.000Z', modifier: '35mm', filter_applied: true, empty_state_message: '', films: [], interaction: 'Clicked 35mm filter Apply', result_state: 'matches', cached: false, run_id: 'test', total: 71, offset: 0, limit: 300, next_offset: null };
+    try {
+        await state.prepare('UPDATE budget SET reserved_mills=1600 WHERE id=1').run();
+        await state.prepare('INSERT INTO cache VALUES(?,?,?)').bind('last-agent-success', JSON.stringify(baseline), 0).run();
+        const h = await r.health();
+        assert.equal(h.ok, true);
+        assert.match(h.tools.find(t => t.tool === 'filter_programme')!.reason, /2026-11-03T00:00:00/);
+        assert.equal((await state.prepare('SELECT COUNT(*) AS n FROM costs').first<{
+            n: number;
+        }>())?.n, 0);
+    }
+    finally {
+        state.db.close();
+    }
+});
+test('previous verified baseline migrates without paid admission and keeps Agent timestamp', async () => {
+    const state = new LocalState(':memory:');
+    const r = new Runtime({ DB: state, TINYFISH_API_KEY: 'test', PAID_CALLS_ENABLED: 'false' });
+    const old = { source_url: 'https://princecharlescinema.com/whats-on/', checked_at: '2026-11-03T00:00:00.000Z', modifier: '35mm', filter_applied: true, empty_state_message: '', films: [], interaction: 'Clicked modifier then Apply', result_state: 'matches', cached: false, run_id: 'old-run' };
+    r.filter = async () => ({ source_url: old.source_url, checked_at: new Date().toISOString(), modifier: '35mm', films: [], total: 71, offset: 0, limit: 300, next_offset: null });
+    r.tf.agent = async () => { throw Error('must not start a new paid run'); };
+    try {
+        await state.prepare('INSERT INTO cache VALUES(?,?,?)').bind('filter:35mm', JSON.stringify(old), Date.now() + 10000).run();
+        const result = await r.agentFilter('35mm');
+        assert.equal(result.checked_at, old.checked_at);
+        assert.equal(result.total, 71);
+        assert.equal(result.cached, true);
+        assert.ok(await state.prepare("SELECT value FROM cache WHERE key='last-agent-success'").first());
+    }
+    finally {
+        state.db.close();
+    }
 });

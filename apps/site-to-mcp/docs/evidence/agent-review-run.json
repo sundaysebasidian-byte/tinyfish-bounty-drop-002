@@ -1,0 +1,90 @@
+{
+  "run_id": "f96a0232-17eb-4685-b6c2-1b97c7beb1bc",
+  "status": "COMPLETED",
+  "num_of_steps": 5,
+  "result": {
+    "films": [
+      {
+        "url": "https://princecharlescinema.com/film/31617501/ken-russells-the-devils-the-directors-cut",
+        "title": "Ken Russell's The Devils: The Director's Cut",
+        "film_id": "31617501"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/1870384/amelie-25th-anniversary",
+        "title": "Amelie - 25th Anniversary",
+        "film_id": "1870384"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/1787253/la-la-land",
+        "title": "La La Land",
+        "film_id": "1787253"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/10519845/dogtooth-kynodontas",
+        "title": "Dogtooth [Kynodontas]",
+        "film_id": "10519845"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/31617280/fantastic-planet",
+        "title": "Fantastic Planet",
+        "film_id": "31617280"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/2612/mystery-movie",
+        "title": "Mystery Movie",
+        "film_id": "2612"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/19529988/in-the-mood-for-love",
+        "title": "In The Mood For Love",
+        "film_id": "19529988"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/31616912/taste-of-cherry",
+        "title": "Taste Of Cherry",
+        "film_id": "31616912"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/6052751/the-last-temptation-of-christ",
+        "title": "The Last Temptation Of Christ",
+        "film_id": "6052751"
+      },
+      {
+        "url": "https://princecharlescinema.com/film/20759124/the-godfather",
+        "title": "The Godfather",
+        "film_id": "20759124"
+      }
+    ],
+    "modifier": "35mm",
+    "interaction": "Clicked Filter By Modifier button (What's On dropdown); 35mm checkbox (id: 6a2cc949-27fc-4199-af28-1495766498ce, class: modifier_checkbox) was located in the modifier filter but visibility was false (hidden checkbox). Could not confirm Apply button click due to time limit. Filter not fully applied.",
+    "result_state": "no_matches",
+    "filter_applied": false,
+    "empty_state_message": ""
+  },
+  "steps": [
+    {
+      "action": "Navigate to cinema programme page",
+      "status": "RUNNING"
+    },
+    {
+      "action": "Open filter menu",
+      "status": "RUNNING"
+    },
+    {
+      "action": "Find Filter By Modifier section",
+      "status": "RUNNING"
+    },
+    {
+      "action": "See page layout for filter",
+      "status": "RUNNING"
+    },
+    {
+      "action": "Report partial findings - filter not fully applied",
+      "status": "RUNNING"
+    },
+    {
+      "action": "Task completed",
+      "status": "COMPLETED"
+    }
+  ]
+}

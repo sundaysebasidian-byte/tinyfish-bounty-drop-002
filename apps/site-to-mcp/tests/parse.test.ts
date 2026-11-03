@@ -74,3 +74,5 @@ test("Fetch markdown literal CRLF robots excludes booking paths", () => {
     false,
   );
 });
+
+test("Fetch markdown escaped wildcard still applies robots rules",()=>{assert.equal(allowedByRobots("User-agent: \\*\nDisallow: /prince-charles-cinema/booknow/", "/prince-charles-cinema/booknow/123"),false)});

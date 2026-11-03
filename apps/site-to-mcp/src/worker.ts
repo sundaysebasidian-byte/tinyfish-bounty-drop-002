@@ -38,6 +38,7 @@ app.get("/health", async (c) => {
 app.all("/mcp", async (c) => {
   const transport = new StreamableHTTPTransport({
     sessionIdGenerator: undefined,
+    enableJsonResponse: true,
   });
   const server = createServer(new Runtime(c.env));
   await server.connect(transport);
