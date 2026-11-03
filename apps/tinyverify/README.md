@@ -48,7 +48,7 @@ Receipts carry the registry number, exact source status, normalised status, expi
 | FDIC BankFind                        | Fetch JSON             | Bank name / certificate number                                                                  |
 | ABN Lookup                           | Fetch HTML as markdown | ABN number                                                                                      |
 | Charity Commission (England & Wales) | Fetch HTML as markdown | Charity number; reporting status is preserved; registration status stays unknown                |
-| California CSLB                      | Agent                  | Admin-only bounded JS-form search, cached 24 hours; requires account access to `max_steps` beta |
+| California CSLB                      | Agent                  | Admin-only JS-form search bounded by `max_duration_seconds: 90` (~10 steps ≈ $0.16), cached 24 hours |
 
 **Fetch** retrieves live official content via `POST https://api.fetch.tinyfish.ai`, TTL 3600 seconds; explicit recheck uses TTL 0. Hosts and redirects are allowlisted. Parser drift yields `registry_error`. Recorded fixtures are real official responses; NPI fixtures remove authorised-official contacts. No fixture is served as live data.
 
@@ -72,4 +72,4 @@ Submission remains the owner's responsibility: eligibility, video/GIF, required 
 
 Live URL: https://tinyverify.sundaysebasidian.workers.dev . Seven Fetch adapters returned real records, including multi-candidate FINRA/NPI results; real TESCO receipt creation and fresh recheck passed. A real daily TESCO Monitor is active for seven days (watch `89c70216-e849-4c33-b0d6-0e592ed8ce07`). Scheduled delivery is pending the next 09:00 UTC run; no real status change has yet been observed.
 
-**CSLB live execution is blocked:** this TinyFish account rejects the bounded Agent request with HTTP 403 (`max_steps` requires beta access). No unbounded fallback is made. Consequently the mandatory meaningful Agent use has not been demonstrated yet; this entry is not submission-ready. Fix requires account beta enablement, then an admin deep-check and a recorded Agent parser fixture. Remaining submission assets: GIF/video and owner-managed program eligibility/social submission.
+**CSLB live execution:** verified on 2026-11-03 — a 10-step Agent run returned three SWINERTON BUILDERS candidates (licences 92 Active, 993242 Inactive, 1024581 Active) from cslb.ca.gov. Remaining submission assets: GIF/video and owner-managed submission.
