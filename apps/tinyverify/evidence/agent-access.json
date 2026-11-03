@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-03T18:07:43.887Z",
+  "status": 502,
+  "data": {
+    "error": "request_failed",
+    "message": "TinyFish HTTP 403"
+  }
+}

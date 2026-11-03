@@ -1,0 +1,21 @@
+
+ ⛅️ wrangler 4.156.2 (update available 4.157.0)
+───────────────────────────────────────────────
+🌀 Building list of assets...
+✨ Read 3 files from the assets directory /Users/sebasidian/.t3/worktrees/hackerson/t3-36c78ed7/apps/tinyverify/public
+🌀 Starting asset upload...
+No updated asset files to upload. Proceeding with deployment...
+Total Upload: 862.19 KiB / gzip: 143.89 KiB
+Worker Startup Time: 17 ms
+Your Worker has access to the following bindings:
+Binding                                                                  Resource
+env.DB (tinyverify)                                                      D1 Database
+env.ASSETS                                                               Assets
+env.PAID_CALLS_ENABLED ("true")                                          Environment Variable
+env.PUBLIC_BASE_URL ("https://tinyverify.sundaysebasidian.w...")         Environment Variable
+
+Uploaded tinyverify (6.67 sec)
+Deployed tinyverify triggers (1.72 sec)
+  https://tinyverify.sundaysebasidian.workers.dev
+  schedule: 0 * * * *
+Current Version ID: f0340105-23cd-43e0-a25c-1b26051097b5

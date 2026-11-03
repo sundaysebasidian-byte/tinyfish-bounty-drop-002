@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-11-03T18:08:44.265Z",
+  "url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&enumeration_type=NPI-2&organization_name=ZZTinyVerifyNoSuchOrganisation991827&limit=10",
+  "response": {
+    "results": [
+      {
+        "url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&enumeration_type=NPI-2&organization_name=ZZTinyVerifyNoSuchOrganisation991827&limit=10",
+        "final_url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&enumeration_type=NPI-2&organization_name=ZZTinyVerifyNoSuchOrganisation991827&limit=10",
+        "title": null,
+        "description": null,
+        "language": null,
+        "text": "{\"result\\_count\":0,\"results\":[]}",
+        "author": null,
+        "published_date": null,
+        "links": [],
+        "latency_ms": 525.471191998804,
+        "format": "markdown"
+      }
+    ],
+    "errors": []
+  }
+}
