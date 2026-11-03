@@ -104,7 +104,7 @@ flowchart LR
 
 The Worker authenticates webhooks with a page-scoped HMAC-SHA256 token and verifies `fetch_monitor_id`. Run IDs are unique, duplicate deliveries are acknowledged, and no-change runs add checks without snapshots. Text is saved before screenshot work is deferred. A Durable Object serializes short state mutations and budget reservations, while external Fetch/Browser requests run outside that queue. D1 batch transactions prevent partial ingestion. Observation timestamps increase monotonically even if two runs arrive in one millisecond.
 
-Noise filtering drops standalone relative times, standalone clocks and short `updated:` labels, collapses whitespace, and strips known tracking parameters. It preserves prices, effective dates, substantive lines containing times, and the raw source text. Loading placeholders and bot challenges fail verification; they do not become invented empty changes.
+Noise filtering masks inline English/ISO dates and clocks for comparison, drops standalone metadata, cookie/consent phrases and a small anchored rotating-promo/ad blocklist, collapses whitespace, and strips tracking parameters. Explicit effective dates and prices remain substantive. Raw text remains intact. Existing snapshots are re-normalized from raw text for comparison without rewriting their stored hashes. Noise-only checks store `noise_only=1` and `noise_count`, create no snapshot/changelog entry, and trigger no paid screenshot. Diff responses and the UI report `noise_lines_dropped` and `noise_lines_masked`. Loading placeholders and bot challenges fail verification; they do not become invented empty changes.
 
 The chain starts with `sha256("time-machine:" + pageId)` and links:
 
@@ -114,7 +114,7 @@ sha256(previousLink + "\n" + textSha + "\n" + (chainShotSha ?? "-") + "\n" + obs
 
 If a screenshot finishes before the next version, its hash is included in the newest chain link. If a later version already exists, the earlier image is stored with `late=1`, its own `shot_sha`, and a null `chain_shot_sha`, preserving the existing chain. The UI explicitly labels late images. “Verify evidence” recomputes text, chain links, and actual image bytes using Web Crypto in the client. These hashes detect corruption relative to an exported/trusted chain root; an operator who rewrites the complete database can rewrite the chain too. This is not independent notarization.
 
-JPEGs capture a 1280×6000 viewport region, capped for cost and storage. They are actual browser images, not rendered markdown or recreated pages. Screenshot time is recorded separately from text observation time; a page can change between Fetch and Browser capture. KV may take time to propagate. Failures remain explicit in the timeline and can be retried by an administrator. The UI refreshes pending captures for 90 seconds.
+JPEGs wait up to eight seconds for network idle, then capture a 1280×6000 region, capped for cost and storage. New captures record `shot_truncated` and the UI labels content beyond 6000px. Browser DELETE retries once for HTTP 409 or 5xx. They are actual browser images, not rendered markdown or recreated pages. Screenshot time is recorded separately from text observation time; a page can change between Fetch and Browser capture. KV may take time to propagate. Failures remain explicit in the timeline and can be retried by an administrator. The UI refreshes pending captures for 90 seconds.
 
 ## Budget and operation
 
@@ -125,6 +125,18 @@ Scheduled Monitors bill outside the Worker. Each creation therefore reserves its
 The cron independently estimates elapsed check charges even if webhooks are lost, holds one inventory-wide check of headroom, pauses Monitors at the budget/end-date boundary, and deletes expired community Monitors only after retaining their local history. Deletion is confirmed with a 404 from TinyFish. The end date is November 17 at 23:59 PT. Guard reservations are conservative estimates, not exact invoices. The wallet is shared with other builds, so wallet balance movement cannot be attributed exclusively to this app.
 
 Do not manually increase Monitor frequency outside the app: that would bypass its schedule projection. If cron fails, alert/reconcile in Cloudflare; a Worker cannot guarantee stopping an external billing schedule during a total infrastructure outage. TinyFish webhooks are best effort and no REST run-history endpoint is available, so lost deliveries cannot be fully backfilled.
+
+## Review fixes (November 3)
+
+Deployed M1–M9: the ten-minute maintenance watchdog logs active pages with no check beyond twice their schedule interval; `/api/health` reports stale pages, per-page scheduled receipt times, last received/accepted webhook times and logged 401/403 counts. Rejections do not log payloads or tokens. Search runs outside the Durable Object serial queue. Screenshot GETs bypass limits writes; static assets already bypass API middleware. Failed Monitor provisioning marks the row failed and releases its future reservation. Pause PATCHes apply only to currently active rows. Unexpected route/operation failures return 500; validation failures return 400. Archived pages reject new checks, webhook ingestion and screenshot repair.
+
+Two lower-value changelogs were replaced by Fetch-verified student visa fees and immigration healthcare surcharge pages; 25 active sources remain. Old Monitors were deleted with confirmed 404s and history retained. Inventory and exact later delivery-check curl: [evidence/MONITORS.md](evidence/MONITORS.md). First fast and daily deliveries are November 4 at 00:00 and 09:00 UTC, still future at this audit. The synthetic wrong-token/wrong-monitor/duplicate probes are tests, not scheduled-delivery evidence.
+
+Validation: typecheck and 44 tests pass. Real fetched GOV.UK and Cloudflare pricing fixtures cover date-only variants, noise-only ingestion and substantive fee changes. Production audit verified as-of, diff, export, all 28 chains and all 28 JPEG hashes. See `evidence/live-audit.json`, `review-health.json`, `review-smoke.json` and `review-monitor-delta.json`.
+
+Current incurred ledger estimate: $0.265. Conservative schedule commitment through November 17: $2.725; with 60 additional screenshot reservations: $2.965, below the $3.20 stop. This is a stated scenario, not a guarantee of future change volume or an invoice. Shared wallet balance: $11.429191; movement includes other projects.
+
+Existing deployments: apply `migrations/0001_review_observability.sql` once before deploying this source. Fresh databases use the updated `schema.sql` directly and must not reapply that ALTER script. Historical content and hashes are preserved.
 
 ## Readiness
 

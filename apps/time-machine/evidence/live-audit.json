@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-03T18:18:38.504Z",
+  "at": "2026-11-03T18:31:01.938Z",
   "pages": [
     {
       "id": "ba29e97a-ff15-421d-9984-d4e78a523ae7",
@@ -17,6 +17,23 @@
       "check_count": 1,
       "change_count": 0,
       "last_checked_at": "2026-11-03T18:07:16.989Z"
+    },
+    {
+      "id": "61b9975b-5899-43f0-b50c-49d674b70a67",
+      "url": "https://www.gov.uk/healthcare-immigration-application/how-much-pay",
+      "name": "UK immigration health surcharge",
+      "category": "Immigration",
+      "monitor_id": "68b7f68b-a128-4b42-bb88-bf3bbf5ed07e",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:30:24.302Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:30:24.302Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:30:25.157Z"
     },
     {
       "id": "dfc8e64a-538b-47ac-b109-701d53d6ac44",
@@ -51,6 +68,23 @@
       "check_count": 1,
       "change_count": 0,
       "last_checked_at": "2026-11-03T18:09:54.435Z"
+    },
+    {
+      "id": "1cc14df1-181d-443f-a80b-6cf86541cd08",
+      "url": "https://www.gov.uk/student-visa",
+      "name": "UK student visa fees",
+      "category": "Immigration",
+      "monitor_id": "249bf721-1802-4263-918a-7ae133ffb6e9",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:30:17.419Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:30:17.419Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:30:18.565Z"
     },
     {
       "id": "cd23af69-75b5-47d5-93ec-1805d6a8ac0d",
@@ -385,7 +419,7 @@
       "created_at": "2026-11-03T18:06:51.443Z",
       "expires_at": null,
       "public": 0,
-      "status": "active",
+      "status": "archived",
       "verified_at": "2026-11-03T18:06:51.443Z",
       "fast_until": "2026-11-06T18:06:51.714Z",
       "check_count": 1,
@@ -419,7 +453,7 @@
       "created_at": "2026-11-03T18:07:38.677Z",
       "expires_at": null,
       "public": 0,
-      "status": "active",
+      "status": "archived",
       "verified_at": "2026-11-03T18:07:38.677Z",
       "fast_until": "2026-11-06T18:07:38.950Z",
       "check_count": 1,
@@ -445,6 +479,18 @@
     }
   ],
   "monitors": [
+    {
+      "id": "68b7f68b-a128-4b42-bb88-bf3bbf5ed07e",
+      "name": "TM · UK immigration health surcharge",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "249bf721-1802-4263-918a-7ae133ffb6e9",
+      "name": "TM · UK student visa fees",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
     {
       "id": "5c13e084-db64-4729-bcbd-4fde3fa282f7",
       "name": "TM · IKEA US restaurant menu prices",
@@ -560,12 +606,6 @@
       "schedule_cron": "0 9 * * *"
     },
     {
-      "id": "79cc0bac-4ce6-4569-9d2c-98fb2ccea53c",
-      "name": "TM · OpenAI API changelog",
-      "status": "active",
-      "schedule_cron": "0 */6 * * *"
-    },
-    {
       "id": "70da6108-1732-4082-8077-47ee5b61e23d",
       "name": "TM · UK immigration rule changes",
       "status": "active",
@@ -581,12 +621,6 @@
       "id": "b88898ac-9262-4578-a094-3d85a581c521",
       "name": "TM · AWS recent announcements",
       "status": "paused",
-      "schedule_cron": "0 */6 * * *"
-    },
-    {
-      "id": "7246fc89-b95d-44b5-9069-8f065e2e7112",
-      "name": "TM · Cloudflare Changelog",
-      "status": "active",
       "schedule_cron": "0 */6 * * *"
     },
     {
@@ -615,6 +649,25 @@
           "id": "e126b886-984a-4694-821c-65ce628342d8",
           "status": 200,
           "bytes": 1223153,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "UK immigration health surcharge",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "0e1645b3-dc49-4f4a-88f8-acfe95f3b11b",
+          "status": 200,
+          "bytes": 366351,
           "hash_ok": true
         }
       ],
@@ -653,6 +706,25 @@
           "id": "788fb2f1-13e6-4726-bd36-a8f2206575f2",
           "status": 200,
           "bytes": 461506,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "UK student visa fees",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "45ac0d09-803d-496b-8a46-8b8902e35d5d",
+          "status": 200,
+          "bytes": 523159,
           "hash_ok": true
         }
       ],
@@ -1101,7 +1173,7 @@
       "name": "wrong token",
       "status": 401,
       "expected": 401,
-      "ms": 290,
+      "ms": 353,
       "body": {
         "error": "Unauthorized"
       }
@@ -1110,7 +1182,7 @@
       "name": "wrong monitor",
       "status": 403,
       "expected": 403,
-      "ms": 852,
+      "ms": 1205,
       "body": {
         "error": "Monitor mismatch"
       }
@@ -1119,7 +1191,7 @@
       "name": "duplicate",
       "status": 200,
       "expected": 200,
-      "ms": 517,
+      "ms": 383,
       "body": {
         "duplicate": true
       }
@@ -1132,18 +1204,18 @@
     "costs": [
       {
         "primitive": "browser",
-        "usd": 0.112,
-        "calls": 28
+        "usd": 0.12,
+        "calls": 30
       },
       {
         "primitive": "monitor_check",
-        "usd": 0.13,
-        "calls": 26
+        "usd": 0.14,
+        "calls": 28
       },
       {
         "primitive": "monitor_future",
-        "usd": 2.44,
-        "calls": 26
+        "usd": 2.6,
+        "calls": 28
       },
       {
         "primitive": "monitor_manual",
@@ -1151,14 +1223,14 @@
         "calls": 1
       }
     ],
-    "incurred_estimate_usd": 0.247,
-    "committed_projection_usd": 2.557,
+    "incurred_estimate_usd": 0.265,
+    "committed_projection_usd": 2.725,
     "note": "Conservative reservations; wallet billing is authoritative. Scheduled costs logged on receipt; lost webhooks may undercount. Cron independently estimates elapsed charges."
   },
   "wallet": {
-    "available_balance": "11.818492",
+    "available_balance": "11.429191",
     "currency": "USD",
-    "as_of": "2026-11-03T18:19:34.054Z",
+    "as_of": "2026-11-03T18:31:58.657Z",
     "auto_reload": {
       "state": "unconfigured"
     },

@@ -3,7 +3,7 @@ import worker from '../src/index';
 import {webhookToken} from '../src/core';
 import type {Env} from '../src/types';
 const page={id:'p',monitor_id:'m'};
-const env={WEBHOOK_SECRET:'test-secret',ADMIN_TOKEN:'admin',DB:{prepare(){return {bind(){return {first:async()=>page};}};}},COORDINATOR:{idFromName:()=>'',get:()=>({fetch:async()=>Response.json({duplicate:true})})}} as unknown as Env;
+const env={WEBHOOK_SECRET:'test-secret',ADMIN_TOKEN:'admin',DB:{prepare(){return {bind(){return {first:async()=>page,run:async()=>({})};}};}},COORDINATOR:{idFromName:()=>'',get:()=>({fetch:async()=>Response.json({duplicate:true})})}} as unknown as Env;
 const context={waitUntil(){},passThroughOnException(){}} as unknown as ExecutionContext;
 const request=(token:string,monitor='m')=>new Request('https://test/api/hooks/monitor/p?t='+token,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:'r',fetch_monitor_id:monitor,results:[],errors:[]})});
 it('rejects an incorrect webhook token with 401',async()=>expect((await worker.fetch(request('wrong'),env,context)).status).toBe(401));

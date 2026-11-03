@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-03T18:33:25.103Z",
+  "checks": [
+    {
+      "page": "UK student visa fees",
+      "asof": true,
+      "diff": true,
+      "export": true,
+      "screenshot_ready": true,
+      "truncated": 0,
+      "noise_lines_dropped": 0,
+      "noise_lines_masked": 4
+    },
+    {
+      "page": "UK immigration health surcharge",
+      "asof": true,
+      "diff": true,
+      "export": true,
+      "screenshot_ready": true,
+      "truncated": 0,
+      "noise_lines_dropped": 0,
+      "noise_lines_masked": 0
+    }
+  ],
+  "health_ok": true,
+  "budget": {
+    "cap_usd": 4,
+    "stop_at_usd": 3.2,
+    "paid_enabled": true,
+    "costs": [
+      {
+        "primitive": "browser",
+        "usd": 0.12,
+        "calls": 30
+      },
+      {
+        "primitive": "monitor_check",
+        "usd": 0.14,
+        "calls": 28
+      },
+      {
+        "primitive": "monitor_future",
+        "usd": 2.6,
+        "calls": 28
+      },
+      {
+        "primitive": "monitor_manual",
+        "usd": 0.005,
+        "calls": 1
+      }
+    ],
+    "incurred_estimate_usd": 0.265,
+    "committed_projection_usd": 2.725,
+    "note": "Conservative reservations; wallet billing is authoritative. Scheduled costs logged on receipt; lost webhooks may undercount. Cron independently estimates elapsed charges."
+  }
+}

@@ -1,7 +1,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import type { Env, Page, Run, Snapshot } from './types';
 import { TinyFish } from './tinyfish';
-import { chainLink,chainRoot,meaningfulText,normalize,now,paidAllowed,safeUrl,sha,webhookToken } from './core';
+import { chainLink,chainRoot,meaningfulText,normalize,now,paidAllowed,safeUrl,sha,stalePages,ValidationError,webhookToken } from './core';
 import { capture } from './screenshot';
 export class Coordinator extends DurableObject<Env> {
  private queue:Promise<unknown>=Promise.resolve();
@@ -19,24 +19,24 @@ export class Coordinator extends DurableObject<Env> {
  }
  async fetch(request:Request):Promise<Response>{
   try {const b=await request.json() as {action:string;[key:string]:unknown};
+   if(b.action==='search')return Response.json(await this.tf().search(String(b.query)));
    if(b.action==='create')return Response.json(await this.create(b));
-   if(b.action==='repair'){const p=await this.page(String(b.id));const shot=await this.env.DB.prepare('SELECT * FROM snapshots WHERE id=? AND page_id=?').bind(String(b.snapshotId),p.id).first<Snapshot>();if(!shot)throw Error('Snapshot not found');if(shot.shot_status==='ready')return Response.json({existing:true});await this.takeShot(shot.id,p);return Response.json({ok:true});}
+   if(b.action==='repair'){const p=await this.page(String(b.id));if(p.status!=='active')return Response.json({error:'Page is read-only'},{status:409});const shot=await this.env.DB.prepare('SELECT * FROM snapshots WHERE id=? AND page_id=?').bind(String(b.snapshotId),p.id).first<Snapshot>();if(!shot)throw Error('Snapshot not found');if(shot.shot_status==='ready')return Response.json({existing:true});await this.takeShot(shot.id,p);return Response.json({ok:true});}
    if(b.action==='maintenance'){await this.maintenance();return Response.json({ok:true});}
-   if(b.action==='check'){const p=await this.page(String(b.id));await this.serial(()=>this.reserve('monitor_manual',.005,p.id));const r=await this.tf().monitor<{run:Run}>('/'+p.monitor_id+'/runs',{},'POST');return Response.json(await this.serial(()=>this.ingest(p,r.run,'manual')));}
+   if(b.action==='check'){const p=await this.page(String(b.id));if(p.status!=='active')return Response.json({error:'Page is read-only'},{status:409});await this.serial(()=>this.reserve('monitor_manual',.005,p.id));const r=await this.tf().monitor<{run:Run}>('/'+p.monitor_id+'/runs',{},'POST');return Response.json(await this.serial(()=>this.ingest(p,r.run,'manual')));}
    return await this.serial(async()=>{
    switch(b.action){
     case 'ingest':return Response.json(await this.ingest(b.page as Page,b.run as Run,String(b.source)));
-    case 'search':return Response.json(await this.tf().search(String(b.query)));
     default:return Response.json({error:'Unknown operation'},{status:400});
    }
-  });}catch(e){const message=e instanceof Error?e.message:'Operation failed';return Response.json({error:message},{status:/slots|rate|budget|paid_disabled/.test(message)?429:400});}
+  });}catch(e){const message=e instanceof Error?e.message:'Operation failed';return Response.json({error:message},{status:/slots|rate|budget|paid_disabled/.test(message)?429:e instanceof ValidationError||e instanceof SyntaxError?400:/not found/i.test(message)?404:500});}
  }
  private async page(id:string){const p=await this.env.DB.prepare('SELECT * FROM pages WHERE id=?').bind(id).first<Page>();if(!p)throw Error('Page not found');return p;}
  private async create(b:Record<string,unknown>){
   const url=safeUrl(String(b.url));const existing=await this.env.DB.prepare('SELECT * FROM pages WHERE url=?').bind(url).first<Page>();if(existing)return {page:existing,existing:true};
   const admin=b.admin===true;
   const verified=await this.tf().fetchPage(url);const result=verified.results?.[0];
-  if(!result||!meaningfulText(result.text??''))throw Error('Fetch verification failed: page unavailable or insufficient meaningful text');
+  if(!result||!meaningfulText(result.text??''))throw new ValidationError('Fetch verification failed: page unavailable or insufficient meaningful text');
   const id=crypto.randomUUID();const created=now();const fast=admin&&b.schedule==='6h';
   const expires=admin?null:new Date(Date.now()+7*86400000).toISOString();
   const end=Math.min(new Date(this.env.MONITOR_END).getTime(),expires?new Date(expires).getTime():Infinity);
@@ -55,7 +55,9 @@ export class Coordinator extends DurableObject<Env> {
   });
   const token=await webhookToken(this.env.WEBHOOK_SECRET,id);
   // Persist the page before provisioning so a failed create remains visible for reconciliation.
-  const createdMonitor=await this.tf().monitor<{monitor:{id:string};run:Run}>('',{type:'fetch',name:'TM · '+p.name,config:{url,format:'markdown'},schedule_cron:p.schedule,purpose:'Record meaningful changes to prices, terms, eligibility rules or published updates.',webhook_url:this.env.PUBLIC_BASE_URL+'/api/hooks/monitor/'+id+'?t='+token});
+  let createdMonitor:{monitor:{id:string};run:Run};
+  try{createdMonitor=await this.tf().monitor<{monitor:{id:string};run:Run}>('',{type:'fetch',name:'TM · '+p.name,config:{url,format:'markdown'},schedule_cron:p.schedule,purpose:'Record meaningful changes to prices, terms, eligibility rules or published updates.',webhook_url:this.env.PUBLIC_BASE_URL+'/api/hooks/monitor/'+id+'?t='+token});
+  }catch(e){await this.env.DB.batch([this.env.DB.prepare("UPDATE pages SET status='failed' WHERE id=?").bind(id),this.env.DB.prepare("DELETE FROM costs WHERE primitive='monitor_future' AND detail=?").bind(id)]);throw e;}
   p.monitor_id=createdMonitor.monitor.id;p.status='active';
   await this.env.DB.prepare("UPDATE pages SET monitor_id=?,status='active' WHERE id=?").bind(p.monitor_id,id).run();
   const baseline=await this.serial(()=>this.ingest(p,createdMonitor.run,'baseline'));return {page:p,baseline};
@@ -66,9 +68,10 @@ export class Coordinator extends DurableObject<Env> {
   if(previous&&at<=previous.captured_at)at=new Date(Date.parse(previous.captured_at)+1).toISOString();
   const result=run.results?.[0];const raw=result?.text;
   const error=typeof raw!=='string'||!raw.trim()?'Fetch failed: no text':run.errors?.length?JSON.stringify(run.errors):(!meaningfulText(raw)&&raw.length>200)?'Fetch incomplete: challenge or loading placeholder':null;
-  if(error){await this.env.DB.prepare('INSERT INTO checks VALUES (?,?,?,?,?,?)').bind(run.id,p.id,at,0,source,error).run();return {changed:false,error};}
-  const normalized=normalize(raw!);const textSha=await sha(normalized.text);const changed=!previous||textSha!==previous.text_sha;
-  const statements=[this.env.DB.prepare('INSERT INTO checks VALUES (?,?,?,?,?,NULL)').bind(run.id,p.id,at,changed?1:0,source)];
+  if(error){await this.env.DB.prepare('INSERT INTO checks (run_id,page_id,captured_at,changed,source,error) VALUES (?,?,?,?,?,?)').bind(run.id,p.id,at,0,source,error).run();return {changed:false,error};}
+  const normalized=normalize(raw!);const textSha=await sha(normalized.text);const changed=!previous||normalized.text!==normalize(previous.raw_text).text;
+  const noiseOnly=!!previous&&!changed&&raw!==previous.raw_text;
+  const statements=[this.env.DB.prepare('INSERT INTO checks (run_id,page_id,captured_at,changed,source,error,noise_only,noise_count) VALUES (?,?,?,?,?,NULL,?,?)').bind(run.id,p.id,at,changed?1:0,source,noiseOnly?1:0,normalized.noise)];
   let id:string|undefined;
   if(changed){
    id=crypto.randomUUID();const link=await chainLink(previous?.link??await chainRoot(p.id),textSha,null,at);
@@ -77,24 +80,26 @@ export class Coordinator extends DurableObject<Env> {
   if(source==='scheduled'||source==='baseline')statements.push(this.env.DB.prepare('INSERT INTO costs VALUES (?,?,?,?,?)').bind('run:'+run.id,at,'monitor_check',.005,p.id));
   await this.env.DB.batch(statements);
   if(id){const snapshotId=id;this.ctx.waitUntil(this.takeShot(snapshotId,p));}
-  return {changed,snapshotId:id};
+  return {changed,noiseOnly,noiseLines:normalized.noise,snapshotId:id};
  }
  private async takeShot(id:string,p:Page){
   try {
    await this.serial(()=>this.reserve('browser',.004,id));
-   const jpg=await capture(this.tf(),p.url);const shotSha=await sha(jpg);
+   const {jpg,truncated}=await capture(this.tf(),p.url);const shotSha=await sha(jpg);
    await this.env.BLOBS.put('shots/'+id,jpg,{metadata:{type:'image/jpeg'}});
    await this.serial(async()=>{
    const s=await this.env.DB.prepare('SELECT * FROM snapshots WHERE id=?').bind(id).first<Snapshot>();
    const newest=await this.env.DB.prepare('SELECT id FROM snapshots WHERE page_id=? ORDER BY captured_at DESC,id DESC LIMIT 1').bind(p.id).first<{id:string}>();
    const previous=await this.env.DB.prepare('SELECT link FROM snapshots WHERE page_id=? AND captured_at < ? ORDER BY captured_at DESC,id DESC LIMIT 1').bind(p.id,s!.captured_at).first<{link:string}>();
    const late=newest!.id!==id;const link=late?s!.link:await chainLink(previous?.link??await chainRoot(p.id),s!.text_sha,shotSha,s!.captured_at);
-   await this.env.DB.prepare("UPDATE snapshots SET shot_sha=?,chain_shot_sha=?,link=?,shot_status='ready',shot_at=?,late=? WHERE id=?").bind(shotSha,late?null:shotSha,link,now(),late?1:0,id).run();
+   await this.env.DB.prepare("UPDATE snapshots SET shot_sha=?,chain_shot_sha=?,link=?,shot_status='ready',shot_at=?,late=?,shot_truncated=? WHERE id=?").bind(shotSha,late?null:shotSha,link,now(),late?1:0,truncated?1:0,id).run();
    });
   }catch(e){const reason=e instanceof Error?e.message:'capture_failed';await this.env.DB.prepare('UPDATE snapshots SET shot_status=? WHERE id=?').bind(reason,id).run();}
  }
  private async maintenance(){
   const pages=(await this.env.DB.prepare("SELECT * FROM pages WHERE status='active'").all<Page>()).results;
+  const health=(await this.env.DB.prepare("SELECT p.id,p.schedule,p.created_at,(SELECT MAX(captured_at) FROM checks WHERE page_id=p.id) AS last_checked_at FROM pages p WHERE status='active'").all<{id:string;schedule:string;created_at:string;last_checked_at:string|null}>()).results;
+  for(const p of stalePages(health))await this.env.DB.prepare('INSERT INTO events(at,message) SELECT ?,? WHERE NOT EXISTS (SELECT 1 FROM events WHERE message=? AND at>?)').bind(now(),'stale_page:'+p.id,'stale_page:'+p.id,new Date(Date.now()-3600000).toISOString()).run();
   const costs=await this.env.DB.prepare("SELECT COALESCE(SUM(estimate),0) AS total FROM costs WHERE primitive!='monitor_future'").first<{total:number}>();
   // Reserve headroom for a full interval of checks even if every webhook is lost.
   let incurred=.004;
@@ -107,7 +112,7 @@ export class Coordinator extends DurableObject<Env> {
     await this.tf().monitor('/'+p.monitor_id,undefined,'DELETE');
     try{await this.tf().monitor('/'+p.monitor_id);throw Error('Deleted Monitor remains readable');}catch(e){if(!(e instanceof Error)||e.message!=='TinyFish HTTP 404')throw e;}
     await this.env.DB.prepare("UPDATE pages SET status='expired' WHERE id=?").bind(p.id).run();
-   }else if(stop){await this.tf().monitor('/'+p.monitor_id,{status:'paused'},'PATCH');await this.env.DB.prepare("UPDATE pages SET status='budget_paused' WHERE id=?").bind(p.id).run();}
+   }else if(stop&&(await this.page(p.id)).status==='active'){await this.tf().monitor('/'+p.monitor_id,{status:'paused'},'PATCH');await this.env.DB.prepare("UPDATE pages SET status='budget_paused' WHERE id=?").bind(p.id).run();}
    else if(p.fast_until&&p.fast_until<=now()&&p.schedule!=='0 9 * * *'){
     await this.tf().monitor('/'+p.monitor_id,{schedule_cron:'0 9 * * *'},'PATCH');await this.env.DB.prepare("UPDATE pages SET schedule='0 9 * * *' WHERE id=?").bind(p.id).run();
    }

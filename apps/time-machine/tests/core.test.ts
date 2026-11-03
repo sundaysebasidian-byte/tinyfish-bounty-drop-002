@@ -2,7 +2,7 @@ import { describe,it,expect } from 'vitest';
 import {normalize,structuredDiff,sha,chainRoot,chainLink,verifyChain,webhookToken,equalToken,paidAllowed,safeUrl} from '../src/core';
 describe('normalization and conservative noise filtering',()=>{
  it('normalizes whitespace and tracking links stably',()=>{const n=normalize(' A  B\n\n\n[Plans](https://example.com/pricing?utm_source=x&plan=pro)');expect(n.text).toBe('A B\n\n[Plans](https://example.com/pricing?plan=pro)');expect(normalize(n.text).text).toBe(n.text);});
- it('drops timestamp-only noise but preserves dates and prices in meaningful content',()=>{const n=normalize('Updated: today\n5 minutes ago\n10:30 UTC\nVisa fee changes on November 5: $120\nOffer ends at 10:30 UTC\n$20 per month');expect(n.noise).toBe(3);expect(n.text).toContain('Visa fee');expect(n.text).toContain('Offer ends at 10:30');expect(n.text).toContain('$20');});
+ it('drops timestamp-only noise but preserves dates and prices in meaningful content',()=>{const n=normalize('Updated: today\n5 minutes ago\n10:30 UTC\nVisa fee changes on November 5: $120\nOffer ends at 10:30 UTC\n$20 per month');expect(n.noise).toBe(4);expect(n.text).toContain('Visa fee');expect(n.text).toContain('Offer ends at [date/time]');expect(n.text).toContain('$20');});
  it('preserves policy effective dates',()=>expect(normalize('Effective November 17, 2026').text).toContain('November 17'));
 });
 describe('structured diff',()=>{

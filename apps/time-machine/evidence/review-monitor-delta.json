@@ -1,0 +1,103 @@
+{
+  "at": "2026-11-03T18:30:15.527Z",
+  "added": [
+    {
+      "name": "UK student visa fees",
+      "url": "https://www.gov.uk/student-visa",
+      "id": "1cc14df1-181d-443f-a80b-6cf86541cd08",
+      "category": "Immigration",
+      "monitor_id": "249bf721-1802-4263-918a-7ae133ffb6e9",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:30:17.419Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:30:17.419Z",
+      "fast_until": null
+    },
+    {
+      "name": "UK immigration health surcharge",
+      "url": "https://www.gov.uk/healthcare-immigration-application/how-much-pay",
+      "id": "61b9975b-5899-43f0-b50c-49d674b70a67",
+      "category": "Immigration",
+      "monitor_id": "68b7f68b-a128-4b42-bb88-bf3bbf5ed07e",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:30:24.302Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:30:24.302Z",
+      "fast_until": null
+    }
+  ],
+  "removed": [
+    {
+      "id": "424579dc-690e-4c9b-890a-87a3b792dbd2",
+      "url": "https://developers.cloudflare.com/changelog/",
+      "name": "Cloudflare Changelog",
+      "category": "Updates",
+      "monitor_id": "7246fc89-b95d-44b5-9069-8f065e2e7112",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:06:51.443Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:06:51.443Z",
+      "fast_until": "2026-11-06T18:06:51.714Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:06:53.706Z",
+      "deleted_verified_404": true,
+      "history": "retained read-only"
+    },
+    {
+      "id": "9d368f6f-1e7c-4ac3-990e-f9c0d38f33da",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "name": "OpenAI API changelog",
+      "category": "Updates",
+      "monitor_id": "79cc0bac-4ce6-4569-9d2c-98fb2ccea53c",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:07:38.677Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:07:38.677Z",
+      "fast_until": "2026-11-06T18:07:38.950Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:07:41.157Z",
+      "deleted_verified_404": true,
+      "history": "retained read-only"
+    }
+  ],
+  "budget": {
+    "cap_usd": 4,
+    "stop_at_usd": 3.2,
+    "paid_enabled": true,
+    "costs": [
+      {
+        "primitive": "browser",
+        "usd": 0.12,
+        "calls": 30
+      },
+      {
+        "primitive": "monitor_check",
+        "usd": 0.14,
+        "calls": 28
+      },
+      {
+        "primitive": "monitor_future",
+        "usd": 2.6,
+        "calls": 28
+      },
+      {
+        "primitive": "monitor_manual",
+        "usd": 0.005,
+        "calls": 1
+      }
+    ],
+    "incurred_estimate_usd": 0.265,
+    "committed_projection_usd": 2.725,
+    "note": "Conservative reservations; wallet billing is authoritative. Scheduled costs logged on receipt; lost webhooks may undercount. Cron independently estimates elapsed charges."
+  }
+}
