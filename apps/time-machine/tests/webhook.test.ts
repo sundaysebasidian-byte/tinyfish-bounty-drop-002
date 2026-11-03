@@ -1,0 +1,11 @@
+import {it,expect} from 'vitest';
+import worker from '../src/index';
+import {webhookToken} from '../src/core';
+import type {Env} from '../src/types';
+const page={id:'p',monitor_id:'m'};
+const env={WEBHOOK_SECRET:'test-secret',ADMIN_TOKEN:'admin',DB:{prepare(){return {bind(){return {first:async()=>page};}};}},COORDINATOR:{idFromName:()=>'',get:()=>({fetch:async()=>Response.json({duplicate:true})})}} as unknown as Env;
+const context={waitUntil(){},passThroughOnException(){}} as unknown as ExecutionContext;
+const request=(token:string,monitor='m')=>new Request('https://test/api/hooks/monitor/p?t='+token,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:'r',fetch_monitor_id:monitor,results:[],errors:[]})});
+it('rejects an incorrect webhook token with 401',async()=>expect((await worker.fetch(request('wrong'),env,context)).status).toBe(401));
+it('rejects a Monitor ID mismatch with 403',async()=>expect((await worker.fetch(request(await webhookToken(env.WEBHOOK_SECRET,'p'),'wrong'),env,context)).status).toBe(403));
+it('accepts an authenticated, matching payload',async()=>{const r=await worker.fetch(request(await webhookToken(env.WEBHOOK_SECRET,'p')),env,context);expect(r.status).toBe(200);expect(await r.json()).toEqual({duplicate:true});});
