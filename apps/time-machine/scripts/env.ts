@@ -1,6 +1,8 @@
-import { readFileSync, appendFileSync } from 'node:fs';
+import { existsSync,readFileSync, appendFileSync } from 'node:fs';
 export function key() {
- const env = readFileSync('/Users/sebasidian/.t3/projects/hackerson/.env.local','utf8');
+ if(process.env.TINYFISH_API_KEY)return process.env.TINYFISH_API_KEY;
+ const local=existsSync('.env.local')?'.env.local':'/Users/sebasidian/.t3/projects/hackerson/.env.local';
+ const env = readFileSync(local,'utf8');
  const match = env.match(/^TINYFISH_API_KEY\s*=\s*["']?([^\s"']+)/m);
  if(!match) throw Error('Missing TinyFish key');
  return match[1];

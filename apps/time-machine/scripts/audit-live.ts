@@ -4,7 +4,7 @@ import {webhookToken,verifyChain}from'../src/core.js';
 import type {Snapshot,Page}from'../src/types.js';
 const config=Object.fromEntries(readFileSync('.env.runtime.local','utf8').split('\n').filter(Boolean).map(s=>{const i=s.indexOf('=');return[s.slice(0,i),s.slice(i+1)];}));
 const base='https://tinyfish-time-machine.sundaysebasidian.workers.dev';
-const get=async<T=unknown>(path:string):Promise<T>=>{const r=await fetch(base+path);if(!r.ok)throw Error(path+' HTTP '+r.status);return r.json() as Promise<T>;};
+const get=async<T=unknown>(path:string):Promise<T>=>{const r=await fetch(base+path,{headers:{Authorization:'Bearer '+config.ADMIN_TOKEN}});if(!r.ok)throw Error(path+' HTTP '+r.status);return r.json() as Promise<T>;};
 const pages=await get<{pages:Page[]}>('/api/pages');
 const monitors=await api('https://agent.tinyfish.ai/v1/monitors')as{monitors:{id:string;name:string;status:string;schedule_cron:string}[]};
 const report:{at:string;pages:unknown[];monitors:unknown[];checks:unknown[];budget?:unknown;wallet?:unknown}={at:new Date().toISOString(),pages:pages.pages,monitors:monitors.monitors.filter(m=>pages.pages.some((p:Page)=>p.monitor_id===m.id)).map(({id,name,status,schedule_cron})=>({id,name,status,schedule_cron})),checks:[]};
@@ -12,7 +12,7 @@ for(const p of pages.pages){
  const data=await get<{snapshots:Snapshot[]}>('/api/pages/'+p.id+'/snapshots');const snapshots=data.snapshots as Snapshot[];
  const chain=await verifyChain(p.id,snapshots);
  const images=[];
- for(const s of snapshots){if(s.shot_status==='ready'){const r=await fetch(base+'/api/screenshots/'+s.id);const bytes=new Uint8Array(await r.arrayBuffer());const {sha}=await import('../src/core.js');images.push({id:s.id,status:r.status,bytes:bytes.length,hash_ok:await sha(bytes)===s.shot_sha});}}
+ for(const s of snapshots){if(s.shot_status==='ready'){const r=await fetch(base+'/api/screenshots/'+s.id,{headers:{Authorization:'Bearer '+config.ADMIN_TOKEN}});const bytes=new Uint8Array(await r.arrayBuffer());const {sha}=await import('../src/core.js');images.push({id:s.id,status:r.status,bytes:bytes.length,hash_ok:await sha(bytes)===s.shot_sha});}}
  if(snapshots[0]){const asof=await get<{snapshot:Snapshot}>('/api/pages/'+p.id+'/as-of?at='+encodeURIComponent(snapshots[0].captured_at));if(asof.snapshot.id!==snapshots[0].id)throw Error('As-of wrong version');const d=await get<{blocks:unknown[]}>('/api/pages/'+p.id+'/diff?from='+encodeURIComponent(snapshots[0].captured_at)+'&to='+encodeURIComponent(snapshots.at(-1)!.captured_at));if(!Array.isArray(d.blocks))throw Error('Diff shape');const e=await get<{snapshots:Snapshot[]}>('/api/pages/'+p.id+'/export');if(e.snapshots.length!==snapshots.length)throw Error('Export mismatch');}
  report.checks.push({page:p.name,snapshots:snapshots.length,chain,images,statuses:snapshots.map(s=>s.shot_status)});
  console.log(p.name,snapshots.length,chain.ok,images.length+'/'+snapshots.length,'screenshots');

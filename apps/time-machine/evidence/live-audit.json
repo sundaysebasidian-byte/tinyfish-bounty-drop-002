@@ -1,0 +1,1245 @@
+{
+  "at": "2026-11-03T18:18:38.504Z",
+  "pages": [
+    {
+      "id": "ba29e97a-ff15-421d-9984-d4e78a523ae7",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices.html",
+      "name": "Canada immigration notices",
+      "category": "Immigration",
+      "monitor_id": "e9c04f13-a0b4-43b8-9f84-578594d3bbd5",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:07:13.126Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:07:13.126Z",
+      "fast_until": "2026-11-06T18:07:13.406Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:07:16.989Z"
+    },
+    {
+      "id": "dfc8e64a-538b-47ac-b109-701d53d6ac44",
+      "url": "https://www.gov.uk/government/collections/immigration-rules-statement-of-changes",
+      "name": "UK immigration rule changes",
+      "category": "Immigration",
+      "monitor_id": "70da6108-1732-4082-8077-47ee5b61e23d",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:07:25.371Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:07:25.371Z",
+      "fast_until": "2026-11-06T18:07:25.685Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:07:27.915Z"
+    },
+    {
+      "id": "7e1b40a6-39c5-45a6-9810-8ba096065c6b",
+      "url": "https://www.gov.uk/skilled-worker-visa/how-much-it-costs",
+      "name": "UK skilled worker visa fees",
+      "category": "Immigration",
+      "monitor_id": "67afcb50-41f2-4d8b-b3dc-9b735b5ec37a",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:09:51.883Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:09:51.883Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:09:54.435Z"
+    },
+    {
+      "id": "cd23af69-75b5-47d5-93ec-1805d6a8ac0d",
+      "url": "https://www.uscis.gov/newsroom/alerts",
+      "name": "USCIS immigration alerts",
+      "category": "Immigration",
+      "monitor_id": "85af25cb-8f4c-4d2e-882b-c8417087cbdb",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:11:49.051Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:11:49.051Z",
+      "fast_until": "2026-11-06T18:11:49.322Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:11:50.630Z"
+    },
+    {
+      "id": "3c1352aa-9d69-4a7a-9933-5ff07651111f",
+      "url": "https://www.medicare.gov/basics/costs/medicare-costs",
+      "name": "Medicare costs",
+      "category": "Insurance",
+      "monitor_id": "9d9bac37-a51e-4572-bf7d-604bfaaf9be2",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:10:21.916Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:10:21.916Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:10:23.539Z"
+    },
+    {
+      "id": "1fff7b41-e4d1-424a-964b-f79828e49ced",
+      "url": "https://www.medicare.gov/coverage",
+      "name": "Medicare coverage",
+      "category": "Insurance",
+      "monitor_id": "862384b2-8c97-4abc-b945-5d9e007c1df4",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:10:16.113Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:10:16.113Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:10:17.643Z"
+    },
+    {
+      "id": "4c52f099-540f-46c5-ae90-cdbc8dcf0be9",
+      "url": "https://www.ikea.com/us/en/stores/restaurant/",
+      "name": "IKEA US restaurant menu prices",
+      "category": "Menus",
+      "monitor_id": "5c13e084-db64-4729-bcbd-4fde3fa282f7",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:13:12.017Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:13:12.017Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:13:17.222Z"
+    },
+    {
+      "id": "ed3961b3-44e4-4c22-bcf0-6a8582d59b68",
+      "url": "https://www.in-n-out.com/menu",
+      "name": "In-N-Out menu",
+      "category": "Menus",
+      "monitor_id": "b1ac11b4-4274-434f-8f16-abd4dbee7423",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:10:27.345Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:10:27.345Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:10:29.143Z"
+    },
+    {
+      "id": "a78c98f2-95f5-46bf-abc1-8f653dc060da",
+      "url": "https://www.jdwetherspoon.com/food/",
+      "name": "Wetherspoon food menu",
+      "category": "Menus",
+      "monitor_id": "cc7e0d11-84ef-445b-9894-1fb3da7b1025",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:10:33.109Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:10:33.109Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:10:35.135Z"
+    },
+    {
+      "id": "11af3997-e00d-4708-8d6d-9f1e647b7b07",
+      "url": "https://www.anthropic.com/pricing",
+      "name": "Anthropic pricing",
+      "category": "Pricing",
+      "monitor_id": "41764e14-379b-48d8-8dab-1870878b9a14",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:07:51.798Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:07:51.798Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:08:10.184Z"
+    },
+    {
+      "id": "d61ebe34-c8fc-4f3e-a14a-fc897cd609a2",
+      "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "name": "Cloudflare Workers pricing",
+      "category": "Pricing",
+      "monitor_id": "d48b1fe7-ed60-497c-9344-f8e6fb892afb",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:08:30.332Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:08:30.332Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:08:32.135Z"
+    },
+    {
+      "id": "a2610287-5f46-4f9c-bc21-33a4a6d85875",
+      "url": "https://github.com/pricing",
+      "name": "GitHub pricing",
+      "category": "Pricing",
+      "monitor_id": "ddb1717a-19ae-4f03-b966-db152badb9d8",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:08:51.264Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:08:51.264Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:08:56.020Z"
+    },
+    {
+      "id": "9141e840-adb4-425b-a079-93348ec41624",
+      "url": "https://www.hetzner.com/cloud/",
+      "name": "Hetzner cloud pricing",
+      "category": "Pricing",
+      "monitor_id": "abcf244c-636b-4101-9e35-e6eaf1dc76e8",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:10:39.154Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:10:39.154Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:10:54.328Z"
+    },
+    {
+      "id": "fcbdb182-3743-42d0-af5a-e0c0c07ece77",
+      "url": "https://openai.com/api/pricing/",
+      "name": "OpenAI API pricing",
+      "category": "Pricing",
+      "monitor_id": "c76ae287-13b0-4909-9f3e-1c6d604f7d4c",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:08:15.518Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:08:15.518Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:08:27.013Z"
+    },
+    {
+      "id": "b121fd07-c9c9-4b6b-914d-584afafd0ee8",
+      "url": "https://supabase.com/pricing",
+      "name": "Supabase pricing",
+      "category": "Pricing",
+      "monitor_id": "caf73eb1-ab3c-46a9-b349-0b988dde578f",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:08:43.884Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:08:43.884Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:08:46.022Z"
+    },
+    {
+      "id": "14534e0c-4a1d-43cb-a183-f68bcf2f5dbd",
+      "url": "https://www.tinyfish.ai/pricing",
+      "name": "TinyFish pricing",
+      "category": "Pricing",
+      "monitor_id": "d276c499-bc39-4fdf-a1bb-f404ffdc7ddf",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:07:44.584Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:07:44.584Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:07:46.069Z"
+    },
+    {
+      "id": "0c3a8f40-733b-4cf4-96af-0af7c1083ab5",
+      "url": "https://vercel.com/pricing",
+      "name": "Vercel pricing",
+      "category": "Pricing",
+      "monitor_id": "518e3fa5-ab27-4b16-b70f-8a3d9afb8ade",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:08:36.471Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:08:36.471Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:08:39.368Z"
+    },
+    {
+      "id": "c8fe3002-e6ec-4528-a4d4-2e557353e6f1",
+      "url": "https://www.anthropic.com/legal/consumer-terms",
+      "name": "Anthropic consumer terms",
+      "category": "Terms & privacy",
+      "monitor_id": "f643e8ba-99aa-478f-9c31-06be4bab61df",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:08:59.302Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:08:59.302Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:09:01.026Z"
+    },
+    {
+      "id": "8942d174-f1f3-4b32-8f49-df2af59cf88f",
+      "url": "https://www.cloudflare.com/privacypolicy/",
+      "name": "Cloudflare privacy policy",
+      "category": "Terms & privacy",
+      "monitor_id": "5267b416-7b53-4105-b24d-68ab5d0ea6f4",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:09:45.634Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:09:45.634Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:09:47.929Z"
+    },
+    {
+      "id": "6b9efdac-3746-4cae-a13a-ac93b44f8724",
+      "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+      "name": "GitHub privacy statement",
+      "category": "Terms & privacy",
+      "monitor_id": "82cd3b43-430f-4dc3-8de2-e7570a099bb7",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:09:27.965Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:09:27.965Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:09:40.940Z"
+    },
+    {
+      "id": "fa23134b-963d-43af-8fa6-985a2d06c362",
+      "url": "https://openai.com/policies/terms-of-use/",
+      "name": "OpenAI terms of use",
+      "category": "Terms & privacy",
+      "monitor_id": "913ed57f-8c9c-482f-9f90-6cd9087ed48f",
+      "schedule": "0 9 * * *",
+      "created_at": "2026-11-03T18:09:18.850Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:09:18.850Z",
+      "fast_until": null,
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:09:24.260Z"
+    },
+    {
+      "id": "6e607489-50b4-4976-b35d-4c20ec05d605",
+      "url": "https://aws.amazon.com/about-aws/whats-new/recent/",
+      "name": "AWS recent announcements",
+      "category": "Updates",
+      "monitor_id": "b88898ac-9262-4578-a094-3d85a581c521",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:06:57.970Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "retired_incomplete_source",
+      "verified_at": "2026-11-03T18:06:57.970Z",
+      "fast_until": "2026-11-06T18:06:58.247Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:07:00.064Z"
+    },
+    {
+      "id": "424579dc-690e-4c9b-890a-87a3b792dbd2",
+      "url": "https://developers.cloudflare.com/changelog/",
+      "name": "Cloudflare Changelog",
+      "category": "Updates",
+      "monitor_id": "7246fc89-b95d-44b5-9069-8f065e2e7112",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:06:51.443Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:06:51.443Z",
+      "fast_until": "2026-11-06T18:06:51.714Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:06:53.706Z"
+    },
+    {
+      "id": "7ce2217a-f303-49d1-bb54-44204b241581",
+      "url": "https://github.blog/changelog/",
+      "name": "GitHub Changelog",
+      "category": "Updates",
+      "monitor_id": "773b5217-c923-4425-bb09-8e5b7575f3db",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:06:43.892Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:06:43.892Z",
+      "fast_until": "2026-11-06T18:06:44.215Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:06:46.128Z"
+    },
+    {
+      "id": "9d368f6f-1e7c-4ac3-990e-f9c0d38f33da",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "name": "OpenAI API changelog",
+      "category": "Updates",
+      "monitor_id": "79cc0bac-4ce6-4569-9d2c-98fb2ccea53c",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:07:38.677Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:07:38.677Z",
+      "fast_until": "2026-11-06T18:07:38.950Z",
+      "check_count": 1,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:07:41.157Z"
+    },
+    {
+      "id": "f8016e28-b66c-4e1b-a07a-23b03102c0a6",
+      "url": "https://en.wikipedia.org/wiki/Portal:Current_events",
+      "name": "Wikipedia current events",
+      "category": "Updates",
+      "monitor_id": "3a3c68a0-06c5-41bd-b4f0-c933ea529322",
+      "schedule": "0 */6 * * *",
+      "created_at": "2026-11-03T18:06:35.270Z",
+      "expires_at": null,
+      "public": 0,
+      "status": "active",
+      "verified_at": "2026-11-03T18:06:35.270Z",
+      "fast_until": "2026-11-06T18:06:35.631Z",
+      "check_count": 2,
+      "change_count": 0,
+      "last_checked_at": "2026-11-03T18:14:53.956Z"
+    }
+  ],
+  "monitors": [
+    {
+      "id": "5c13e084-db64-4729-bcbd-4fde3fa282f7",
+      "name": "TM · IKEA US restaurant menu prices",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "85af25cb-8f4c-4d2e-882b-c8417087cbdb",
+      "name": "TM · USCIS immigration alerts",
+      "status": "active",
+      "schedule_cron": "0 */6 * * *"
+    },
+    {
+      "id": "abcf244c-636b-4101-9e35-e6eaf1dc76e8",
+      "name": "TM · Hetzner cloud pricing",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "cc7e0d11-84ef-445b-9894-1fb3da7b1025",
+      "name": "TM · Wetherspoon food menu",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "b1ac11b4-4274-434f-8f16-abd4dbee7423",
+      "name": "TM · In-N-Out menu",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "9d9bac37-a51e-4572-bf7d-604bfaaf9be2",
+      "name": "TM · Medicare costs",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "862384b2-8c97-4abc-b945-5d9e007c1df4",
+      "name": "TM · Medicare coverage",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "67afcb50-41f2-4d8b-b3dc-9b735b5ec37a",
+      "name": "TM · UK skilled worker visa fees",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "5267b416-7b53-4105-b24d-68ab5d0ea6f4",
+      "name": "TM · Cloudflare privacy policy",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "82cd3b43-430f-4dc3-8de2-e7570a099bb7",
+      "name": "TM · GitHub privacy statement",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "913ed57f-8c9c-482f-9f90-6cd9087ed48f",
+      "name": "TM · OpenAI terms of use",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "f643e8ba-99aa-478f-9c31-06be4bab61df",
+      "name": "TM · Anthropic consumer terms",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "ddb1717a-19ae-4f03-b966-db152badb9d8",
+      "name": "TM · GitHub pricing",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "caf73eb1-ab3c-46a9-b349-0b988dde578f",
+      "name": "TM · Supabase pricing",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "518e3fa5-ab27-4b16-b70f-8a3d9afb8ade",
+      "name": "TM · Vercel pricing",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "d48b1fe7-ed60-497c-9344-f8e6fb892afb",
+      "name": "TM · Cloudflare Workers pricing",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "c76ae287-13b0-4909-9f3e-1c6d604f7d4c",
+      "name": "TM · OpenAI API pricing",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "41764e14-379b-48d8-8dab-1870878b9a14",
+      "name": "TM · Anthropic pricing",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "d276c499-bc39-4fdf-a1bb-f404ffdc7ddf",
+      "name": "TM · TinyFish pricing",
+      "status": "active",
+      "schedule_cron": "0 9 * * *"
+    },
+    {
+      "id": "79cc0bac-4ce6-4569-9d2c-98fb2ccea53c",
+      "name": "TM · OpenAI API changelog",
+      "status": "active",
+      "schedule_cron": "0 */6 * * *"
+    },
+    {
+      "id": "70da6108-1732-4082-8077-47ee5b61e23d",
+      "name": "TM · UK immigration rule changes",
+      "status": "active",
+      "schedule_cron": "0 */6 * * *"
+    },
+    {
+      "id": "e9c04f13-a0b4-43b8-9f84-578594d3bbd5",
+      "name": "TM · Canada immigration notices",
+      "status": "active",
+      "schedule_cron": "0 */6 * * *"
+    },
+    {
+      "id": "b88898ac-9262-4578-a094-3d85a581c521",
+      "name": "TM · AWS recent announcements",
+      "status": "paused",
+      "schedule_cron": "0 */6 * * *"
+    },
+    {
+      "id": "7246fc89-b95d-44b5-9069-8f065e2e7112",
+      "name": "TM · Cloudflare Changelog",
+      "status": "active",
+      "schedule_cron": "0 */6 * * *"
+    },
+    {
+      "id": "773b5217-c923-4425-bb09-8e5b7575f3db",
+      "name": "TM · GitHub Changelog",
+      "status": "active",
+      "schedule_cron": "0 */6 * * *"
+    },
+    {
+      "id": "3a3c68a0-06c5-41bd-b4f0-c933ea529322",
+      "name": "TM · Wikipedia current events",
+      "status": "active",
+      "schedule_cron": "0 */6 * * *"
+    }
+  ],
+  "checks": [
+    {
+      "page": "Canada immigration notices",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "e126b886-984a-4694-821c-65ce628342d8",
+          "status": 200,
+          "bytes": 1223153,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "UK immigration rule changes",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "967df42e-de01-4e75-9e06-be2142b7a06b",
+          "status": 200,
+          "bytes": 568477,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "UK skilled worker visa fees",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "788fb2f1-13e6-4726-bd36-a8f2206575f2",
+          "status": 200,
+          "bytes": 461506,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "USCIS immigration alerts",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "ab71d33f-a889-4e25-90c5-fd0f77a2518d",
+          "status": 200,
+          "bytes": 421196,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Medicare costs",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "3cc152ec-e284-422b-9e75-dc2584ec09c3",
+          "status": 200,
+          "bytes": 756472,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Medicare coverage",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "e1a505cf-5c51-45fc-868e-43fe56ab87be",
+          "status": 200,
+          "bytes": 271851,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "IKEA US restaurant menu prices",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "225bf0f7-89f6-4e77-bd92-7571fdec1c08",
+          "status": 200,
+          "bytes": 402290,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "In-N-Out menu",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "30ada788-128d-452f-8acd-fad643b786ba",
+          "status": 200,
+          "bytes": 421699,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Wetherspoon food menu",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "5d9ba525-ce58-4681-b675-cc1fb347efb4",
+          "status": 200,
+          "bytes": 558982,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Anthropic pricing",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "8da91777-96d3-4b55-a9eb-98c2a98deb41",
+          "status": 200,
+          "bytes": 371649,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Cloudflare Workers pricing",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "4f083a75-1a13-40c8-a034-adcf5f7a8f99",
+          "status": 200,
+          "bytes": 541701,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "GitHub pricing",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "4ec9a38f-d480-482f-9e2b-9bff9ff68b9d",
+          "status": 200,
+          "bytes": 491027,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Hetzner cloud pricing",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "95ce7fbb-bce0-4f13-ab15-043dd85dbdfe",
+          "status": 200,
+          "bytes": 462647,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "OpenAI API pricing",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "683d5f5a-b306-4639-9e39-56732efa14cd",
+          "status": 200,
+          "bytes": 390706,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Supabase pricing",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "63c04656-27f6-4f84-93b5-97907594c951",
+          "status": 200,
+          "bytes": 271599,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "TinyFish pricing",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "915b043e-51de-40ec-8d4c-b5525ce8935f",
+          "status": 200,
+          "bytes": 183645,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Vercel pricing",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "ba0f7e4f-c648-4645-951a-06f6cff5db90",
+          "status": 200,
+          "bytes": 372017,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Anthropic consumer terms",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "995d0d37-4bab-4974-8ef2-716ecfda9454",
+          "status": 200,
+          "bytes": 674627,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Cloudflare privacy policy",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "2bce2e13-1a42-4611-b3e0-0f13b489b253",
+          "status": 200,
+          "bytes": 929678,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "GitHub privacy statement",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "0215b047-3e8f-40bd-96b2-1ed1de0ee1c1",
+          "status": 200,
+          "bytes": 960140,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "OpenAI terms of use",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "5723112c-ff85-4245-9990-8b2fbdfb3681",
+          "status": 200,
+          "bytes": 1173049,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "AWS recent announcements",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "b5887ab8-9cd3-4b40-b514-6001ee399cc1",
+          "status": 200,
+          "bytes": 162631,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Cloudflare Changelog",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "c1bad2be-5648-4746-826d-442902543b8c",
+          "status": 200,
+          "bytes": 631098,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "GitHub Changelog",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "afa2108e-7405-4813-b4dd-ccc2e8e20c59",
+          "status": 200,
+          "bytes": 309193,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "OpenAI API changelog",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "d39beda6-9314-4127-9255-6e41d124e468",
+          "status": 200,
+          "bytes": 165286,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "page": "Wikipedia current events",
+      "snapshots": 1,
+      "chain": {
+        "ok": true,
+        "count": 1
+      },
+      "images": [
+        {
+          "id": "5da6338c-eed9-4c9f-a04e-8d639be2a893",
+          "status": 200,
+          "bytes": 866713,
+          "hash_ok": true
+        }
+      ],
+      "statuses": [
+        "ready"
+      ]
+    },
+    {
+      "name": "wrong token",
+      "status": 401,
+      "expected": 401,
+      "ms": 290,
+      "body": {
+        "error": "Unauthorized"
+      }
+    },
+    {
+      "name": "wrong monitor",
+      "status": 403,
+      "expected": 403,
+      "ms": 852,
+      "body": {
+        "error": "Monitor mismatch"
+      }
+    },
+    {
+      "name": "duplicate",
+      "status": 200,
+      "expected": 200,
+      "ms": 517,
+      "body": {
+        "duplicate": true
+      }
+    }
+  ],
+  "budget": {
+    "cap_usd": 4,
+    "stop_at_usd": 3.2,
+    "paid_enabled": true,
+    "costs": [
+      {
+        "primitive": "browser",
+        "usd": 0.112,
+        "calls": 28
+      },
+      {
+        "primitive": "monitor_check",
+        "usd": 0.13,
+        "calls": 26
+      },
+      {
+        "primitive": "monitor_future",
+        "usd": 2.44,
+        "calls": 26
+      },
+      {
+        "primitive": "monitor_manual",
+        "usd": 0.005,
+        "calls": 1
+      }
+    ],
+    "incurred_estimate_usd": 0.247,
+    "committed_projection_usd": 2.557,
+    "note": "Conservative reservations; wallet billing is authoritative. Scheduled costs logged on receipt; lost webhooks may undercount. Cron independently estimates elapsed charges."
+  },
+  "wallet": {
+    "available_balance": "11.818492",
+    "currency": "USD",
+    "as_of": "2026-11-03T18:19:34.054Z",
+    "auto_reload": {
+      "state": "unconfigured"
+    },
+    "pending_top_up": null,
+    "rates": {
+      "meters": [
+        {
+          "label": "TinyFish Agent",
+          "unit_amount": "0.016",
+          "currency": "USD",
+          "per": "step"
+        },
+        {
+          "label": "TinyFish Answer",
+          "unit_amount": "0",
+          "currency": "USD",
+          "per": "answer"
+        },
+        {
+          "label": "TinyFish Browser",
+          "unit_amount": "0.002",
+          "currency": "USD",
+          "per": "minute"
+        },
+        {
+          "label": "TinyFish Enrich (Company_profile)",
+          "unit_amount": "0",
+          "currency": "USD",
+          "per": "unit"
+        },
+        {
+          "label": "TinyFish Fetch",
+          "unit_amount": "0",
+          "currency": "USD",
+          "per": "url"
+        },
+        {
+          "label": "TinyFish Monitor",
+          "unit_amount": "0.005",
+          "currency": "USD",
+          "per": "run"
+        },
+        {
+          "label": "TinyFish Research (Deep)",
+          "unit_amount": "2",
+          "currency": "USD",
+          "per": "run"
+        },
+        {
+          "label": "TinyFish Research (Max)",
+          "unit_amount": "3",
+          "currency": "USD",
+          "per": "run"
+        },
+        {
+          "label": "TinyFish Router",
+          "unit_amount": "0",
+          "currency": "USD",
+          "per": "unit"
+        },
+        {
+          "label": "TinyFish Search",
+          "unit_amount": "0",
+          "currency": "USD",
+          "per": "query"
+        },
+        {
+          "label": "TinyFish Set",
+          "unit_amount": "0",
+          "currency": "USD",
+          "per": "row"
+        },
+        {
+          "label": "TinyFish Tinysets",
+          "unit_amount": "0",
+          "currency": "USD",
+          "per": "row"
+        }
+      ],
+      "as_of": "2026-11-03T18:13:23.074Z"
+    },
+    "agent_top_up_url": "https://agent.tinyfish.ai/v1/wallet/top-up"
+  }
+}

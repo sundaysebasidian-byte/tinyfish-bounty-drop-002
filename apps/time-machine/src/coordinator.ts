@@ -5,12 +5,16 @@ import { chainLink,chainRoot,meaningfulText,normalize,now,paidAllowed,safeUrl,sh
 import { capture } from './screenshot';
 export class Coordinator extends DurableObject<Env> {
  private queue:Promise<unknown>=Promise.resolve();
+ private wallet?:{balance:number;at:number};
  private serial<T>(fn:()=>Promise<T>):Promise<T>{const result=this.queue.then(fn);this.queue=result.catch(()=>{});return result;}
  private tf(){return new TinyFish(this.env);}
  private async cost(kind:string,amount:number,detail:string){await this.env.DB.prepare('INSERT INTO costs VALUES (?,?,?,?,?)').bind(crypto.randomUUID(),now(),kind,amount,detail).run();}
  private async reserve(kind:string,amount:number,detail:string){
   const row=await this.env.DB.prepare("SELECT COALESCE(SUM(estimate),0) AS total FROM costs WHERE primitive != 'monitor_check'").first<{total:number}>();
   paidAllowed(this.env.PAID_CALLS_ENABLED,row!.total,amount,Number(this.env.STOP_AT_USD));
+  if(!this.wallet||Date.now()-this.wallet.at>300000){const w=await this.tf().request<{available_balance:string}>('https://agent.tinyfish.ai/v1/wallet');const balance=Number(w.available_balance);if(!Number.isFinite(balance))throw Error('Wallet balance unavailable');this.wallet={balance,at:Date.now()};}
+  if(this.wallet.balance-amount<3)throw Error('wallet_floor');
+  if(kind==='browser'){const daily=await this.env.DB.prepare("SELECT COALESCE(SUM(estimate),0) AS total FROM costs WHERE primitive='browser' AND at>=?").bind(now().slice(0,10)).first<{total:number}>();if(daily!.total+amount>.15)throw Error('daily_browser_cap');}
   await this.cost(kind,amount,detail);
  }
  async fetch(request:Request):Promise<Response>{
@@ -101,6 +105,7 @@ export class Coordinator extends DurableObject<Env> {
   for(const p of pages){
    if(p.public&&p.expires_at&&p.expires_at<=now()){
     await this.tf().monitor('/'+p.monitor_id,undefined,'DELETE');
+    try{await this.tf().monitor('/'+p.monitor_id);throw Error('Deleted Monitor remains readable');}catch(e){if(!(e instanceof Error)||e.message!=='TinyFish HTTP 404')throw e;}
     await this.env.DB.prepare("UPDATE pages SET status='expired' WHERE id=?").bind(p.id).run();
    }else if(stop){await this.tf().monitor('/'+p.monitor_id,{status:'paused'},'PATCH');await this.env.DB.prepare("UPDATE pages SET status='budget_paused' WHERE id=?").bind(p.id).run();}
    else if(p.fast_until&&p.fast_until<=now()&&p.schedule!=='0 9 * * *'){

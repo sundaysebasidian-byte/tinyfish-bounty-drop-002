@@ -3,7 +3,7 @@ import type { Env,Page,Run,Snapshot } from './types';
 import { equalToken,now,sha,structuredDiff,webhookToken } from './core';
 export { Coordinator } from './coordinator';
 const app=new Hono<{Bindings:Env}>();
-const call=(env:Env,body:unknown)=>env.COORDINATOR.get(env.COORDINATOR.idFromName('time-machine')).fetch('https://coordinator/',{method:'POST',body:JSON.stringify(body)});
+const call=(env:Env,body:unknown)=>env.COORDINATOR.get(env.COORDINATOR.idFromName('time-machine-v2')).fetch('https://coordinator/',{method:'POST',body:JSON.stringify(body)});
 const date=(s:string|undefined)=>{if(!s||!Number.isFinite(Date.parse(s)))throw Error('Use an ISO date');return new Date(s).toISOString();};
 app.onError((e,c)=>c.json({error:e.message},400));
 app.use('/api/*',async(c,next)=>{

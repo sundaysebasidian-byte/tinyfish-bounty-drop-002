@@ -1,0 +1,11 @@
+{
+  "available_balance": "12.119",
+  "currency": "USD",
+  "as_of": "2026-11-03T18:01:26.635Z",
+  "auto_reload": {
+    "state": "unconfigured"
+  },
+  "pending_top_up": null,
+  "rates": null,
+  "agent_top_up_url": "https://agent.tinyfish.ai/v1/wallet/top-up"
+}
