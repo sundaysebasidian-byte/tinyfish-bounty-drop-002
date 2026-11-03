@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-03T18:27:26.545Z",
+  "agent_step_cost_usd": 0.43200000000000005,
+  "monitor_reserved_usd": 0.19,
+  "total_spend_and_commitments_usd": 0.622,
+  "rows": [
+    {
+      "id": "dd7f72fe-f582-4e9c-b0c8-2eca59d442e5",
+      "primitive": "monitor",
+      "usd": 0.095,
+      "day": "2026-11-03",
+      "created_at": "2026-11-03T18:06:39.074Z",
+      "reserved_usd": 0.095,
+      "num_of_steps": null,
+      "over_step_budget": 0
+    },
+    {
+      "id": "6d2358b4-9e7f-4f65-8693-8430c30361cd",
+      "primitive": "agent",
+      "usd": 0,
+      "day": "2026-11-03",
+      "created_at": "2026-11-03T18:06:45.853Z",
+      "reserved_usd": 0,
+      "num_of_steps": null,
+      "over_step_budget": 0
+    },
+    {
+      "id": "79f71f45-a2a8-4bd5-9b95-98140da6d149",
+      "primitive": "agent",
+      "usd": 0,
+      "day": "2026-11-03",
+      "created_at": "2026-11-03T18:07:42.820Z",
+      "reserved_usd": 0,
+      "num_of_steps": null,
+      "over_step_budget": 0
+    },
+    {
+      "id": "ae2ba267-5cea-46e3-9fd0-925b762f87c4",
+      "primitive": "agent",
+      "usd": 0.272,
+      "day": "2026-11-03",
+      "created_at": "2026-11-03T18:21:53.357Z",
+      "reserved_usd": 0.32,
+      "num_of_steps": 17,
+      "over_step_budget": 0
+    },
+    {
+      "id": "lead-verified-ba18fbd-cslb",
+      "primitive": "agent",
+      "usd": 0.16,
+      "day": "2026-11-03",
+      "created_at": "2026-11-03T18:22:33.269Z",
+      "reserved_usd": 0.32,
+      "num_of_steps": 10,
+      "over_step_budget": 0
+    },
+    {
+      "id": "b58aa464-26be-43ac-9640-9fd131add13a",
+      "primitive": "monitor",
+      "usd": 0.095,
+      "day": "2026-11-03",
+      "created_at": "2026-11-03T18:23:22.198Z",
+      "reserved_usd": 0.095,
+      "num_of_steps": null,
+      "over_step_budget": 0
+    }
+  ]
+}

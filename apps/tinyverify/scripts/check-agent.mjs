@@ -1,14 +1,19 @@
-import { writeFile, appendFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 const base = "https://tinyverify.sundaysebasidian.workers.dev";
-const r = await fetch(base + "/api/deep-check", {
+let r = await fetch(base + (process.env.RESUME_RUN_ID ? `/api/deep-check/${process.env.RESUME_RUN_ID}` : "/api/deep-check"), process.env.RESUME_RUN_ID ? undefined : {
   method: "POST",
   headers: {
     Authorization: `Bearer ${process.env.ADMIN_TOKEN}`,
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ name: "Turner Construction Company" }),
+  body: JSON.stringify({ name: "SWINERTON BUILDERS" }),
 });
-const data = await r.json();
+let data = await r.json();
+while (data.outcome === "pending") {
+  await new Promise(resolve => setTimeout(resolve, 5000));
+  r = await fetch(base + `/api/deep-check/${data.run_id}`);
+  data = await r.json();
+}
 console.log(r.status, JSON.stringify(data).slice(0, 1000));
 await writeFile(
   "agent-evidence.json",

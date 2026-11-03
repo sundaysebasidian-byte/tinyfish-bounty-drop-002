@@ -4,7 +4,6 @@ import { writeFileSync } from "node:fs";
 const secrets = {
   TINYFISH_API_KEY: process.env.TINYFISH_API_KEY,
   ADMIN_TOKEN: randomBytes(32).toString("hex"),
-  WEBHOOK_SECRET: randomBytes(32).toString("hex"),
 };
 if (!secrets.TINYFISH_API_KEY) throw Error("Missing key");
 writeFileSync(

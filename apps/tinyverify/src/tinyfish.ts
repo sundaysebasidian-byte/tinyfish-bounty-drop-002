@@ -4,7 +4,6 @@ export interface Env {
   ASSETS: Fetcher;
   TINYFISH_API_KEY: string;
   ADMIN_TOKEN: string;
-  WEBHOOK_SECRET: string;
   PAID_CALLS_ENABLED: string;
   PUBLIC_BASE_URL: string;
 }
@@ -48,6 +47,7 @@ export async function reserve(
   env: Env,
   primitive: "agent" | "monitor",
   usd: number,
+  publicIP?: string,
 ) {
   if (env.PAID_CALLS_ENABLED !== "true") throw Error("Paid calls disabled");
   const wallet = (await tinyfish(
@@ -62,7 +62,7 @@ export async function reserve(
   const day = new Date().toISOString().slice(0, 10);
   const id = crypto.randomUUID();
   const r = await env.DB.prepare(
-    `INSERT INTO costs(id,primitive,usd,day,created_at) SELECT ?,?,?,?,? WHERE (SELECT COALESCE(SUM(usd),0) FROM costs)+? < 2.4 AND (SELECT COALESCE(SUM(usd),0) FROM costs WHERE day=? AND primitive=?)+? <= ?`,
+    `INSERT INTO costs(id,primitive,usd,day,created_at,reserved_usd,public_ip) SELECT ?,?,?,?,?,?,? WHERE (SELECT COALESCE(SUM(usd),0) FROM costs)+? < 2.4 AND (SELECT COALESCE(SUM(usd),0) FROM costs WHERE day=? AND primitive=?)+? <= ? AND (? IS NULL OR ((SELECT COUNT(*) FROM costs WHERE day=? AND public_ip IS NOT NULL)<3 AND (SELECT COUNT(*) FROM costs WHERE day=? AND public_ip=?)<1)) AND NOT EXISTS(SELECT 1 FROM costs WHERE over_step_budget=1)`,
   )
     .bind(
       id,
@@ -71,10 +71,13 @@ export async function reserve(
       day,
       new Date().toISOString(),
       usd,
+      publicIP ?? null,
+      usd,
       day,
       primitive,
       usd,
       primitive === "agent" ? 0.6 : 0.2,
+      publicIP ?? null, day, day, publicIP ?? null,
     )
     .run();
   if (!r.meta.changes) throw Error("Budget stop: 80% of $3 cap or daily cap");

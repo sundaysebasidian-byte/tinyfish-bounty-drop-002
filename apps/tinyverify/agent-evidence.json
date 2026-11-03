@@ -1,8 +1,56 @@
 {
-  "at": "2026-11-03T18:07:43.887Z",
-  "status": 502,
+  "at": "2026-11-03T18:25:32.661Z",
+  "status": 200,
   "data": {
-    "error": "request_failed",
-    "message": "TinyFish HTTP 403"
+    "cached": false,
+    "outcome": "multiple_matches",
+    "candidates": [
+      {
+        "name": "SWINERTON BUILDERS",
+        "record_number": "92",
+        "source_status": "Active",
+        "expiry_date": null,
+        "disciplinary_actions": null,
+        "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=92"
+      },
+      {
+        "name": "SWINERTON BUILDERS",
+        "record_number": "993242",
+        "source_status": "Inactive",
+        "expiry_date": null,
+        "disciplinary_actions": null,
+        "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=993242"
+      },
+      {
+        "name": "SWINERTON BUILDERS & POWER ENGINEERING A JOINT VENTURE",
+        "record_number": "1024581",
+        "source_status": "Active",
+        "expiry_date": null,
+        "disciplinary_actions": null,
+        "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1024581"
+      },
+      {
+        "name": "SWINERTON BUILDERS / E I C O N A JOINT VENTURE",
+        "record_number": "777297",
+        "source_status": "Cancelled",
+        "expiry_date": null,
+        "disciplinary_actions": null,
+        "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=777297"
+      },
+      {
+        "name": "SWINERTON BUILDERS / MARELICH MECHANICAL A JOINT VENTURE",
+        "record_number": "801117",
+        "source_status": "Cancelled",
+        "expiry_date": null,
+        "disciplinary_actions": null,
+        "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801117"
+      }
+    ],
+    "num_of_steps": 17,
+    "actual_cost_usd": 0.272,
+    "reserved_usd": 0.32,
+    "over_step_budget": false,
+    "checked_at": "2026-11-03T18:25:32.230Z",
+    "source_url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"
   }
 }

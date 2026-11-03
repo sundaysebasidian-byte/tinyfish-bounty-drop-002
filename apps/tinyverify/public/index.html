@@ -26,7 +26,7 @@
             placeholder="Business name, NPI, LEI, company or ABN number"
             required
             minlength="2"
-            maxlength="150"
+            maxlength="100"
           />
           <div class="filters">
             <label
@@ -49,6 +49,7 @@
                 <option value="business_registration">
                   ABN registration · number required
                 </option>
+                <option value="contractor_license">Contractor licence · California</option>
                 <option value="charity_registration">
                   Charity registration · number required
                 </option>
@@ -57,11 +58,13 @@
               >Jurisdiction<select name="jurisdiction">
                 <option value="Global">All jurisdictions</option>
                 <option value="US">United States</option>
+                <option value="US-CA">California</option>
                 <option value="UK">United Kingdom</option>
                 <option value="AU">Australia</option>
               </select></label
             >
           </div>
+          <label>Registry<select name="registry" id="registry"><option value="">Automatic</option></select></label>
           <button type="submit">Verify record <span>↗</span></button>
         </form>
         <p class="muted">
@@ -79,8 +82,7 @@
     </main>
     <footer>
       Registry evidence, not a hiring recommendation. Unknown fields stay
-      unknown.<br />Paid Agent and Monitor creation require an administrator
-      token.
+      unknown.<br />Public Agent: cached checks free; up to three new runs/day globally and one/IP/day. Monitor creation requires an administrator token.
     </footer>
   </body>
 </html>

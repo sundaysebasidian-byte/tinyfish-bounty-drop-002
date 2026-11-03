@@ -1,0 +1,140 @@
+{
+  "run_id": "60495483-27f1-4bd9-b993-a9828d6e90e6",
+  "status": "COMPLETED",
+  "goal": "Navigate to https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx to complete the goal: Search by business name for \"Swinerton Builders\" (read-only). Return JSON {candidates:[{name,license_number,status,expiration}]} max 3.",
+  "created_at": "2026-11-03T18:12:31Z",
+  "started_at": "2026-11-03T18:12:33Z",
+  "finished_at": "2026-11-03T18:13:22Z",
+  "num_of_steps": 10,
+  "result": {
+    "candidates": [
+      {
+        "name": "SWINERTON BUILDERS",
+        "status": "Active",
+        "expiration": "",
+        "license_number": "92"
+      },
+      {
+        "name": "SWINERTON BUILDERS",
+        "status": "Inactive",
+        "expiration": "",
+        "license_number": "993242"
+      },
+      {
+        "name": "SWINERTON BUILDERS & POWER ENGINEERING A JOINT VENTURE",
+        "status": "Active",
+        "expiration": "",
+        "license_number": "1024581"
+      }
+    ]
+  },
+  "output_schema": null,
+  "profile_attached": false,
+  "profile_id": null,
+  "error": null,
+  "browser_config": {
+    "proxy_enabled": false,
+    "proxy_country_code": null
+  },
+  "steps": [
+    {
+      "id": "4cfc9b6f-0e31-4a90-8f46-c260783e46dc",
+      "timestamp": "2026-11-03T18:12:34Z",
+      "status": "RUNNING",
+      "action": "Navigate to CSLB license search page",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/4cfc9b6f-0e31-4a90-8f46-c260783e46dc/screenshot",
+      "html": null,
+      "duration": "1.8s"
+    },
+    {
+      "id": "5a57ba95-e0c6-48db-909d-eecbd5bb18f4",
+      "timestamp": "2026-11-03T18:12:38Z",
+      "status": "RUNNING",
+      "action": "Navigate to business name search",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/5a57ba95-e0c6-48db-909d-eecbd5bb18f4/screenshot",
+      "html": null,
+      "duration": "1.2s"
+    },
+    {
+      "id": "f8fd8628-4ab4-4314-afdc-7fddd9e5d9b2",
+      "timestamp": "2026-11-03T18:12:44Z",
+      "status": "RUNNING",
+      "action": "Enter business name for search",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/f8fd8628-4ab4-4314-afdc-7fddd9e5d9b2/screenshot",
+      "html": null,
+      "duration": "1.0s"
+    },
+    {
+      "id": "b959a7ae-1735-472f-9cbc-40d2d79e4dab",
+      "timestamp": "2026-11-03T18:12:47Z",
+      "status": "RUNNING",
+      "action": "Submit business name search",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/b959a7ae-1735-472f-9cbc-40d2d79e4dab/screenshot",
+      "html": null,
+      "duration": "1.6s"
+    },
+    {
+      "id": "99d7d35d-fa1c-49f8-ab3e-b0f8f1e8c9d8",
+      "timestamp": "2026-11-03T18:12:52Z",
+      "status": "RUNNING",
+      "action": "Extract search results data",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/99d7d35d-fa1c-49f8-ab3e-b0f8f1e8c9d8/screenshot",
+      "html": null,
+      "duration": "6.6s"
+    },
+    {
+      "id": "0629a757-ec36-4558-ac2e-f33bfd359eae",
+      "timestamp": "2026-11-03T18:13:00Z",
+      "status": "RUNNING",
+      "action": "Check for expiration date column",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/0629a757-ec36-4558-ac2e-f33bfd359eae/screenshot",
+      "html": null,
+      "duration": "2.2s"
+    },
+    {
+      "id": "fa800f71-4e33-42dc-bac7-331559c04a06",
+      "timestamp": "2026-11-03T18:13:05Z",
+      "status": "RUNNING",
+      "action": "Click first SWINERTON BUILDERS license to see details",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/fa800f71-4e33-42dc-bac7-331559c04a06/screenshot",
+      "html": null,
+      "duration": "2.0s"
+    },
+    {
+      "id": "ab52b13c-586f-440f-a15a-2567438a2e82",
+      "timestamp": "2026-11-03T18:13:09Z",
+      "status": "RUNNING",
+      "action": "Check current page state",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/ab52b13c-586f-440f-a15a-2567438a2e82/screenshot",
+      "html": null,
+      "duration": "2.4s"
+    },
+    {
+      "id": "7bdd8212-2bc7-4cb5-93bd-d41217c7fab4",
+      "timestamp": "2026-11-03T18:13:14Z",
+      "status": "RUNNING",
+      "action": "Check if there's a next page",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/7bdd8212-2bc7-4cb5-93bd-d41217c7fab4/screenshot",
+      "html": null,
+      "duration": "1.4s"
+    },
+    {
+      "id": "835d62f1-d59b-4b89-b4fa-c85a8f966ca7",
+      "timestamp": "2026-11-03T18:13:19Z",
+      "status": "RUNNING",
+      "action": "Return top 3 Swinerton Builders search results",
+      "screenshot": "https://agent.tinyfish.ai/runs/60495483-27f1-4bd9-b993-a9828d6e90e6/steps/835d62f1-d59b-4b89-b4fa-c85a8f966ca7/screenshot",
+      "html": null,
+      "duration": "2.6s"
+    },
+    {
+      "id": "3172b6db-06de-419b-9633-5fde913c8fc8",
+      "timestamp": "2026-11-03T18:13:21Z",
+      "status": "COMPLETED",
+      "action": "Task completed",
+      "screenshot": null,
+      "html": null,
+      "duration": null
+    }
+  ]
+}

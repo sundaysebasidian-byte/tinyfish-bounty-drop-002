@@ -125,7 +125,7 @@ else if (location.pathname === "/registries") {
           r.name + " · " + r.authority,
           r.jurisdiction,
           r.type,
-          r.method + (r.method === "Agent" ? " · admin only" : ""),
+          r.method + (r.method === "Agent" ? " · capped public access" : ""),
         ])
           row.append(el("td", value));
         table.append(row);
@@ -144,15 +144,20 @@ else if (location.pathname === "/registries") {
         form.requestSubmit();
       }),
   );
+  api("/api/registries").then(d => {
+    const select = form.elements.registry;
+    for (const r of d.registries) { const option = el("option", r.name); option.value = r.id; select.append(option); }
+    select.onchange = () => { const r = d.registries.find(r => r.id === select.value); if (r) { form.elements.record_type.value = r.type; form.elements.jurisdiction.value = r.jurisdiction; } };
+  }).catch(e => error(results, e));
   form.onsubmit = async (e) => {
     e.preventDefault();
     results.replaceChildren(el("p", "Checking live official sources…"));
     const submit = form.querySelector("[type=submit]");
     submit.disabled = true;
     try {
-      const d = await api(
-        "/api/verify?" + new URLSearchParams(new FormData(form)),
-      );
+      const params = new URLSearchParams(new FormData(form));
+      if (!params.get("registry")) params.delete("registry");
+      const d = await api("/api/verify?" + params);
       results.replaceChildren();
       if (!d.results.length)
         results.append(
@@ -165,6 +170,11 @@ else if (location.pathname === "/registries") {
           el("p", r.outcome.replaceAll("_", " "), "muted"),
         );
         if (r.message) card.append(el("p", r.message, "warning"));
+        if (r.outcome === "agent_required") {
+          const run = el("button", "Run Agent check");
+          run.onclick = async () => { run.disabled = true; try { let data = await api("/api/deep-check", { name: params.get("name") }); while (data.outcome === "pending") { await new Promise(resolve => setTimeout(resolve, 5000)); data = await api(`/api/deep-check/${data.run_id}`); } card.append(el("pre", JSON.stringify(data, null, 2))); } catch (e) { error(card, e); } finally { run.disabled = false; } };
+          card.append(run);
+        }
         if (r.truncated)
           card.append(
             el(

@@ -52,8 +52,8 @@ function env() {
     ADMIN_TOKEN: "test-admin",
   } as unknown as Env;
 }
-it("public callers cannot start paid monitors or Agent", async () => {
-  for (const path of ["/api/watches", "/api/deep-check"]) {
+it("public callers cannot create paid monitors", async () => {
+  for (const path of ["/api/watches"]) {
     const r = await worker.fetch(
       new Request("https://app.test" + path, { method: "POST", body: "{}" }),
       env(),
@@ -101,7 +101,7 @@ for (const mode of ["unchanged", "duplicate", "source_error"])
   it(`Monitor webhook ${mode}`, async () => {
     const f = JSON.parse(
       readFileSync(
-        new URL("../fixtures/companies.json", import.meta.url),
+        new URL("../fixtures/companies-monitor-markdown.json", import.meta.url),
         "utf8",
       ),
     );
@@ -159,7 +159,7 @@ for (const mode of ["unchanged", "duplicate", "source_error"])
     const r = await worker.fetch(
       new Request("https://app.test/api/webhooks/monitor/watch/token", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", origin: "https://monitor.tinyfish.ai" },
         body: JSON.stringify(body),
       }),
       e,
