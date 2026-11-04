@@ -1,0 +1,20 @@
+{
+  "page": {
+    "id": "4c52f099-540f-46c5-ae90-cdbc8dcf0be9",
+    "url": "https://www.ikea.com/us/en/stores/restaurant/",
+    "name": "IKEA US restaurant menu prices",
+    "category": "Menus",
+    "monitor_id": "5c13e084-db64-4729-bcbd-4fde3fa282f7",
+    "schedule": "0 9 * * *",
+    "created_at": "2026-11-03T18:13:12.017Z",
+    "expires_at": null,
+    "public": 0,
+    "status": "active",
+    "verified_at": "2026-11-03T18:13:12.017Z",
+    "fast_until": null
+  },
+  "baseline": {
+    "changed": true,
+    "snapshotId": "225bf0f7-89f6-4e77-bd92-7571fdec1c08"
+  }
+}

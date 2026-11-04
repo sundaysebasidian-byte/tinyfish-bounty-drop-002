@@ -1,0 +1,20 @@
+{
+  "page": {
+    "id": "cd23af69-75b5-47d5-93ec-1805d6a8ac0d",
+    "url": "https://www.uscis.gov/newsroom/alerts",
+    "name": "USCIS immigration alerts",
+    "category": "Immigration",
+    "monitor_id": "85af25cb-8f4c-4d2e-882b-c8417087cbdb",
+    "schedule": "0 */6 * * *",
+    "created_at": "2026-11-03T18:11:49.051Z",
+    "expires_at": null,
+    "public": 0,
+    "status": "active",
+    "verified_at": "2026-11-03T18:11:49.051Z",
+    "fast_until": "2026-11-06T18:11:49.322Z"
+  },
+  "baseline": {
+    "changed": true,
+    "snapshotId": "ab71d33f-a889-4e25-90c5-fd0f77a2518d"
+  }
+}

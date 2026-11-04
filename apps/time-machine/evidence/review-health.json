@@ -1,0 +1,163 @@
+{
+  "ok": true,
+  "at": "2026-11-03T18:33:24.756Z",
+  "storage": "D1 + KV",
+  "monitor_required": true,
+  "stale_pages": [],
+  "scheduled_deliveries": [
+    {
+      "id": "f8016e28-b66c-4e1b-a07a-23b03102c0a6",
+      "name": "Wikipedia current events",
+      "schedule": "0 */6 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "7ce2217a-f303-49d1-bb54-44204b241581",
+      "name": "GitHub Changelog",
+      "schedule": "0 */6 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "ba29e97a-ff15-421d-9984-d4e78a523ae7",
+      "name": "Canada immigration notices",
+      "schedule": "0 */6 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "dfc8e64a-538b-47ac-b109-701d53d6ac44",
+      "name": "UK immigration rule changes",
+      "schedule": "0 */6 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "14534e0c-4a1d-43cb-a183-f68bcf2f5dbd",
+      "name": "TinyFish pricing",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "11af3997-e00d-4708-8d6d-9f1e647b7b07",
+      "name": "Anthropic pricing",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "fcbdb182-3743-42d0-af5a-e0c0c07ece77",
+      "name": "OpenAI API pricing",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "d61ebe34-c8fc-4f3e-a14a-fc897cd609a2",
+      "name": "Cloudflare Workers pricing",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "0c3a8f40-733b-4cf4-96af-0af7c1083ab5",
+      "name": "Vercel pricing",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "b121fd07-c9c9-4b6b-914d-584afafd0ee8",
+      "name": "Supabase pricing",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "a2610287-5f46-4f9c-bc21-33a4a6d85875",
+      "name": "GitHub pricing",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "c8fe3002-e6ec-4528-a4d4-2e557353e6f1",
+      "name": "Anthropic consumer terms",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "fa23134b-963d-43af-8fa6-985a2d06c362",
+      "name": "OpenAI terms of use",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "6b9efdac-3746-4cae-a13a-ac93b44f8724",
+      "name": "GitHub privacy statement",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "8942d174-f1f3-4b32-8f49-df2af59cf88f",
+      "name": "Cloudflare privacy policy",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "7e1b40a6-39c5-45a6-9810-8ba096065c6b",
+      "name": "UK skilled worker visa fees",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "1fff7b41-e4d1-424a-964b-f79828e49ced",
+      "name": "Medicare coverage",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "3c1352aa-9d69-4a7a-9933-5ff07651111f",
+      "name": "Medicare costs",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "ed3961b3-44e4-4c22-bcf0-6a8582d59b68",
+      "name": "In-N-Out menu",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "a78c98f2-95f5-46bf-abc1-8f653dc060da",
+      "name": "Wetherspoon food menu",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "9141e840-adb4-425b-a079-93348ec41624",
+      "name": "Hetzner cloud pricing",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "cd23af69-75b5-47d5-93ec-1805d6a8ac0d",
+      "name": "USCIS immigration alerts",
+      "schedule": "0 */6 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "4c52f099-540f-46c5-ae90-cdbc8dcf0be9",
+      "name": "IKEA US restaurant menu prices",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "1cc14df1-181d-443f-a80b-6cf86541cd08",
+      "name": "UK student visa fees",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    },
+    {
+      "id": "61b9975b-5899-43f0-b50c-49d674b70a67",
+      "name": "UK immigration health surcharge",
+      "schedule": "0 9 * * *",
+      "last_scheduled_at": null
+    }
+  ],
+  "last_webhook_received_at": "2026-11-03T18:31:57.117Z",
+  "last_webhook_accepted_at": "2026-11-03T18:31:57.177Z",
+  "rejected_401": 1,
+  "rejected_403": 1
+}

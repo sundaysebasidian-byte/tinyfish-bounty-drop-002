@@ -1,0 +1,281 @@
+[
+  {
+    "name": "Wikipedia current events",
+    "url": "https://en.wikipedia.org/wiki/Portal:Current_events",
+    "category": "Updates",
+    "schedule": "6h",
+    "at": "2026-11-03T18:06:32.849Z",
+    "chars": 25321,
+    "title": "Portal:Current events - Wikipedia",
+    "errors": [],
+    "preview": "Edit instructions\n\nFrom Wikipedia, the free encyclopedia\n\n|  |  |\n| --- | --- |\n|  | **Portal maintenance status:** (October 2020)  * This portal's subpages **have been checked** by an editor, and are needed.  Please take care when editing, especially if using automated editing software. Learn how to update the maintenance information here. |\n\nWiki"
+  },
+  {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/",
+    "category": "Updates",
+    "schedule": "6h",
+    "at": "2026-11-03T18:06:41.683Z",
+    "chars": 3162,
+    "title": "GitHub Changelog",
+    "errors": [],
+    "preview": "Back to blog\n\nAll \n\nNew Releases \n\nImprovements \n\nRetired\n\nFilters (0 selected)\n\n## Filters (0 selected)\n\nMatch:\n\nAny\n\n\nAll\n\n\nTags\n\n* Account management\n* Actions\n* Application Security\n* Client apps\n* Collaboration tools\n* Community engagement\n* Copilot\n* Ecosystem & accessibility\n* Enterprise management tools\n* Platform governance\n* Projects & Is"
+  },
+  {
+    "name": "Cloudflare Changelog",
+    "url": "https://developers.cloudflare.com/changelog/",
+    "category": "Updates",
+    "schedule": "6h",
+    "at": "2026-11-03T18:06:48.795Z",
+    "chars": 41219,
+    "title": "Changelogs",
+    "errors": [],
+    "preview": "All products\n\nProduct groups\n\nAI\n\nAnalytics\n\nApplication performance\n\nApplication security\n\nCloudflare One\n\nConsumer services\n\nCore platform\n\nDeveloper platform\n\nDocs collections\n\nMedia\n\nNetwork security\n\nPrivacy\n\nStorage\n\nProducts\n\n1.1.1.1 (DNS Resolver)\n\nAccess\n\nAgent Lee\n\nAgents\n\nAI Crawl Control\n\nAI Gateway\n\nAI Search\n\nAnalytics\n\nAPI Shield\n\nAr"
+  },
+  {
+    "name": "AWS recent announcements",
+    "url": "https://aws.amazon.com/about-aws/whats-new/recent/",
+    "category": "Updates",
+    "schedule": "6h",
+    "at": "2026-11-03T18:06:56.630Z",
+    "chars": 253,
+    "title": "What's New with AWS",
+    "errors": [],
+    "preview": "# What's New with AWS\n\nStay current with our latest cloud computing services, features, and regional expansions\n\n## Latest announcements\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading\n\nLoading"
+  },
+  {
+    "name": "Canada immigration notices",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices.html",
+    "category": "Immigration",
+    "schedule": "6h",
+    "at": "2026-11-03T18:07:02.609Z",
+    "chars": 40009,
+    "title": "Notices — Immigration, Refugees and Citizenship Canada - Canada.ca",
+    "errors": [],
+    "preview": "# Notices: Immigration, Refugees and Citizenship Canada\n\n## 2026\n\n* Notice – Canada updates temporary measures for people affected by crises in Haiti and Sudan October 27, 2026\n* Notice – Client experience survey for Ukrainian temporary residents in Canada October 7, 2026\n* Notice – Changes to the pre-removal risk assessment for Israel and Palestin"
+  },
+  {
+    "name": "UK immigration rule changes",
+    "url": "https://www.gov.uk/government/collections/immigration-rules-statement-of-changes",
+    "category": "Immigration",
+    "schedule": "6h",
+    "at": "2026-11-03T18:07:20.906Z",
+    "chars": 16342,
+    "title": "Immigration Rules: statement of changes",
+    "errors": [],
+    "preview": "Collection\n\n# Immigration Rules: statement of changes\n\nStatement of changes in Immigration Rules: 1994 to 2026.\n\n## Updates to this page\n\n**From:**:   UK Visas and Immigration\n**Published:**:   22 January 2014\n**Last updated:**:   3 September 2026\n\n    Show all updates\n\n    1. 3 September 2026\n\n       Added a link to the statement of changes to the"
+  },
+  {
+    "name": "US visa news",
+    "url": "https://travel.state.gov/content/travel/en/News/visas-news.html",
+    "category": "Immigration",
+    "schedule": "6h",
+    "at": "2026-11-03T18:07:31.387Z",
+    "chars": 0,
+    "errors": [
+      {
+        "url": "https://travel.state.gov/content/travel/en/News/visas-news.html",
+        "error": "bot_blocked"
+      }
+    ],
+    "preview": ""
+  },
+  {
+    "name": "OpenAI API changelog",
+    "url": "https://developers.openai.com/api/docs/changelog",
+    "category": "Updates",
+    "schedule": "6h",
+    "at": "2026-11-03T18:07:34.969Z",
+    "chars": 52109,
+    "title": "Changelog | OpenAI API",
+    "errors": [],
+    "preview": "# Changelog\n\nUpcoming deprecations can be found on the deprecations page.\n\n### October, 2026\n\nOct 30\n\nFeature\n\ngpt-6-rosalind\n\nReleased GPT-6 Rosalind, bringing specialized biological reasoning with scientific tool use to complex life sciences research. Access is available to organizations approved for Rosalind Research through the trusted-access p"
+  },
+  {
+    "name": "TinyFish pricing",
+    "url": "https://www.tinyfish.ai/pricing",
+    "category": "Pricing",
+    "schedule": "daily",
+    "at": "2026-11-03T18:07:43.358Z",
+    "chars": 3524,
+    "title": "Pricing | TinyFish",
+    "errors": [],
+    "preview": "# Pricing\n\nPay only for what you run. No plans, no minimums, and a contract when you need more.\n\nGet started for free\n\nProductPrice\n\nTinySearchFree\n\nLimits: 30 requests / min · 500 requests / hour\n\n$0.00\n\nper request\n\nTinyFetchFree\n\nLimits: 150 urls / min · 1,000 urls / day\n\n$0.00\n\nper url\n\nTinyAgent\n\nLimit: 2 concurrent runs\n\n$0.016\n\nper step\n\nTin"
+  },
+  {
+    "name": "Anthropic pricing",
+    "url": "https://www.anthropic.com/pricing",
+    "category": "Pricing",
+    "schedule": "daily",
+    "at": "2026-11-03T18:07:48.964Z",
+    "chars": 14284,
+    "title": "Plans & pricing | Claude by Anthropic",
+    "errors": [],
+    "preview": "#\n\n### Free\n\nTry Claude\n\n$0\n\nFree for everyone\n\nTry Claude\n\n* **Limited usage** every 5 hours and every week\\*\n* Chat on web, desktop, and mobile\n* Search the web, create files, and run code\n* Memory across conversations\n* Connect your apps and tools\n* Create Artifacts\n* Claude Design, Slides, Docs\n\n### Pro\n\nFor everyday work\n\n$17\n\nPer month with a"
+  },
+  {
+    "name": "OpenAI API pricing",
+    "url": "https://openai.com/api/pricing/",
+    "category": "Pricing",
+    "schedule": "daily",
+    "at": "2026-11-03T18:08:13.432Z",
+    "chars": 725,
+    "title": "Business Pricing",
+    "errors": [],
+    "preview": "### Business\n\nA secure workspace with company context and flexible seat types for any budget.\n\n#### Standard seat\n\nBest for everyday work\n\n$20/month if billed annually. $25/month if billed monthly.\n\n#### Premium seat\n\nMore usage than standard, with no 5-hour limit\n\n$100/month if billed annually. $125/month if billed monthly.\n\n* All ChatGPT, ChatGPT"
+  },
+  {
+    "name": "Cloudflare Workers pricing",
+    "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+    "category": "Pricing",
+    "schedule": "daily",
+    "at": "2026-11-03T18:08:29.385Z",
+    "chars": 24546,
+    "title": "Pricing",
+    "errors": [],
+    "preview": "# Pricing\n\nLast updated Oct 2, 2026View as MarkdownAgent setup\n\nBy default, users have access to the Workers Free plan. The Workers Free plan includes limited usage of Workers, Pages Functions, Workers KV and Hyperdrive. Read more about the Free plan limits.\n\nThe Workers Paid plan includes Workers, Pages Functions, Workers KV, Hyperdrive, and Durab"
+  },
+  {
+    "name": "Vercel pricing",
+    "url": "https://vercel.com/pricing",
+    "category": "Pricing",
+    "schedule": "daily",
+    "at": "2026-11-03T18:08:34.705Z",
+    "chars": 13696,
+    "title": "Vercel Pricing: Hobby, Pro, and Enterprise plans",
+    "errors": [],
+    "preview": "# Scale your app, control your costs\n\nHobby\n\n$0/mo.\n\nThe perfect starting place for your web app or personal project.\n\nImport your repo, deploy in seconds\n\nAutomatic CI/CD\n\nWeb Application Firewall\n\nGlobal, automated CDN\n\nFluid compute\n\nDDoS Mitigation\n\nTraffic & performance insights\n\nStart deploying\n\nPro\n\nPopular\n\n$20/mo.\n\nEverything you need to b"
+  },
+  {
+    "name": "Supabase pricing",
+    "url": "https://supabase.com/pricing",
+    "category": "Pricing",
+    "schedule": "daily",
+    "at": "2026-11-03T18:08:42.407Z",
+    "chars": 19765,
+    "title": "Pricing & Fees | Supabase",
+    "errors": [],
+    "preview": "# Predictable pricing, designed to scale\n\nStart building for free, collaborate with your team, then scale to millions of users\n\n## AI tools\n\nAsk ChatGPTAsk Claude\n\n### Free\n\nPerfect for passion projects & simple websites.\n\nStart for Free\n\n$0\n\n/ month\n\nGet started with:\n\n* Unlimited API requests\n* 50,000 monthly active users\n* 500 MB database size\n\n"
+  },
+  {
+    "name": "GitHub pricing",
+    "url": "https://github.com/pricing",
+    "category": "Pricing",
+    "schedule": "daily",
+    "at": "2026-11-03T18:08:49.674Z",
+    "chars": 19347,
+    "title": "GitHub plans and pricing",
+    "errors": [],
+    "preview": "Plans & Pricing\n\n# Try the Copilot-powered platform\n\nWe get it, there's a lot you can do with GitHub. That's why we've packed all of it into a single risk-free trial that includes GitHub Enterprise, Copilot, and Advanced Security.\n\nStart free for 30 daysCompare plans\n\n## Free\n\nThe basics for individuals and organizations\n\n$0USD\n\nCreate a free organ"
+  },
+  {
+    "name": "Anthropic consumer terms",
+    "url": "https://www.anthropic.com/legal/consumer-terms",
+    "category": "Terms & privacy",
+    "schedule": "daily",
+    "at": "2026-11-03T18:08:58.423Z",
+    "chars": 29089,
+    "title": "Consumer Terms of Service",
+    "errors": [],
+    "preview": "###\n\n**Welcome to Anthropic! Before you access our services, please read these Terms of Service.**\n\nThese Terms of Service (“**Terms**”) govern your use of Claude.ai, Claude Pro, and other products and services that we may offer for individuals, along with any associated apps, software, and websites (together, our “**Services**”). These Terms are a"
+  },
+  {
+    "name": "OpenAI terms of use",
+    "url": "https://openai.com/policies/terms-of-use/",
+    "category": "Terms & privacy",
+    "schedule": "daily",
+    "at": "2026-11-03T18:09:09.957Z",
+    "chars": 20656,
+    "title": "Terms of Use",
+    "errors": [],
+    "preview": "# Terms of Use\n\nEffective: January 1, 2026 (Previous version⁠)\n\nThank you for using OpenAI!\n\nThese Terms of Use apply to your use of ChatGPT, DALL·E, and OpenAI’s other services for individuals, along with any associated software applications and websites (all together, “Services”). These Terms form an agreement between you and OpenAI OpCo, LLC, a "
+  },
+  {
+    "name": "GitHub privacy statement",
+    "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+    "category": "Terms & privacy",
+    "schedule": "daily",
+    "at": "2026-11-03T18:09:26.774Z",
+    "chars": 40997,
+    "title": "GitHub General Privacy Statement - GitHub Docs",
+    "errors": [],
+    "preview": "## GitHub Privacy Statement\n\nEffective date: April 27, 2026\n\nWelcome to the GitHub Privacy Statement. This is where we describe how we handle your “Personal Data”, which is information that is directly linked or can be linked to you. It applies to the Personal Data that GitHub, Inc. or GitHub B.V., processes as the “Data Controller” when you intera"
+  },
+  {
+    "name": "Cloudflare privacy policy",
+    "url": "https://www.cloudflare.com/privacypolicy/",
+    "category": "Terms & privacy",
+    "schedule": "daily",
+    "at": "2026-11-03T18:09:44.130Z",
+    "chars": 45936,
+    "title": "Cloudflare's Privacy Policy",
+    "errors": [],
+    "preview": "Overview  \nPolicy application  \nInformation we collect  \nHow we use information we collect\n\nInternational information transfers\n\nData subject rights and choices\n\nData security, data integrity and access\n\nNotice to California residents\n\nIf you have questions about these terms or anything else about Cloudflare, please don't hesitate to contact us:\n\n+"
+  },
+  {
+    "name": "UK skilled worker visa fees",
+    "url": "https://www.gov.uk/skilled-worker-visa/how-much-it-costs",
+    "category": "Immigration",
+    "schedule": "daily",
+    "at": "2026-11-03T18:09:51.243Z",
+    "chars": 3274,
+    "title": "Skilled Worker visa",
+    "errors": [],
+    "preview": "# Skilled Worker visa\n\nSkip contents\n\n# How much it costs\n\nWhen you apply for a Skilled Worker visa, you’ll need to have enough money to:\n\n* pay the application fee - the standard fee ranges from £819 to £1,865 depending on your circumstances\n* pay the healthcare surcharge - this is usually £1,035 per year\n* support yourself when you arrive in the "
+  },
+  {
+    "name": "Medicare coverage",
+    "url": "https://www.medicare.gov/coverage",
+    "category": "Insurance",
+    "schedule": "daily",
+    "at": "2026-11-03T18:09:55.765Z",
+    "chars": 951,
+    "title": "What's covered?",
+    "errors": [],
+    "preview": "# What's covered?\n\nTalk to your doctor or other health care provider and ask if Medicare will cover the test, item, or service you need.\n\n## Ask your doctor or healthcare provider how much your test, item, or service will cost.\n\nYour doctor may recommend services that Medicare does not cover or offers too frequently. This could end up in additional"
+  },
+  {
+    "name": "Medicare costs",
+    "url": "https://www.medicare.gov/basics/costs/medicare-costs",
+    "category": "Insurance",
+    "schedule": "daily",
+    "at": "2026-11-03T18:10:19.996Z",
+    "chars": 9568,
+    "title": "Costs",
+    "errors": [],
+    "preview": "# Costs\n\nWhat’s a premium, deductible, coinsurance, or copayment?\n\n## Find cost information for:\n\n## Part A (Hospital Insurance) costs\n\n| Part A costs: | What you pay in 2026: |\n| --- | --- |\n| **Premium**  Monthly | **$0 for most people** (because they or a spouse paid Medicare taxes long enough while working — generally at least 10 years). If you"
+  },
+  {
+    "name": "In-N-Out menu",
+    "url": "https://www.in-n-out.com/menu",
+    "category": "Menus",
+    "schedule": "daily",
+    "at": "2026-11-03T18:10:25.738Z",
+    "chars": 784,
+    "title": "Menu",
+    "errors": [],
+    "preview": "## Toasted Buns\n\nFreshly baked using old-fashioned, slow-rising sponge dough\n\n## Two Cheese Slices\n\n## Cheese Slice\n\nOur american cheese is the real thing\n\n## two beef patties\n\n100% american beef. no additives, fillers or preservatives\n\n## beef patty\n\n100% american beef. no additives, fillers or preservatives\n\n## Onions\n\nFreshly sliced or grilled\n\n"
+  },
+  {
+    "name": "Wetherspoon food menu",
+    "url": "https://www.jdwetherspoon.com/food/",
+    "category": "Menus",
+    "schedule": "daily",
+    "at": "2026-11-03T18:10:32.046Z",
+    "chars": 5637,
+    "title": "Food and drinks",
+    "errors": [],
+    "preview": "# Food and drinks\n\nWetherspoon’s menus offer something for every taste. However, it is not just choice and variety which are important – a key priority is the quality of the food offered.\n\nWe are committed to sourcing the best-quality ingredients, with menus which offer an enticing mix of traditional British meals, including regional dishes, along "
+  },
+  {
+    "name": "Hetzner cloud pricing",
+    "url": "https://www.hetzner.com/cloud/",
+    "category": "Pricing",
+    "schedule": "daily",
+    "at": "2026-11-03T18:10:37.675Z",
+    "chars": 6694,
+    "title": "Cloud-hosting provider for developers & teams",
+    "errors": [],
+    "preview": "Cloud\n\n# Affordable Cloud Hosting Services\n\nThe cheap simple cloud solution that your demanding projects deserve. Easy to use, flexible, and secure.\n\nCreate cloud instance\n\n## Which Hetzner Cloud Server is right for you?\n\n**Shared** Resources\n\nCurrently not available\n\nPerfect for test environments\n\nCost-Optimized\n\nExtremely cost-effective\n\nLow CPU "
+  }
+]
