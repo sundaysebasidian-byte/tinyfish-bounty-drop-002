@@ -8,7 +8,7 @@
     "deploy": "wrangler deploy",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "record": "node --env-file=/Users/sebasidian/.t3/projects/hackerson/.env.local scripts/record.mjs"
+    "record": "node --env-file=../../.env.local scripts/record.mjs"
   },
   "dependencies": {
     "hono": "^4.10.0",

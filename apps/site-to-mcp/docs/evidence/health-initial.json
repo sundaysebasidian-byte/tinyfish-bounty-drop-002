@@ -2,13 +2,13 @@
 > site-to-mcp@1.0.0 health
 > tsx scripts/health.ts
 
-file:///Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js:2048
+file://<repo>/apps/site-to-mcp/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js:2048
         return new McpError(code, message, data);
                ^
 
 McpError: MCP error -32001: Request timed out
-    at McpError.fromError (/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/node_modules/@modelcontextprotocol/sdk/src/types.ts:2330:16)
-    at Timeout.timeoutHandler (/Users/sebasidian/.t3/worktrees/hackerson/t3-549fc6eb/apps/site-to-mcp/node_modules/@modelcontextprotocol/sdk/src/shared/protocol.ts:1249:58)
+    at McpError.fromError (<repo>/apps/site-to-mcp/node_modules/@modelcontextprotocol/sdk/src/types.ts:2330:16)
+    at Timeout.timeoutHandler (<repo>/apps/site-to-mcp/node_modules/@modelcontextprotocol/sdk/src/shared/protocol.ts:1249:58)
     at listOnTimeout (node:internal/timers:605:17)
     at process.processTimers (node:internal/timers:541:7) {
   code: -32001,
