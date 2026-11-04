@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>TinyVerify · Official registry checks</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <a href="/" class="brand"><i aria-hidden="true"></i>TinyVerify</a>
+      <nav aria-label="Primary">
+        <a href="/registries">Coverage</a><a href="/api/registries">JSON API</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="intro">
+        <p class="eyebrow">Official sources · Source-linked receipts</p>
+        <h1>Check the record.</h1>
+        <form id="search">
+          <div class="query">
+            <label for="name">Name or registration number</label>
+            <div class="bar">
+              <input
+                id="name"
+                name="name"
+                placeholder="Business name, NPI, LEI, company or ABN number"
+                autocomplete="off"
+                spellcheck="false"
+                required
+                minlength="2"
+                maxlength="100"
+              />
+              <button type="submit" class="primary">
+                <span class="label">Verify record</span
+                ><span class="arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+          <div class="filters">
+            <label
+              >Entity<select name="kind">
+                <option value="organisation">Organisation</option>
+                <option value="person">Person · NPI only</option>
+              </select></label
+            ><label
+              >Record type<select name="record_type">
+                <option value="any">All supported records</option>
+                <option value="company_registration">
+                  Company registration
+                </option>
+                <option value="healthcare_registration">
+                  Healthcare registration
+                </option>
+                <option value="broker_registration">Broker registration</option>
+                <option value="bank_registration">Bank registration</option>
+                <option value="lei_registration">LEI registration</option>
+                <option value="business_registration">
+                  ABN registration · number required
+                </option>
+                <option value="contractor_license">
+                  Contractor licence · California
+                </option>
+                <option value="charity_registration">
+                  Charity registration · number required
+                </option>
+              </select></label
+            ><label
+              >Jurisdiction<select name="jurisdiction">
+                <option value="Global">All jurisdictions</option>
+                <option value="US">United States</option>
+                <option value="US-CA">California</option>
+                <option value="UK">United Kingdom</option>
+                <option value="AU">Australia</option>
+              </select></label
+            ><label
+              >Registry<select name="registry" id="registry">
+                <option value="">Automatic</option>
+              </select></label
+            >
+          </div>
+        </form>
+        <p class="examples">
+          Try <button type="button" class="text" data-example="00445790">TESCO PLC</button
+          ><button type="button" class="text" data-example="HWUPKR0MPOU8FGXBT394">
+            Apple LEI</button
+          ><button type="button" class="text" data-example="51824753556">
+            Australian Taxation Office
+          </button>
+        </p>
+      </section>
+      <section id="results" aria-live="polite" aria-busy="false"></section>
+    </main>
+    <footer>
+      <p>
+        Registry evidence, not a hiring recommendation. Unknown fields stay
+        unknown.
+      </p>
+      <p>
+        Public Agent: cached checks free; up to three new runs/day globally and
+        one/IP/day. Monitor creation requires an administrator token.
+      </p>
+    </footer>
+  </body>
+</html>

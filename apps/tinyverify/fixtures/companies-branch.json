@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-11-03T18:08:41.965Z",
+  "url": "https://find-and-update.company-information.service.gov.uk/company/BR008975",
+  "response": {
+    "results": [
+      {
+        "url": "https://find-and-update.company-information.service.gov.uk/company/BR008975",
+        "final_url": "https://find-and-update.company-information.service.gov.uk/company/BR008975",
+        "title": "TESCO AQUA (1LP) LIMITED overview - Find and update company information - GOV.UK",
+        "description": "TESCO AQUA (1LP) LIMITED - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, business activity",
+        "language": "en",
+        "text": "Sign in / Register\n\n# TESCO AQUA (1LP) LIMITED\n\nUK establishment number\n**BR008975**\n\nFollow this company\n\n**UK establishment office address**:   New Tesco House, Cheshunt, Delamare Road, EN8 9SL\n\n**Status**:   Closed\n\n**Opened on**\n:   9 August 2006\n\n**Type of business**:   Holding Of A Limited Partnership Interest\n\n---\n\n**This is a UK establishment of**\nTESCO AQUA (1LP) LIMITED\n  \n  \n**Company number**:   FC026996",
+        "author": null,
+        "published_date": null,
+        "links": [
+          "https://find-and-update.company-information.service.gov.uk/help/cookies",
+          "https://find-and-update.company-information.service.gov.uk/company/BR008975#content",
+          "https://www.gov.uk/",
+          "https://find-and-update.company-information.service.gov.uk/",
+          "https://www.gov.uk/guidance/searching-the-companies-house-register",
+          "https://find-and-update.company-information.service.gov.uk/signin",
+          "https://find-and-update.company-information.service.gov.uk/advanced-search",
+          "https://follow.company-information.service.gov.uk/company/BR008975/confirm-follow?return_to=https://find-and-update.company-information.service.gov.uk/company/BR008975",
+          "https://find-and-update.company-information.service.gov.uk/company/BR008975",
+          "https://find-and-update.company-information.service.gov.uk/company/BR008975/filing-history",
+          "https://find-and-update.company-information.service.gov.uk/company/FC026996",
+          "https://www.smartsurvey.co.uk/s/getcompanyinformation/",
+          "https://www.gov.uk/guidance/search-the-companies-house-register",
+          "https://www.gov.uk/find-contact-details-companies-house",
+          "https://find-and-update.company-information.service.gov.uk/help/accessibility-statement",
+          "https://developer.companieshouse.gov.uk/",
+          "https://www.gov.uk/government/organisations/companies-house",
+          "https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        ],
+        "latency_ms": 304.0713689988479,
+        "format": "markdown"
+      }
+    ],
+    "errors": []
+  }
+}

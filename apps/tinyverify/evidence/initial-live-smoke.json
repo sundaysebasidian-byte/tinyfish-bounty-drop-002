@@ -1,0 +1,745 @@
+{
+  "at": "2026-11-03T18:06:47.137Z",
+  "base": "https://tinyverify.sundaysebasidian.workers.dev",
+  "evidence": [
+    {
+      "path": "/api/verify?name=00445790&registry=companies&record_type=any&jurisdiction=Global",
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "00445790",
+          "record_type": "any",
+          "jurisdiction": "Global",
+          "kind": "organisation",
+          "registry": "companies"
+        },
+        "results": [
+          {
+            "registry": "companies",
+            "outcome": "match",
+            "checked_at": "2026-11-03T18:06:06.749Z",
+            "source_url": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+            "truncated": false,
+            "candidates": [
+              {
+                "record_number": "00445790",
+                "name": "TESCO PLC",
+                "name_variants": [
+                  "TESCO STORES (HOLDINGS) PUBLIC LIMITED COMPANY",
+                  "TESCO STORES (HOLDINGS) LIMITED"
+                ],
+                "status": "active",
+                "source_status": "Active",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+                "notes": [
+                  "UK incorporation has no expiry date. Accounts due dates are not licence expiry."
+                ],
+                "name_match": "possible_match"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/verify?name=HWUPKR0MPOU8FGXBT394&registry=gleif&record_type=any&jurisdiction=Global",
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "HWUPKR0MPOU8FGXBT394",
+          "record_type": "any",
+          "jurisdiction": "Global",
+          "kind": "organisation",
+          "registry": "gleif"
+        },
+        "results": [
+          {
+            "registry": "gleif",
+            "outcome": "match",
+            "checked_at": "2026-11-03T18:06:07.885Z",
+            "source_url": "https://api.gleif.org/api/v1/lei-records/HWUPKR0MPOU8FGXBT394",
+            "truncated": false,
+            "candidates": [
+              {
+                "record_number": "HWUPKR0MPOU8FGXBT394",
+                "name": "Apple Inc.",
+                "name_variants": [
+                  "Apple Computer, Inc."
+                ],
+                "status": "active",
+                "source_status": "ISSUED",
+                "expiry_date": "2027-03-08T17:27:20Z",
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://search.gleif.org/#/record/HWUPKR0MPOU8FGXBT394",
+                "notes": [
+                  "Expiry is the LEI next renewal date, not company incorporation expiry."
+                ],
+                "name_match": "possible_match"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/verify?name=628&registry=fdic&record_type=any&jurisdiction=Global",
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "628",
+          "record_type": "any",
+          "jurisdiction": "Global",
+          "kind": "organisation",
+          "registry": "fdic"
+        },
+        "results": [
+          {
+            "registry": "fdic",
+            "outcome": "match",
+            "checked_at": "2026-11-03T18:06:09.936Z",
+            "source_url": "https://api.fdic.gov/banks/institutions?filters=CERT:628&fields=NAME,CERT,ACTIVE,STNAME,CITY&limit=10",
+            "truncated": false,
+            "candidates": [
+              {
+                "record_number": "628",
+                "name": "JPMorgan Chase Bank, National Association",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "1",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/628",
+                "notes": [
+                  "FDIC institution record; no licence expiry or disciplinary data supplied by this dataset."
+                ],
+                "name_match": "possible_match"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/verify?name=51824753556&registry=abn&record_type=any&jurisdiction=Global",
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "51824753556",
+          "record_type": "any",
+          "jurisdiction": "Global",
+          "kind": "organisation",
+          "registry": "abn"
+        },
+        "results": [
+          {
+            "registry": "abn",
+            "outcome": "match",
+            "checked_at": "2026-11-03T18:06:11.894Z",
+            "source_url": "https://abr.business.gov.au/ABN/View?abn=51824753556",
+            "truncated": false,
+            "candidates": [
+              {
+                "record_number": "51824753556",
+                "name": "AUSTRALIAN TAXATION OFFICE",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "Active from 01 Nov 1999",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://abr.business.gov.au/ABN/View?abn=51824753556",
+                "notes": [
+                  "ABN registration is not an Australian Financial Services licence."
+                ],
+                "name_match": "possible_match"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/verify?name=202918&registry=charity&record_type=any&jurisdiction=Global",
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "202918",
+          "record_type": "any",
+          "jurisdiction": "Global",
+          "kind": "organisation",
+          "registry": "charity"
+        },
+        "results": [
+          {
+            "registry": "charity",
+            "outcome": "match",
+            "checked_at": "2026-11-03T18:06:16.057Z",
+            "source_url": "https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/202918",
+            "truncated": false,
+            "candidates": [
+              {
+                "record_number": "202918",
+                "name": "OXFAM",
+                "name_variants": [],
+                "status": "unknown",
+                "source_status": "Charity reporting is up to date (on time)",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/202918",
+                "notes": [
+                  "Reporting timeliness does not establish active registration; status remains unknown. Expiry and disciplinary history are not supplied on the overview."
+                ],
+                "name_match": "possible_match"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/verify?name=robinhood&registry=finra&record_type=any&jurisdiction=Global",
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "robinhood",
+          "record_type": "any",
+          "jurisdiction": "Global",
+          "kind": "organisation",
+          "registry": "finra"
+        },
+        "results": [
+          {
+            "registry": "finra",
+            "outcome": "multiple_matches",
+            "checked_at": "2026-11-03T18:06:18.603Z",
+            "source_url": "https://api.brokercheck.finra.org/search/firm?query=robinhood&nrows=10&start=0&wt=json",
+            "truncated": false,
+            "candidates": [
+              {
+                "record_number": "339165",
+                "name": "ROBINHOOD VENTURES",
+                "name_variants": [
+                  "ROBINHOOD VENTURES",
+                  "ROBINHOOD VENTURES DE, LLC"
+                ],
+                "status": "active",
+                "source_status": "ACTIVE",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://brokercheck.finra.org/firm/summary/339165",
+                "notes": [
+                  "Official, undocumented FINRA search interface. A disclosure flag is not itself a disciplinary finding; consult the linked report."
+                ],
+                "name_match": "possible_match"
+              },
+              {
+                "record_number": "46350",
+                "name": "TRADEPMR BY ROBINHOOD",
+                "name_variants": [
+                  "TRADE-PMR INC.",
+                  "TRADEPMR BY ROBINHOOD"
+                ],
+                "status": "active",
+                "source_status": "ACTIVE",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [
+                  "disclosures"
+                ],
+                "source_link": "https://brokercheck.finra.org/firm/summary/46350",
+                "notes": [
+                  "Official, undocumented FINRA search interface. A disclosure flag is not itself a disciplinary finding; consult the linked report."
+                ],
+                "name_match": "possible_match"
+              },
+              {
+                "record_number": "165998",
+                "name": "ROBINHOOD FINANCIAL, LLC",
+                "name_variants": [
+                  "CHRONOS FINANCIAL, LLC",
+                  "ROBINHOOD FINANCIAL, LLC"
+                ],
+                "status": "active",
+                "source_status": "ACTIVE",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [
+                  "disclosures"
+                ],
+                "source_link": "https://brokercheck.finra.org/firm/summary/165998",
+                "notes": [
+                  "Official, undocumented FINRA search interface. A disclosure flag is not itself a disciplinary finding; consult the linked report."
+                ],
+                "name_match": "possible_match"
+              },
+              {
+                "record_number": "287900",
+                "name": "ROBINHOOD SECURITIES, LLC",
+                "name_variants": [
+                  "ROBINHOOD SECURITIES, LLC"
+                ],
+                "status": "active",
+                "source_status": "ACTIVE",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [
+                  "disclosures"
+                ],
+                "source_link": "https://brokercheck.finra.org/firm/summary/287900",
+                "notes": [
+                  "Official, undocumented FINRA search interface. A disclosure flag is not itself a disciplinary finding; consult the linked report."
+                ],
+                "name_match": "possible_match"
+              },
+              {
+                "record_number": "323736",
+                "name": "ROBINHOOD ASSET MANAGEMENT",
+                "name_variants": [
+                  "RAM",
+                  "ROBINHOOD STRATEGIES",
+                  "ROBINHOOD ASSET MANAGEMENT, LLC",
+                  "ROBINHOOD ASSET MANAGEMENT",
+                  "ROBINHOOD ADVISOR NETWORK",
+                  "RAN"
+                ],
+                "status": "active",
+                "source_status": "ACTIVE",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://brokercheck.finra.org/firm/summary/323736",
+                "notes": [
+                  "Official, undocumented FINRA search interface. A disclosure flag is not itself a disciplinary finding; consult the linked report."
+                ],
+                "name_match": "possible_match"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/verify?name=Mayo+Clinic&registry=npi&record_type=any&jurisdiction=Global",
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "Mayo Clinic",
+          "record_type": "any",
+          "jurisdiction": "Global",
+          "kind": "organisation",
+          "registry": "npi"
+        },
+        "results": [
+          {
+            "registry": "npi",
+            "outcome": "multiple_matches",
+            "checked_at": "2026-11-03T18:06:30.342Z",
+            "source_url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&limit=10&enumeration_type=NPI-2&organization_name=Mayo%20Clinic",
+            "truncated": true,
+            "candidates": [
+              {
+                "record_number": "1881018208",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1881018208",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1538568928",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1538568928",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1821326570",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1821326570",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1164758868",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1164758868",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1508762600",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1508762600",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1588895643",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1588895643",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1023405065",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1023405065",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1912403536",
+                "name": "MAYO CLINIC",
+                "name_variants": [
+                  "MAYO CLINIC CENTER OF EXCELLENCE PROGRAM"
+                ],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1912403536",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1114343860",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1114343860",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              },
+              {
+                "record_number": "1427235068",
+                "name": "MAYO CLINIC",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "A",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://npiregistry.cms.hhs.gov/provider-view/1427235068",
+                "notes": [
+                  "NPI enumeration is not verification of a state professional licence. Expiry and disciplinary actions are not supplied by NPPES."
+                ],
+                "name_match": "exact_or_variant"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/receipts",
+      "status": 201,
+      "data": {
+        "id": "c7712726-58c5-467b-b0f8-35655a494dfc",
+        "registry": "companies",
+        "authority": "UK Registrar of Companies",
+        "record": {
+          "record_number": "00445790",
+          "name": "TESCO PLC",
+          "name_variants": [
+            "TESCO STORES (HOLDINGS) PUBLIC LIMITED COMPANY",
+            "TESCO STORES (HOLDINGS) LIMITED"
+          ],
+          "status": "active",
+          "source_status": "Active",
+          "expiry_date": null,
+          "disciplinary_actions": null,
+          "flags": [],
+          "source_link": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+          "notes": [
+            "UK incorporation has no expiry date. Accounts due dates are not licence expiry."
+          ]
+        },
+        "source_url": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+        "checked_at": "2026-11-03T18:06:33.707Z",
+        "sha256": "8ca9b506ee40ece50bf66f6f42bc02d5a723d1ca3a868a3b766f45754fcc92cf",
+        "fields_sha256": "8eced55f52b73ed3b4cea50c4334382f9be98598f39dba5c28aa1a6d8e44466a",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/api/receipts/c7712726-58c5-467b-b0f8-35655a494dfc",
+      "status": 200,
+      "data": {
+        "id": "c7712726-58c5-467b-b0f8-35655a494dfc",
+        "registry": "companies",
+        "authority": "UK Registrar of Companies",
+        "record": {
+          "record_number": "00445790",
+          "name": "TESCO PLC",
+          "name_variants": [
+            "TESCO STORES (HOLDINGS) PUBLIC LIMITED COMPANY",
+            "TESCO STORES (HOLDINGS) LIMITED"
+          ],
+          "status": "active",
+          "source_status": "Active",
+          "expiry_date": null,
+          "disciplinary_actions": null,
+          "flags": [],
+          "source_link": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+          "notes": [
+            "UK incorporation has no expiry date. Accounts due dates are not licence expiry."
+          ]
+        },
+        "source_url": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+        "checked_at": "2026-11-03T18:06:33.707Z",
+        "sha256": "8ca9b506ee40ece50bf66f6f42bc02d5a723d1ca3a868a3b766f45754fcc92cf",
+        "fields_sha256": "8eced55f52b73ed3b4cea50c4334382f9be98598f39dba5c28aa1a6d8e44466a",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "path": "/api/receipts/c7712726-58c5-467b-b0f8-35655a494dfc/recheck",
+      "status": 200,
+      "data": {
+        "id": "93e10692-f9d8-47b2-88c9-8ffcde96dda5",
+        "registry": "companies",
+        "authority": "UK Registrar of Companies",
+        "record": {
+          "record_number": "00445790",
+          "name": "TESCO PLC",
+          "name_variants": [
+            "TESCO STORES (HOLDINGS) PUBLIC LIMITED COMPANY",
+            "TESCO STORES (HOLDINGS) LIMITED"
+          ],
+          "status": "active",
+          "source_status": "Active",
+          "expiry_date": null,
+          "disciplinary_actions": null,
+          "flags": [],
+          "source_link": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+          "notes": [
+            "UK incorporation has no expiry date. Accounts due dates are not licence expiry."
+          ]
+        },
+        "source_url": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+        "checked_at": "2026-11-03T18:06:37.292Z",
+        "sha256": "8ca9b506ee40ece50bf66f6f42bc02d5a723d1ca3a868a3b766f45754fcc92cf",
+        "fields_sha256": "8eced55f52b73ed3b4cea50c4334382f9be98598f39dba5c28aa1a6d8e44466a",
+        "version": "1.0.0",
+        "changed": false,
+        "status_changed": false
+      }
+    },
+    {
+      "path": "/api/watches",
+      "status": 201,
+      "data": {
+        "id": "89c70216-e849-4c33-b0d6-0e592ed8ce07",
+        "monitor_id": "f19a92c8-de3f-47d2-9507-0787ad174ae4",
+        "state": "active",
+        "expires_at": "2026-11-10T18:06:38.244Z",
+        "schedule": "0 9 * * * UTC",
+        "reserved_usd": 0.04
+      }
+    },
+    {
+      "path": "/api/discover?name=TESCO%20PLC&registry=companies",
+      "status": 200,
+      "data": {
+        "purpose": "Official-source discovery only. Search snippets are not verified records.",
+        "registry": "companies",
+        "results": {
+          "query": "TESCO PLC site:find-and-update.company-information.service.gov.uk",
+          "results": [
+            {
+              "position": 1,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO PLC - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, ...",
+              "title": "TESCO PLC overview - Find and update company information",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/00445790"
+            },
+            {
+              "position": 2,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO PLC - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, ...",
+              "title": "TESCO PLC filing history - Companies House - GOV.UK",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/00445790/filing-history"
+            },
+            {
+              "position": 3,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO PLC - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, ...",
+              "title": "TESCO PLC people - Find and update company information",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/00445790/officers"
+            },
+            {
+              "position": 4,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO STORES LIMITED - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, ...",
+              "title": "TESCO STORES LIMITED overview - Companies House",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/00519500"
+            },
+            {
+              "position": 5,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO PLC - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, ...",
+              "title": "TESCO PLC filing history - Find and update company information ...",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/00445790/filing-history?page=122"
+            },
+            {
+              "position": 6,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO PLC - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, ...",
+              "title": "TESCO PLC more information - Companies House - GOV.UK",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/00445790/more"
+            },
+            {
+              "position": 7,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "Registered office address: Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, United Kingdom, AL7 1GA. Company status: Active.",
+              "title": "tesco corporate treasury services plc - Companies House",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/08629715"
+            },
+            {
+              "position": 8,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO PROPERTY FINANCE 1 PLC - Free company information from Companies House including registered office address, filing history, accounts, annual return, ...",
+              "title": "tesco property finance 1 plc - Companies House - GOV.UK",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/05888925"
+            },
+            {
+              "position": 9,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO PERSONAL FINANCE LIMITED - Free company information from Companies House including registered office address, filing history, accounts, annual return, ...",
+              "title": "tesco personal finance limited - Companies House - GOV.UK",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/SC173199"
+            },
+            {
+              "position": 10,
+              "site_name": "find-and-update.company-information.service.gov.uk",
+              "snippet": "TESCO PLC - Free company information from Companies House including registered office address, filing history, accounts, annual return, officers, charges, ...",
+              "title": "Charge - Find and update company information - GOV.UK",
+              "url": "https://find-and-update.company-information.service.gov.uk/company/00445790/charges/O6ul7W1nI7mzGEywWukRwuArUXQ"
+            }
+          ],
+          "total_results": 10,
+          "page": 0
+        }
+      }
+    },
+    {
+      "path": "/api/deep-check",
+      "status": 502,
+      "data": {
+        "error": "request_failed",
+        "message": "TinyFish HTTP 400"
+      }
+    },
+    {
+      "path": "/api/admin/costs",
+      "status": 200,
+      "data": {
+        "success": true,
+        "meta": {
+          "served_by": "v3-prod",
+          "served_by_region": "WNAM",
+          "served_by_colo": "SJC",
+          "served_by_primary": true,
+          "timings": {
+            "sql_duration_ms": 0.1844
+          },
+          "duration": 0.1844,
+          "changes": 0,
+          "last_row_id": 2,
+          "changed_db": false,
+          "size_after": 81920,
+          "rows_read": 4,
+          "rows_written": 0,
+          "total_attempts": 1
+        },
+        "results": [
+          {
+            "id": "dd7f72fe-f582-4e9c-b0c8-2eca59d442e5",
+            "primitive": "monitor",
+            "usd": 0.04,
+            "day": "2026-11-03",
+            "created_at": "2026-11-03T18:06:39.074Z"
+          },
+          {
+            "id": "6d2358b4-9e7f-4f65-8693-8430c30361cd",
+            "primitive": "agent",
+            "usd": 0.32,
+            "day": "2026-11-03",
+            "created_at": "2026-11-03T18:06:45.853Z"
+          }
+        ]
+      }
+    }
+  ]
+}

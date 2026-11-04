@@ -1,0 +1,246 @@
+{
+  "at": "2026-11-03T18:27:26.079Z",
+  "evidence": [
+    {
+      "q": {
+        "name": "202918",
+        "record_type": "charity_registration",
+        "jurisdiction": "UK"
+      },
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "202918",
+          "record_type": "charity_registration",
+          "jurisdiction": "UK",
+          "kind": "organisation"
+        },
+        "results": [
+          {
+            "registry": "charity",
+            "outcome": "match",
+            "checked_at": "2026-11-03T18:27:19.771Z",
+            "source_url": "https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/202918",
+            "truncated": false,
+            "candidates": [
+              {
+                "record_number": "202918",
+                "name": "OXFAM",
+                "name_variants": [],
+                "status": "unknown",
+                "source_status": "Charity reporting is up to date (on time)",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/202918",
+                "notes": [
+                  "Reporting timeliness does not establish active registration; status remains unknown. Expiry and disciplinary history are not supplied on the overview."
+                ],
+                "name_match": "possible_match"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "q": {
+        "name": "51824753556",
+        "record_type": "business_registration",
+        "jurisdiction": "AU"
+      },
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "51824753556",
+          "record_type": "business_registration",
+          "jurisdiction": "AU",
+          "kind": "organisation"
+        },
+        "results": [
+          {
+            "registry": "abn",
+            "outcome": "match",
+            "checked_at": "2026-11-03T18:27:22.197Z",
+            "source_url": "https://abr.business.gov.au/ABN/View?abn=51824753556",
+            "truncated": false,
+            "candidates": [
+              {
+                "record_number": "51824753556",
+                "name": "AUSTRALIAN TAXATION OFFICE",
+                "name_variants": [],
+                "status": "active",
+                "source_status": "Active from 01 Nov 1999",
+                "expiry_date": null,
+                "disciplinary_actions": null,
+                "flags": [],
+                "source_link": "https://abr.business.gov.au/ABN/View?abn=51824753556",
+                "notes": [
+                  "ABN registration is not an Australian Financial Services licence."
+                ],
+                "name_match": "possible_match"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "q": {
+        "name": "SWINERTON BUILDERS",
+        "record_type": "contractor_license",
+        "jurisdiction": "US-CA"
+      },
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "SWINERTON BUILDERS",
+          "record_type": "contractor_license",
+          "jurisdiction": "US-CA",
+          "kind": "organisation"
+        },
+        "results": [
+          {
+            "registry": "cslb",
+            "outcome": "agent_required",
+            "message": "Run the capped public Agent check with POST /api/deep-check.",
+            "candidates": []
+          }
+        ]
+      }
+    },
+    {
+      "q": {
+        "name": "Acme",
+        "record_type": "contractor_license",
+        "jurisdiction": "AU"
+      },
+      "status": 200,
+      "data": {
+        "query": {
+          "name": "Acme",
+          "record_type": "contractor_license",
+          "jurisdiction": "AU",
+          "kind": "organisation"
+        },
+        "outcome": "no_registry_for_query",
+        "message": "Choose a supported record type, jurisdiction and registry from /api/registries.",
+        "results": []
+      }
+    },
+    {
+      "path": "/api/deep-check",
+      "status": 200,
+      "data": {
+        "cached": true,
+        "outcome": "multiple_matches",
+        "candidates": [
+          {
+            "name": "SWINERTON BUILDERS",
+            "record_number": "92",
+            "source_status": "Active",
+            "expiry_date": null,
+            "disciplinary_actions": null,
+            "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=92"
+          },
+          {
+            "name": "SWINERTON BUILDERS",
+            "record_number": "993242",
+            "source_status": "Inactive",
+            "expiry_date": null,
+            "disciplinary_actions": null,
+            "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=993242"
+          },
+          {
+            "name": "SWINERTON BUILDERS & POWER ENGINEERING A JOINT VENTURE",
+            "record_number": "1024581",
+            "source_status": "Active",
+            "expiry_date": null,
+            "disciplinary_actions": null,
+            "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1024581"
+          },
+          {
+            "name": "SWINERTON BUILDERS / E I C O N A JOINT VENTURE",
+            "record_number": "777297",
+            "source_status": "Cancelled",
+            "expiry_date": null,
+            "disciplinary_actions": null,
+            "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=777297"
+          },
+          {
+            "name": "SWINERTON BUILDERS / MARELICH MECHANICAL A JOINT VENTURE",
+            "record_number": "801117",
+            "source_status": "Cancelled",
+            "expiry_date": null,
+            "disciplinary_actions": null,
+            "source_link": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801117"
+          }
+        ],
+        "num_of_steps": 17,
+        "actual_cost_usd": 0.272,
+        "reserved_usd": 0.32,
+        "over_step_budget": false,
+        "checked_at": "2026-11-03T18:25:32.230Z",
+        "source_url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"
+      }
+    }
+  ],
+  "monitors": [
+    {
+      "watch": {
+        "id": "89c70216-e849-4c33-b0d6-0e592ed8ce07",
+        "receipt_id": "c7712726-58c5-467b-b0f8-35655a494dfc",
+        "monitor_id": "f19a92c8-de3f-47d2-9507-0787ad174ae4",
+        "expires_at": "2026-11-21T18:06:38.244Z",
+        "state": "active",
+        "last_error": null,
+        "events": []
+      },
+      "monitor": {
+        "id": "f19a92c8-de3f-47d2-9507-0787ad174ae4",
+        "name": "TinyVerify companies 00445790",
+        "type": "fetch",
+        "config": {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/00445790",
+          "format": "markdown",
+          "links": false,
+          "image_links": false,
+          "ttl": 0
+        },
+        "schedule_cron": "0 9 * * *",
+        "status": "active",
+        "last_error": null,
+        "created_at": "2026-11-03 18:06:39",
+        "updated_at": "2026-11-03 18:06:41"
+      }
+    },
+    {
+      "watch": {
+        "id": "a94a5a7e-3d43-4489-800e-9692907bc8de",
+        "receipt_id": "22dd092e-8810-459c-a90c-2b98df251f6e",
+        "monitor_id": "9d39f594-6f78-4e24-b114-c2b67d8d8485",
+        "expires_at": "2026-11-21T18:23:21.991Z",
+        "state": "active",
+        "last_error": null,
+        "events": []
+      },
+      "monitor": {
+        "id": "9d39f594-6f78-4e24-b114-c2b67d8d8485",
+        "name": "TinyVerify gleif HWUPKR0MPOU8FGXBT394",
+        "type": "fetch",
+        "config": {
+          "url": "https://api.gleif.org/api/v1/lei-records/HWUPKR0MPOU8FGXBT394",
+          "format": "markdown",
+          "links": false,
+          "image_links": false,
+          "ttl": 0
+        },
+        "schedule_cron": "0 9 * * *",
+        "status": "active",
+        "last_error": null,
+        "created_at": "2026-11-03 18:23:22",
+        "updated_at": "2026-11-03 18:23:23"
+      }
+    }
+  ]
+}

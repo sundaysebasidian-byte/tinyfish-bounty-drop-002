@@ -1,0 +1,16 @@
+
+> tinyverify@1.0.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/sebasidian/.t3/worktrees/hackerson/t3-36c78ed7/apps/tinyverify
+
+ ✓ tests/safety.test.ts (11 tests) 14ms
+ ✓ tests/parsers.test.ts (26 tests) 14ms
+ ✓ tests/review.test.ts (12 tests) 16ms
+
+ Test Files  3 passed (3)
+      Tests  49 passed (49)
+   Start at  10:27:27
+   Duration  288ms (transform 163ms, setup 0ms, collect 318ms, tests 44ms, environment 0ms, prepare 113ms)
+

@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-03T19:00:00.496226+00:00",
+  "head_before": "01de87fef1b42d7cf827be04b12c6daa376bfe84",
+  "status": " M public/app.js\n M src/index.ts\n M src/registries.ts\n?? review-live-evidence.json\n?? tests/ranking.test.ts\n",
+  "moved": [],
+  "retained": [
+    "current worktree, source, fixtures, live evidence, delivery configuration and shared dependencies"
+  ],
+  "blocked": [],
+  "manifest": "closeout-audit/review.json",
+  "restore_mapping": [],
+  "reason": "No obsolete copy or disposable build cache verified; nothing moved. No temporary services or browser pages started.",
+  "disk": "Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5   482797652 304704052 150320420    67% 3912505 1503204200    0%   /System/Volumes/Data\n"
+}

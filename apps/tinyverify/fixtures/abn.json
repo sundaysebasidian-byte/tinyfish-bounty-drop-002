@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-11-03T18:01:04.991Z",
+  "url": "https://abr.business.gov.au/ABN/View?abn=51824753556",
+  "response": {
+    "results": [
+      {
+        "url": "https://abr.business.gov.au/ABN/View?abn=51824753556",
+        "final_url": "https://abr.business.gov.au/ABN/View?abn=51824753556",
+        "title": "Current details for ABN 51 824 753 556 | ABN Lookup",
+        "description": null,
+        "language": "en",
+        "text": "ABN details help|  |  |\n| --- | --- |\n| Entity name: | AUSTRALIAN TAXATION OFFICE |\n| ABN status: | Active from 01 Nov 1999 |\n| Entity type: | Commonwealth Government Entity |\n| Goods & Services Tax (GST): | Registered from 01 Jul 2000 |\n| Main business location: | NSW 2640 |\n\nTrading name(s) help|  |\n| --- |\n| The ABR stopped collecting and updating trading names in May 2012. Businesses now register their business name on the national Business Names Register. To learn more visit the ASIC Website . |\n| Trading name | From |\n| AUSTRALIAN TAXATION OFFICE | 09 Mar 2000 |\n| AUSTRALIAN TAXATION OFFICE-SUPERANNUATION GROUP | 19 May 2000 |\n\nDeductible gift recipient status help|  |\n| --- |\n| Not entitled to receive tax deductible gifts |\n\n### Disclaimer\n\nThe Registrar makes every reasonable effort to maintain current and accurate information on this site.\nThe Commissioner of Taxation advises that if you\nuse ABN Lookup for information about another entity for taxation purposes and that information turns out to be incorrect, in certain circumstances you\nwill be protected from liability. For more information see disclaimer.\n\n### Warning Statement\n\nIf you use ABN Lookup for information about a person or entity that provides financial or investment products or advice, make sure they have\nan Australian Financial Services (AFS) licence. You can check licenced professional registers here.",
+        "author": null,
+        "published_date": null,
+        "latency_ms": 2132.311902998481,
+        "format": "markdown"
+      }
+    ],
+    "errors": []
+  }
+}

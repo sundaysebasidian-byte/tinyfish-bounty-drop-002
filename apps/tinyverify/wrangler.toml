@@ -1,0 +1,17 @@
+name = "tinyverify"
+main = "src/index.ts"
+compatibility_date = "2026-11-03"
+account_id = "8f236662adb381d7fc8ef1e68d93d0af"
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+[vars]
+PAID_CALLS_ENABLED = "true"
+PUBLIC_BASE_URL = "https://tinyverify.sundaysebasidian.workers.dev"
+[[d1_databases]]
+binding = "DB"
+database_name = "tinyverify"
+database_id = "9ddfc0f2-aecb-4335-820e-89a2b833dc86"
+[triggers]
+crons = ["0 * * * *"]
