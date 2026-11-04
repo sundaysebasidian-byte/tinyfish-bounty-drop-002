@@ -1,7 +1,7 @@
 import{readFileSync,writeFileSync}from'node:fs';
 const base='https://tinyfish-time-machine.sundaysebasidian.workers.dev';
 const token=readFileSync('.env.runtime.local','utf8').match(/^ADMIN_TOKEN=(.+)$/m)![1];
-const get=async(path:string)=>{const r=await fetch(base+path,{headers:{Authorization:'Bearer '+token}});if(!r.ok)throw Error(path+' '+r.status);return r.json()};
+const get=async(path:string):Promise<any>=>{const r=await fetch(base+path,{headers:{Authorization:'Bearer '+token}});if(!r.ok)throw Error(path+' '+r.status);return r.json()};
 const {added}=JSON.parse(readFileSync('evidence/review-monitor-delta.json','utf8'));
 const checks=[];
 for(const p of added){const {snapshots}=await get('/api/pages/'+p.id+'/snapshots');const at=snapshots[0].captured_at;

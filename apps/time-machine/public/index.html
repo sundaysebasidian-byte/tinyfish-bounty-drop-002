@@ -1,1 +1,20 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Time Machine — recorded web history</title><link rel="stylesheet" href="/style.css"></head><body><header><a href="/" class="brand">◷ Time Machine</a><nav><a href="/#changes">Live changes</a><a href="/api/pages">API</a><a href="/api/budget">Budget</a></nav></header><main id="app" aria-live="polite"><p>Loading recorded history…</p></main><footer>Observed history, starting November 2026. Changes between checks are unknown. Powered by TinyFish Monitor.</footer><script type="module" src="/app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Time Machine — recorded web history</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+<header class="bar">
+  <a href="/" class="brand"><span class="mark" aria-hidden="true"></span>Time Machine</a>
+  <nav aria-label="Primary"><a href="/#changes">Live changes</a><a href="/api/pages">API</a><a href="/api/budget">Budget</a></nav>
+</header>
+<main id="app" tabindex="-1"><p class="loading">Loading recorded history…</p></main>
+<footer class="foot">Observed history, starting November 2026. Changes between checks are unknown. Powered by TinyFish Monitor.</footer>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
