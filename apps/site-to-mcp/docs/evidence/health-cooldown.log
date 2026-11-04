@@ -1,0 +1,35 @@
+
+> site-to-mcp@1.0.0 health
+> tsx scripts/health.ts
+
+{
+  "checked_at": "2026-11-03T18:16:47.307Z",
+  "ok": false,
+  "tools": [
+    {
+      "tool": "search_films",
+      "ok": true,
+      "reason": "Schema and known-input sanity passed",
+      "duration_ms": 10527
+    },
+    {
+      "tool": "get_film",
+      "ok": true,
+      "reason": "Schema and known-input sanity passed",
+      "duration_ms": 42356
+    },
+    {
+      "tool": "get_screenings",
+      "ok": true,
+      "reason": "Schema and known-input sanity passed",
+      "duration_ms": 16057
+    },
+    {
+      "tool": "filter_programme",
+      "ok": false,
+      "code": "BUDGET_OR_RATE_LIMIT",
+      "reason": "Agent unavailable: $1.60 stop threshold or 10-minute global cooldown",
+      "duration_ms": 11658
+    }
+  ]
+}

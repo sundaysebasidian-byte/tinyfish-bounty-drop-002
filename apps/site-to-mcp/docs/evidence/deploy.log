@@ -1,0 +1,14 @@
+⛅️ wrangler 4.156.2 (update available 4.157.0)
+───────────────────────────────────────────────
+Total Upload: 2128.85 KiB / gzip: 420.11 KiB
+Worker Startup Time: 59 ms
+Your Worker has access to the following bindings:
+Binding                                       Resource
+env.DB (site-to-mcp-pcc)                      D1 Database
+env.PAID_CALLS_ENABLED ("true")               Environment Variable
+
+Uploaded site-to-mcp-pcc (5.87 sec)
+Deployed site-to-mcp-pcc triggers (1.33 sec)
+  https://site-to-mcp-pcc.sundaysebasidian.workers.dev
+  schedule: 0 8 * * *
+Current Version ID: bdc0ad4b-05dc-4368-b927-ee85929e0d34

@@ -1,0 +1,19 @@
+stdio tools [
+  'search_films',
+  'get_film',
+  'get_screenings',
+  'filter_programme',
+  'health_check'
+]
+{
+  "source_url": "https://princecharlescinema.com/film/1808/akira/",
+  "checked_at": "2026-11-03T18:11:37.976Z",
+  "film_id": "1808",
+  "title": "Akira",
+  "year": 1988,
+  "runtime_minutes": 125,
+  "certificate": "(15)",
+  "country": "Japan",
+  "genre": "Anime",
+  "director": "Katsuhiro Ôtomo"
+}

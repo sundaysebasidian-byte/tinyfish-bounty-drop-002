@@ -1,0 +1,180 @@
+{
+  "checked_at": "2026-11-03T18:38:48.345Z",
+  "agent": {
+    "modifier": "35mm",
+    "filter_applied": true,
+    "empty_state_message": "",
+    "films": [
+      {
+        "film_id": "31617501",
+        "title": "Ken Russell's The Devils: The Director's Cut",
+        "url": "https://princecharlescinema.com/film/31617501/ken-russells-the-devils-the-directors-cut"
+      },
+      {
+        "film_id": "1870384",
+        "title": "Amelie - 25th Anniversary",
+        "url": "https://princecharlescinema.com/film/1870384/amelie-25th-anniversary"
+      },
+      {
+        "film_id": "19529988",
+        "title": "In The Mood For Love",
+        "url": "https://princecharlescinema.com/film/19529988/in-the-mood-for-love"
+      },
+      {
+        "film_id": "20759124",
+        "title": "The Godfather",
+        "url": "https://princecharlescinema.com/film/20759124/the-godfather"
+      },
+      {
+        "film_id": "23054753",
+        "title": "Salo, Or The 120 Days of Sodom",
+        "url": "https://princecharlescinema.com/film/23054753/salo-or-the-120-days-of-sodom"
+      },
+      {
+        "film_id": "3273",
+        "title": "V For Vendetta",
+        "url": "https://princecharlescinema.com/film/3273/v-for-vendetta"
+      },
+      {
+        "film_id": "4583163",
+        "title": "Short Cuts : 35mm Roadshow Tour",
+        "url": "https://princecharlescinema.com/film/4583163/short-cuts-35mm-roadshow-tour"
+      },
+      {
+        "film_id": "1808",
+        "title": "Akira",
+        "url": "https://princecharlescinema.com/film/1808/akira"
+      },
+      {
+        "film_id": "8371373",
+        "title": "Pulp Fiction",
+        "url": "https://princecharlescinema.com/film/8371373/pulp-fiction"
+      },
+      {
+        "film_id": "2949988",
+        "title": "The Texas Chain Saw Massacre",
+        "url": "https://princecharlescinema.com/film/2949988/the-texas-chain-saw-massacre"
+      }
+    ],
+    "interaction": "Clicked sort/filter icon to open 'Filter By Modifier' panel, selected 35mm checkbox, then clicked 'Apply' button (span.apply-modifier-filter) at bottom of dropdown panel. Panel closed and page refreshed showing only 35mm-tagged films.",
+    "result_state": "matches",
+    "source_url": "https://princecharlescinema.com/whats-on/",
+    "checked_at": "2026-11-03T18:33:27Z",
+    "cached": false,
+    "run_id": "e07d53ca-118b-4150-9ff7-11dd8deb0543"
+  },
+  "fetch_programme_count": 294,
+  "comparisons": [
+    {
+      "film_id": "31617501",
+      "title": "Ken Russell's The Devils: The Director's Cut",
+      "source_url": "https://princecharlescinema.com/film/31617501/ken-russells-the-devils-the-directors-cut/",
+      "bookable_link_count": 50,
+      "source_format_tag_count": 10,
+      "format_context": [
+        "Sold Out 8:30 pm35mm",
+        "Sold Out 12:15 pm35mm"
+      ]
+    },
+    {
+      "film_id": "1870384",
+      "title": "Amelie - 25th Anniversary",
+      "source_url": "https://princecharlescinema.com/film/1870384/amelie-25th-anniversary/",
+      "bookable_link_count": 14,
+      "source_format_tag_count": 14,
+      "format_context": [
+        "Book12:35 pm 35mm",
+        "Book3:00 pm 35mm"
+      ]
+    },
+    {
+      "film_id": "19529988",
+      "title": "In The Mood For Love",
+      "source_url": "https://princecharlescinema.com/film/19529988/in-the-mood-for-love/",
+      "bookable_link_count": 26,
+      "source_format_tag_count": 26,
+      "format_context": [
+        "Book8:45 pm 35mm",
+        "Book8:50 pm 35mm"
+      ]
+    },
+    {
+      "film_id": "20759124",
+      "title": "The Godfather",
+      "source_url": "https://princecharlescinema.com/film/20759124/the-godfather/",
+      "bookable_link_count": 4,
+      "source_format_tag_count": 4,
+      "format_context": [
+        "Book2:10 pm 35mm",
+        "Book3:35 pm 35mm"
+      ]
+    },
+    {
+      "film_id": "23054753",
+      "title": "Salo, Or The 120 Days of Sodom",
+      "source_url": "https://princecharlescinema.com/film/23054753/salo-or-the-120-days-of-sodom/",
+      "bookable_link_count": 2,
+      "source_format_tag_count": 2,
+      "format_context": [
+        "Book5:50 pm 35mm",
+        "Book5:50 pm 35mm"
+      ]
+    },
+    {
+      "film_id": "3273",
+      "title": "V For Vendetta",
+      "source_url": "https://princecharlescinema.com/film/3273/v-for-vendetta/",
+      "bookable_link_count": 0,
+      "source_format_tag_count": 2,
+      "format_context": [
+        "Sold Out 8:50 pm35mm",
+        "Sold Out 8:50 pm35mm"
+      ]
+    },
+    {
+      "film_id": "4583163",
+      "title": "Short Cuts : 35mm Roadshow Tour",
+      "source_url": "https://princecharlescinema.com/film/4583163/short-cuts-35mm-roadshow-tour/",
+      "bookable_link_count": 8,
+      "source_format_tag_count": 8,
+      "format_context": [
+        "Book2:15 pm 35mm",
+        "Book8:05 pm 35mm"
+      ]
+    },
+    {
+      "film_id": "1808",
+      "title": "Akira",
+      "source_url": "https://princecharlescinema.com/film/1808/akira/",
+      "bookable_link_count": 12,
+      "source_format_tag_count": 8,
+      "format_context": [
+        "Book8:45 pm 35mmSUB",
+        "Book2:35 pm 35mmSUB"
+      ]
+    },
+    {
+      "film_id": "8371373",
+      "title": "Pulp Fiction",
+      "source_url": "https://princecharlescinema.com/film/8371373/pulp-fiction/",
+      "bookable_link_count": 2,
+      "source_format_tag_count": 2,
+      "format_context": [
+        "Book2:05 pm 35mm",
+        "Book2:05 pm 35mm"
+      ]
+    },
+    {
+      "film_id": "2949988",
+      "title": "The Texas Chain Saw Massacre",
+      "source_url": "https://princecharlescinema.com/film/2949988/the-texas-chain-saw-massacre/",
+      "bookable_link_count": 2,
+      "source_format_tag_count": 2,
+      "format_context": [
+        "Book12:30 pm 35mm",
+        "Book12:30 pm 35mm"
+      ]
+    }
+  ],
+  "note": "Fetch independently verifies each returned title/ID and format-tagged screenings (including sold-out shows); visible UI interaction comes from Agent, not Fetch. Up to 10 cards, not a completeness guarantee."
+}

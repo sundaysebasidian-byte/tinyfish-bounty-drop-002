@@ -1,0 +1,28 @@
+{
+  "currency": "USD",
+  "price_per_step": 0.016,
+  "runs": [
+    {
+      "source": "lead report in task",
+      "num_of_steps": 10,
+      "actual_usd": 0.16,
+      "status": "verified by lead; imported into shared budget ledger"
+    },
+    {
+      "run_id": "d908bc8f-20ea-42cc-b849-49f70506379d",
+      "num_of_steps": 7,
+      "actual_usd": 0.112,
+      "accepted": false
+    },
+    {
+      "run_id": "e07d53ca-118b-4150-9ff7-11dd8deb0543",
+      "num_of_steps": 8,
+      "actual_usd": 0.128,
+      "accepted": true
+    }
+  ],
+  "implementation_spend_usd": 0.24,
+  "total_known_spend_usd": 0.4,
+  "prior_refused_requests_usd": 0,
+  "unresolved_reservations": 0
+}

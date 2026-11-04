@@ -1,0 +1,46 @@
+{
+  "total_actual_usd": 0.4,
+  "unresolved_reservations": 0,
+  "events": [
+    {
+      "id": "b0599791-f482-435c-a3f5-3be2b0cc2857",
+      "at": "2026-11-03T18:09:40.706Z",
+      "primitive": "agent",
+      "reserved_mills": 320,
+      "actual_mills": 0,
+      "status": "refused_403"
+    },
+    {
+      "id": "step-cap-capability-probe",
+      "at": "2026-11-03T18:11:00Z",
+      "primitive": "agent",
+      "reserved_mills": 16,
+      "actual_mills": 0,
+      "status": "refused_403"
+    },
+    {
+      "id": "ae2b8328-f278-4349-9619-ebb0bb7e5e3b",
+      "at": "2026-11-03T18:20:16.387Z",
+      "primitive": "agent",
+      "reserved_mills": 320,
+      "actual_mills": 112,
+      "status": "COMPLETED"
+    },
+    {
+      "id": "8b35225d-9152-4483-a050-7d139ba46c54",
+      "at": "2026-11-03T18:31:17.669Z",
+      "primitive": "agent",
+      "reserved_mills": 320,
+      "actual_mills": 128,
+      "status": "COMPLETED"
+    },
+    {
+      "id": "lead-duration-probe-2026-11-03",
+      "at": "2026-11-03T18:35:19.665Z",
+      "primitive": "agent",
+      "reserved_mills": 160,
+      "actual_mills": 160,
+      "status": "reported_external_10_steps"
+    }
+  ]
+}
