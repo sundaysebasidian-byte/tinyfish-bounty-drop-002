@@ -125,6 +125,8 @@ const base = (
     ...extra,
   });
 export function parseJSON(text: string): unknown {
+  const fenced = text.trim().match(/^```[a-z]*\s*\n([\s\S]*?)\n?```$/i);
+  if (fenced) text = fenced[1];
   try {
     return JSON.parse(text);
   } catch {
